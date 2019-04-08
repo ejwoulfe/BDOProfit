@@ -77,6 +77,29 @@ nav{
   visibility: hidden;
 }
 
+
+
+
+
+/* Calculator Pages  CSS */
+#calc_search_bar{
+margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Calculator Pages Css End */
+
 /* Footer Ends */
 /* Media Queries */
 @@media (max-width 992px) {

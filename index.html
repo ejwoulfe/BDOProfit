@@ -21,8 +21,8 @@
 
 
       <div id="logo" class="col-4 col-sm-2 .order-sm-1">
-        <a class="navbar-brand" href="">
-          <img src="/assets/logo.png" height="30" class="d-inline-block align-top">BDO Profit</a>
+        <a class="navbar-brand" href="index.html">
+          <img src="/assets/logo.png" height="30" class="d-inline-block align-top">BDO Wolf</a>
       </div>
 
 
@@ -34,18 +34,18 @@
        <form class="form-inline">
          <input id="search_bar" class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
        </form>
-   <!-- </div> -->
+
  </div>
   <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarList">
         <ul id="ul_container" class="navbar-nav ml-auto flex-nowrap">
              <li class="nav-item">
-               <a id="cooking_button" class="nav-link"href="#">Cooking</a>
+               <a id="cooking_button" class="nav-link" href="Calculator/cook.php">Cooking</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link"href="#">Processing</a>
+               <a id="processing_button" class="nav-link"href="Calculator/process.php">Processing</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link"href="#">Alchemy</a>
+               <a id="alchemy_button"  class="nav-link"href="Calculator/alchemy.php">Alchemy</a>
              </li>
              <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarJournalsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +78,7 @@
 <!-- Jumbotron -->
 <div id="main_banner" class="container-fluid">
   <div  class="row">
-    <h1>Welcome to BDOWolf!</h1>
+    <h1>Welcome to BDOWolf</h1>
   </div>
 </div>
 
@@ -90,7 +90,7 @@
 <!-- Main Content -->
 <div id="main_content" class="container-fluid bg-dark">
   <div id="main_content_row1" class="row">
-    <div class="col-sm-4">
+    <div id="cooking_card" class="col-sm-4">
       <div class="card text-center">
         <img class="card-img-top" src="/assets/cooking_icon.png" alt="Card image cap">
         <div class="card-body">
@@ -100,7 +100,7 @@
     </div>
 
     <div class="col-sm-4">
-      <div class="card text-center">
+      <div id="processing_card" class="card text-center">
         <img class="card-img-top" src="/assets/processing_icon.png" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Processing</h5>
@@ -109,7 +109,7 @@
     </div>
 
     <div class="col-sm-4">
-      <div class="card text-center">
+      <div id="alchemy_card" class="card text-center">
         <img class="card-img-top" src="/assets/alchemy_icon.png" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Alchemy</h5>
@@ -173,6 +173,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/js/app.js"></script>
-
   </body>
 </html>
