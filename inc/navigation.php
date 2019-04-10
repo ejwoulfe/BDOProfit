@@ -1,5 +1,5 @@
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg">
       <div id="navigation" class="container-fluid">
     
     
