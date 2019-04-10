@@ -11,6 +11,9 @@ background-color: #150D07;
 nav{
 background-color: #282726;
 }
+.jumbotron{
+  background-color: #343940
+}
 /* Navigation */
 #search_bar{
   width: 100%;
