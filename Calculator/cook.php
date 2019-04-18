@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<?php require_once('../inc/header.php');?>
+<?php require_once('../inc/header.php');
+$username = 'root';
+$password = 'root';
+$db = 'bdowolf_database';
+$host = 'localhost';
+$port = 8890;
+
+$mysqli = new mysqli("localhost", "root", "root", "bdowolf_database", 8890);
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+
+}
+  $query = "SELECT  name FROM items";
+
+  if ($result = $mysqli->query($query)) {
+
+      /* fetch associative array */
+      while ($row = $result->fetch_assoc()) {
+           echo "<h1>" .$row["name"]. "</h1>";
+      }
+
+      /* free result set */
+      $result->free();
+  }
+
+  /* close connection */
+  $mysqli->close();
+
+
+?>
 
 
   <body>
