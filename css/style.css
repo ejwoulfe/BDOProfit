@@ -113,6 +113,11 @@ a{
 #calc_search_bar{
 margin: auto;
 }
+#searh_bar_and_button button{
+  margin-left: 5px;
+}
+
+
 
 
 

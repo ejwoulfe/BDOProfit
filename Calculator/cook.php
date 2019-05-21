@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 
-<?php require_once('../inc/header.php');
-$username = 'root';
-$password = 'root';
-$db = 'bdowolf_database';
-$host = 'localhost';
-$port = 8890;
-
-$mysqli = new mysqli("localhost", "root", "root", "bdowolf_database", 8890);
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-
-}
-  $query = "SELECT  name FROM items";
-
-  if ($result = $mysqli->query($query)) {
-
-      /* fetch associative array */
-      while ($row = $result->fetch_assoc()) {
-           echo "<h1>" .$row["name"]. "</h1>";
-      }
-
-      /* free result set */
-      $result->free();
-  }
-
-  /* close connection */
-  $mysqli->close();
-
-
-?>
+<?php require_once('../inc/header.php');?>
 
 
   <body>
@@ -41,14 +12,16 @@ if ($mysqli->connect_errno) {
       <p class="h5 text-center">What are you looking to cook?</p>
 
       <div id="calc_search_bar" class="col-md-8">
-      <div class="input-group mt-5">
-        <input type="text" class="form-control" placeholder="Search" aria-label="cook search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
+      <!-- <div class="input-group mt-5"> -->
+        <form id="searh_bar_and_button" action="" method="POST">
+        <input name="searchBar" type="text" class="form-control" placeholder="Search" aria-label="cook search" aria-describedby="basic-addon2">
+        <div class="input-group-btn">
+          <button class="btn btn-outline-secondary" type="submit" name="searchButton">
             <i class="fa fa-search"></i>
           </button>
         </div>
-      </div>
+      </form>
+      <!-- </div> -->
       </div>
     </div>
 
@@ -57,17 +30,41 @@ if ($mysqli->connect_errno) {
 
 
     <div id="main_content" class="container-fluid bg-dark">
-
       <table class="table table-bordered text-center bg-light">
         <thead>
           <tr>
-            <th scope="col col-4">#</th>
+            <th scope="col col-4">Image</th>
             <th scope="col col-4">Name</th>
             <th scope="col col-4">Materials</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+
+
+
+          <?php
+          include 'connectToDatabase.php';
+          if(isset($_POST['searchButton'])){
+          $search_value=$_POST['searchBar'];
+          $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
+          $result = mysqli_query($conn, $sql_query);
+          while ($row = mysqli_fetch_assoc($result)) {
+
+            echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
+            echo '<td>' .$row['recipe_name']. '</td>';
+            echo '<td>' .$row['sub_materials_id']. '</td></tr>';
+          }
+        }
+
+
+
+           ?>
+
+
+
+
+
+
         </tbody>
       </table>
 

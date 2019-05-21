@@ -1,3 +1,4 @@
+<?php include 'connectToDatabase.php'; ?>
 <!DOCTYPE html>
 
 <?php require_once('../inc/header.php');?>
