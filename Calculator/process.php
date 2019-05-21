@@ -1,4 +1,3 @@
-<?php include 'connectToDatabase.php'; ?>
 <!DOCTYPE html>
 
 <?php require_once('../inc/header.php');?>
@@ -13,14 +12,16 @@
       <p class="h5 text-center">What are you looking to process?</p>
 
       <div id="calc_search_bar" class="col-md-8">
-      <div class="input-group mt-5">
-        <input type="text" class="form-control" placeholder="Search" aria-label="process search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
+      <!-- <div class="input-group mt-5"> -->
+        <form id="searh_bar_and_button" action="" method="POST">
+        <input name="searchBar" type="text" class="form-control" placeholder="Search" aria-label="cook search" aria-describedby="basic-addon2">
+        <div class="input-group-btn">
+          <button class="btn btn-outline-secondary" type="submit" name="searchButton">
             <i class="fa fa-search"></i>
           </button>
         </div>
-      </div>
+      </form>
+      <!-- </div> -->
       </div>
     </div>
 
@@ -29,17 +30,39 @@
 
 
     <div id="main_content" class="container-fluid bg-dark">
-
       <table class="table table-bordered text-center bg-light">
         <thead>
           <tr>
-            <th scope="col col-4">#</th>
+            <th scope="col col-4">Image</th>
             <th scope="col col-4">Name</th>
-            <th scope="col col-4">Materials</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+
+
+
+          <?php
+          include 'connectToDatabase.php';
+          if(isset($_POST['searchButton'])){
+          $search_value=$_POST['searchBar'];
+          $sql_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
+          $result = mysqli_query($conn, $sql_query);
+          while ($row = mysqli_fetch_assoc($result)) {
+
+            echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
+            echo '<td>' .$row['recipe_name']. '</td>';
+          }
+        }
+
+
+
+           ?>
+
+
+
+
+
+
         </tbody>
       </table>
 

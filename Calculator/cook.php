@@ -35,7 +35,6 @@
           <tr>
             <th scope="col col-4">Image</th>
             <th scope="col col-4">Name</th>
-            <th scope="col col-4">Materials</th>
           </tr>
         </thead>
         <tbody>
@@ -52,7 +51,6 @@
 
             echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
             echo '<td>' .$row['recipe_name']. '</td>';
-            echo '<td>' .$row['sub_materials_id']. '</td></tr>';
           }
         }
 
