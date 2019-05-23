@@ -132,6 +132,31 @@ margin: auto;
 
 
 /* Calculator Pages Css End */
+#recipe_materials table{
+  width: 75%;
+  margin:auto;
+}
+#recipe_materials{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 60%;
+}
+#imageRow{
+  width: 10%;
+}
+#quantityRow{
+  width: 10%;
+}
+
+
+
+/* Details Pages  CSS */
+
+
+
+
+/* Details Pages Css End */
+
+
 
 /* Footer Ends */
 /* Media Queries */

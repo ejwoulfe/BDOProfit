@@ -48,9 +48,12 @@
           $sql_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
           $result = mysqli_query($conn, $sql_query);
           while ($row = mysqli_fetch_assoc($result)) {
-
+//?id={$row['recipe_id']}
             echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
-            echo '<td>' .$row['recipe_name']. '</td>';
+            echo '<td><a href="details.php">' .$row['recipe_name']. '</td>';
+          }
+          if($result==false){
+            echo "<td> No Items Found </td>";
           }
         }
 
