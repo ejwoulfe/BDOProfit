@@ -132,6 +132,15 @@ margin: auto;
 
 
 /* Calculator Pages Css End */
+
+
+
+
+/* Details Pages  CSS */
+#recipeImage{
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
 #recipe_materials table{
   width: 75%;
   margin:auto;
@@ -146,11 +155,6 @@ margin: auto;
 #quantityRow{
   width: 10%;
 }
-
-
-
-/* Details Pages  CSS */
-
 
 
 

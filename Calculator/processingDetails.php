@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 
-<?php require_once('../inc/header.php');?>
+<?php require_once('../inc/header.php');
+
+if(isset($_GET['id'])){
+  include 'connectToDatabase.php';
+  $ID = mysqli_real_escape_string($conn, $_GET['id']);
+
+  $sql = "SELECT * FROM processing_recipes_table WHERE recipe_id = '$ID' ";
+  $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
+  $row = mysqli_fetch_array($result);
+  $test = $row['sub_materials_id'];
+  $subSql = "SELECT * FROM processing_sub_materials_table S, processing_recipes_table R
+ WHERE S.sub_materials_id = $test";
+ $numOfNotNull = "SELECT SUM(IF(material2_quantity IS NOT NULL, 1, 0)) AS count FROM processing_sub_materials_table";
+  $subResult = mysqli_query($conn, $subSql) or die("Bad Query: $subSql");
+  $subRow = mysqli_fetch_array($subResult);
+
+}else{
+  header('Location: process.php');
+}
+
+?>
 
 
   <body>
     <?php require_once('../inc/navigation.php');?>
 
 
-    <div id="details_jum" class="jumbotron ">
-      <h1 class="display-4 text-center">TITLE</h1>
+    <div class="jumbotron ">
+      <h1 class="display-4 text-center"><?php echo $row['recipe_name']  ?></h1>
+      <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
 
       <div id="recipe_materials" class="container-fluid">
         <table class="table table-bordered text-center bg-light">
-    
           <tbody>
             <tr>
-              <td id="imageRow"></td>
-              <td></td>
-              <td id="quantityRow"></td>
+              <td id="imageRow"><?php   ?></td>
+              <td><?php echo SUM  ?></td>
+              <td id="quantityRow"><?php ?></td>
             </tr>
           </tbody>
         </table>
-  
+
       </div>
     </div>
 
