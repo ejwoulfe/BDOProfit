@@ -111,10 +111,10 @@ a{
 
 /* Calculator Pages  CSS */
 #calc_search_bar{
-margin: auto;
+margin:auto;
 }
 #searh_bar_and_button button{
-  margin-left: 5px;
+  width: 100%;
 }
 
 
@@ -142,8 +142,11 @@ margin: auto;
   padding-bottom: 25px;
 }
 #recipe_materials table{
-  width: 75%;
+  width: 100%;
   margin:auto;
+  color: #FA7D10;
+  padding-left: -20px;
+  padding-right: -20px;
 }
 #recipe_materials{
   background-color: rgba(0, 0, 0, 0.5);

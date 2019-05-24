@@ -9,12 +9,56 @@ if(isset($_GET['id'])){
   $sql = "SELECT * FROM processing_recipes_table WHERE recipe_id = '$ID' ";
   $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
   $row = mysqli_fetch_array($result);
-  $test = $row['sub_materials_id'];
-  $subSql = "SELECT * FROM processing_sub_materials_table S, processing_recipes_table R
- WHERE S.sub_materials_id = $test";
- $numOfNotNull = "SELECT SUM(IF(material2_quantity IS NOT NULL, 1, 0)) AS count FROM processing_sub_materials_table";
-  $subResult = mysqli_query($conn, $subSql) or die("Bad Query: $subSql");
-  $subRow = mysqli_fetch_array($subResult);
+  $subID = $row['sub_materials_id'];
+
+
+  $subSql = "SELECT material1_quantity,
+  material1_id,
+  material2_quantity,
+  material2_id,
+  material3_quantity,
+  material3_id,
+  material4_quantity,
+  material4_id,
+  material5_quantity,
+  material5_id
+  FROM processing_sub_materials_table
+  WHERE sub_materials_id = $subID";
+$subResult = mysqli_query($conn, $subSql) or die("Bad Query: $subSql");
+$subRow = mysqli_fetch_array($subResult);
+
+$nullSql = "SELECT
+  ((CASE WHEN material1_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material1_id IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material2_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material2_id IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material3_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material3_id IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material4_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material4_id IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material5_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material5_id IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_nulls
+FROM processing_sub_materials_table
+  WHERE sub_materials_id = $subID";
+  $nullResult = mysqli_query($conn, $nullSql) or die("Bad Query: $nullSql");
+  $nullRow = mysqli_fetch_array($nullResult);
+
+
+   function getMaterialID($sent_material_id, $connection){
+
+    $materialSql = "SELECT * FROM materials_table WHERE material_id = $sent_material_id";
+    $materialResult = mysqli_query($connection, $materialSql) or die("Bad Query: $materialSql");
+    $materialRow = mysqli_fetch_array($materialResult);
+    return $materialRow['material_name'];
+   }
+   function getMaterialImage($sent_material_id, $connection){
+
+    $materialSql = "SELECT * FROM materials_table WHERE material_id = $sent_material_id";
+    $materialResult = mysqli_query($connection, $materialSql) or die("Bad Query: $materialSql");
+    $materialRow = mysqli_fetch_array($materialResult);
+    return $materialRow['material_image'];
+   }
+
 
 }else{
   header('Location: process.php');
@@ -32,13 +76,33 @@ if(isset($_GET['id'])){
       <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
 
       <div id="recipe_materials" class="container-fluid">
-        <table class="table table-bordered text-center bg-light">
+        <table class="table table-borderless text-center">
           <tbody>
-            <tr>
-              <td id="imageRow"><?php   ?></td>
-              <td><?php echo SUM  ?></td>
-              <td id="quantityRow"><?php ?></td>
-            </tr>
+            <?php
+
+            for ($x = 0; $x < $nullRow['sum_of_nulls']; $x+=2) {
+
+              $y = $x +1;
+                echo '<tr>
+                <td><img src="'
+                .getMaterialImage($subRow[$y], $conn).
+                '"  height="30"></td><td>'
+                .getMaterialID($subRow[$y], $conn).
+                '</td><td>'
+                .$subRow[$x].
+                '</td>
+                </tr>';
+            //echo getMaterialID($subRow[1]);
+
+
+          //  <tr>
+            //echo   "<td id="imageRow">  </td>"
+            //   <td></td>
+            //   <td id="quantityRow"></td>
+        //  </tr>
+  }
+            ?>
+
           </tbody>
         </table>
 
