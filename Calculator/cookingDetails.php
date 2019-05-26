@@ -6,7 +6,7 @@ if(isset($_GET['id'])){
   include 'connectToDatabase.php';
   $ID = mysqli_real_escape_string($conn, $_GET['id']);
 
-  $sql = "SELECT * FROM processing_recipes_table WHERE recipe_id = '$ID' ";
+  $sql = "SELECT * FROM cooking_recipes_table WHERE recipe_id = '$ID' ";
   $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
   $row = mysqli_fetch_array($result);
   $subID = $row['sub_materials_id'];
@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
   material4_id,
   material5_quantity,
   material5_id
-  FROM processing_sub_materials_table
+  FROM cooking_sub_materials_table
   WHERE sub_materials_id = $subID";
 $subResult = mysqli_query($conn, $subSql) or die("Bad Query: $subSql");
 $subRow = mysqli_fetch_array($subResult);
@@ -38,7 +38,7 @@ $nullSql = "SELECT
   + (CASE WHEN material4_id IS NOT NULL THEN 1 ELSE 0 END)
   + (CASE WHEN material5_quantity IS NOT NULL THEN 1 ELSE 0 END)
   + (CASE WHEN material5_id IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_nulls
-FROM processing_sub_materials_table
+FROM cooking_sub_materials_table
   WHERE sub_materials_id = $subID";
   $nullResult = mysqli_query($conn, $nullSql) or die("Bad Query: $nullSql");
   $nullRow = mysqli_fetch_array($nullResult);
@@ -100,7 +100,6 @@ FROM processing_sub_materials_table
     </div>
   </div>
 
-
     <div class="jumbotron ">
       <h1 class="display-4 text-center"><?php echo $row['recipe_name']  ?></h1>
       <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
@@ -138,9 +137,6 @@ FROM processing_sub_materials_table
 
       </div>
     </div>
-
-
-
 
 
     <div id="main_content" class="container-fluid bg-dark">

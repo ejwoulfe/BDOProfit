@@ -43,14 +43,17 @@
 
           <?php
           include 'connectToDatabase.php';
+
           if(isset($_POST['searchButton'])){
           $search_value=$_POST['searchBar'];
           $sql_query = "SELECT * FROM alchemy_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
           $result = mysqli_query($conn, $sql_query);
           while ($row = mysqli_fetch_assoc($result)) {
-
             echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
-            echo '<td>' .$row['recipe_name']. '</td>';
+            echo "<td><a href='alchemyDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
+          }
+          if($result==false){
+            echo "<td> No Items Found </td>";
           }
         }
 

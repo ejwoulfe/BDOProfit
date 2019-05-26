@@ -159,6 +159,54 @@ margin:auto;
   width: 10%;
 }
 
+#proc_rates_row{
+    background-color: #282726;
+    text-decoration: uppercase;
+}
+#craft_quantity{
+  margin: auto;
+  display: inline-block;
+  min-height: 50px;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+#craft_quantity p{
+  padding-right: 10px;
+}
+#craft_quantity input{
+  width: 150px;
+  height: 25px;
+  text-align: right;
+}
+#tier1_proc{
+  margin: auto;
+  min-height: 50px;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+#tier1_proc p{
+  padding-right: 10px;
+}
+#tier1_proc input{
+  width: 150px;
+  height: 25px;
+  text-align: right;
+}
+#tier2_proc{
+  margin: auto;
+  min-height: 50px;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+#tier2_proc p{
+  padding-right: 10px;
+}
+#tier2_proc input{
+  width: 150px;
+  height: 25px;
+  text-align: right;
+}
+
 
 
 /* Details Pages Css End */
