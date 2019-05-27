@@ -12,7 +12,7 @@ nav{
 background-color: #282726;
 }
 .jumbotron{
-  background-color: #343940
+  background-color: #343940;
 }
 /* Navigation */
 #search_bar{
@@ -36,11 +36,8 @@ nav{
 a{
   color: #FA7D10;
 }
-#journal_dropdown{
-  float: right;
-}
-#timer_dropdown{
-  float: right;
+a:hover{
+  color: white;
 }
 /* End Navigation */
 
@@ -51,7 +48,7 @@ a{
   background-size: 400px;
   width: auto;
   height: auto;
-  background-image: url(/assets/JapaneseTempleRain.jpg);
+  background-image: url("/assets/main_banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -65,36 +62,64 @@ a{
   background-color: #282726;
   text-decoration: uppercase;
 }
-.card-img-top{
-      width:12vh;
-      height: 12vh;
-      object-fit: cover;
-      margin: auto;
-}
+
 .card{
   margin: auto;
   color: #FA7D10;
-  background-color: #838383;
-  min-height: 100px;
-  padding-top: 20px;
+  min-height: 500px;
   text-transform: uppercase;
+  border: none;
+}
+.card h2{
+  font-weight: bolder;
+  -webkit-transition: padding-top 2s; /* Safari */
+  transition: padding-top 2s;
+}
+.card-body{
+  padding: 0px;
+}
+.overlay{
+  margin: auto;
+  height: 60px;
+  padding: 10px 0px 0px 0px;
+  -webkit-transition: height 2s; /* Safari */
+  transition: height 2s;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+.card-body:hover .overlay{
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 600px;
+}
+.card-body:hover h2{
+  padding-top: 250px;
+}
+.card-body:hover{
+  cursor:pointer;
 }
 .card-title{
-  padding-top: 5px;
-  font-weight: bolder;
+  margin-bottom: 0px;
 }
 #main_content_row1{
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-#main_content_row2{
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
+#cooking_card{
+  background-image: url("../assets/bdo_cooking.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#main_content_row3{
-  padding-top: 40px;
+#processing_card{
+  background-image: url("../assets/bdo_processing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+#alchemy_card{
+  background-image: url("../assets/bdo_alchemy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 
 /* Main Content Ends */
@@ -115,6 +140,40 @@ margin:auto;
 }
 #searh_bar_and_button button{
   width: 100%;
+}
+#calculator_table thead tr{
+  background-color: white;
+  color: black;
+}
+#calculator_table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+#calculator_main_content table td{
+  padding: 0px;
+}
+#calculator_main_content table a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 1.05em;
+}
+#calculator_main_content table a:hover{
+  color: white;
+  text-decoration: underline;
+}
+#calculator_main_content table td:nth-child(1){
+  vertical-align: middle;
+}
+#calculator_main_content table tbody tr:nth-child(even) {
+  background: #282726;
+}
+#calculator_main_content table tbody tr:nth-child(odd){
+  background: #343940;
+}
+#calculator_main_content{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #343940;
 }
 
 

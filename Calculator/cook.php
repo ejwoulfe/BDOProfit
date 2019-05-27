@@ -29,8 +29,8 @@
 
 
 
-    <div id="main_content" class="container-fluid bg-dark">
-      <table class="table table-bordered text-center bg-light">
+    <div id="calculator_main_content" class="container-fluid bg-dark">
+      <table id="calculator_table" class="table table-bordered text-center">
         <thead>
           <tr>
             <th scope="col col-4">Image</th>
@@ -48,7 +48,6 @@
           $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
           $result = mysqli_query($conn, $sql_query);
           while ($row = mysqli_fetch_assoc($result)) {
-  //?id={$row['recipe_id']}
             echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
             echo "<td><a href='cookingDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
           }

@@ -84,7 +84,7 @@ FROM alchemy_sub_materials_table
           <p>Tier 1 Proc Rate:</p>
         </div>
         <div class="d-inline-block">
-          <input type="number" name="quantity" min="1" max="999999" value="2.5">
+          <input type="number" name="quantity" min="1" max="999999" value="2.5" step="0.1">
         </div>
 
     </div>

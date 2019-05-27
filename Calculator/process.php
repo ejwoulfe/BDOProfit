@@ -29,8 +29,8 @@
 
 
 
-    <div id="main_content" class="container-fluid bg-dark">
-      <table class="table table-bordered text-center bg-light">
+    <div id="calculator_main_content" class="container-fluid">
+      <table id="calculator_table" class="table table-bordered text-center">
         <thead>
           <tr>
             <th scope="col col-4">Image</th>
