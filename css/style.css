@@ -15,9 +15,6 @@ background-color: #282726;
   background-color: #343940;
 }
 /* Navigation */
-#search_bar{
-  width: 100%;
-}
 #navigation{
   min-height: 60px;
 }
@@ -38,6 +35,9 @@ a{
 }
 a:hover{
   color: white;
+}
+#navigation #test{
+  position: absolute;
 }
 /* End Navigation */
 
@@ -144,10 +144,11 @@ a:hover{
 
 /* Calculator Pages  CSS */
 #calc_search_bar{
-margin:auto;
+    margin: auto;
 }
-#searh_bar_and_button button{
-  width: 100%;
+#calc_search_bar form{
+  display: block;
+  padding-top: 20px;
 }
 #calculator_table thead tr{
   background-color: white;
@@ -294,4 +295,5 @@ margin:auto;
   #main_content_row2{
     padding-top: 0px;
   }
+
 }

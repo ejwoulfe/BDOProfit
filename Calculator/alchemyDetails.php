@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
 <?php require_once('../inc/header.php');
-
+require ('../inc/connectToDatabase.php');
 if(isset($_GET['id'])){
-  include 'connectToDatabase.php';
   $ID = mysqli_real_escape_string($conn, $_GET['id']);
 
   $sql = "SELECT * FROM alchemy_recipes_table WHERE recipe_id = '$ID' ";

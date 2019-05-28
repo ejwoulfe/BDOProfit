@@ -1,5 +1,5 @@
 <?php
-require '../Calculator/connectToDatabase.php';
+require 'connectToDatabase.php';
 
 if(isset($_POST['search_term']) == true && empty($_POST['search_term']) == false){
   $search_value = mysqli_real_escape_string($_POST['search_term']);

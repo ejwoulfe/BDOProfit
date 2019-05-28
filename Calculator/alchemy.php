@@ -12,16 +12,28 @@
       <p class="h5 text-center">What are you looking to mix?</p>
 
       <div id="calc_search_bar" class="col-md-8">
-      <!-- <div class="input-group mt-5"> -->
-        <form id="searh_bar_and_button" action="" method="POST">
-        <input name="searchBar" type="text" class="form-control" placeholder="Search" aria-label="cook search" aria-describedby="basic-addon2">
-          <button class="btn btn-outline-secondary" type="submit" name="searchButton">
+        <form action="" class="form-inline" method="POST">
+          <div id="test" class="input-group mb-3">
+        <input id="bar" name="searchBar" type="text" class="form-control" placeholder="Search" aria-label="cook search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button id="btn" class="btn btn-outline-secondary" type="submit" name="searchButton">
             <i class="fa fa-search"></i>
           </button>
+        </div>
+      </div>
       </form>
-      <!-- </div> -->
       </div>
     </div>
+    <!-- <form class="form-inline" action="" method="POST">
+    <div id="test" class="input-group mb-3">
+<input name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
+<div class="input-group-append">
+  <button class="btn btn-outline-secondary" type="submit" name="nav_search_button">
+  <i class="fa fa-search"></i>
+</button>
+</div>
+</div>
+</form> -->
 
 
 
@@ -40,7 +52,7 @@
 
 
           <?php
-          include 'connectToDatabase.php';
+          include '../inc/connectToDatabase.php';
 
           if(isset($_POST['searchButton'])){
           $search_value=$_POST['searchBar'];

@@ -1,21 +1,44 @@
+<?php
+include 'connectToDatabase.php';
+if(isset($_POST['nav_search_button'])){
+$nav_search_value=$_POST['nav_search_bar'];
+$nav_sql_query = "SELECT recipe_id, recipe_name, 'cooking_recipes_table' AS table_name FROM cooking_recipes_table WHERE recipe_name LIKE '$nav_search_value'
+UNION
+SELECT recipe_id, recipe_name, 'alchemy_recipes_table' AS table_name FROM alchemy_recipes_table WHERE recipe_name LIKE '$nav_search_value'
+UNION
+SELECT recipe_id, recipe_name, 'processing_recipes_table' AS table_name FROM processing_recipes_table WHERE recipe_name LIKE '$nav_search_value'";
+$nav_result = mysqli_query($conn, $nav_sql_query);
+while ($nav_row = mysqli_fetch_assoc($nav_result)) {
+  if($nav_row['table_name']=='cooking_recipes_table'){
+    header('Location: ../Calculator/cookingDetails.php?id=' .$nav_row['recipe_id']);
+  }else if($nav_row['table_name']=='processing_recipes_table'){
+    header('Location: ../Calculator/processingDetails.php?id=' .$nav_row['recipe_id']);
+  }else if($nav_row['table_name']=='alchemy_recipes_table'){
+    header('Location: ../Calculator/alchemyDetails.php?id=' .$nav_row['recipe_id']);
+  }
+}
+}
+?>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg">
       <div id="navigation" class="container-fluid">
 
 
-          <div id="logo" class="col-4 col-sm-2 .order-sm-1">
-            <a class="navbar-brand" href="../index.php">BDO Wolf</a>
+          <div id="logo" class="col-4 .order-sm-1">
+            <a class="navbar-brand" href="../index.php">BDOWolf</a>
           </div>
 
+        <form class="form-inline" action="" method="POST">
+        <div id="test" class="input-group mb-3">
+    <input name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit" name="nav_search_button">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>
+</form>
 
-            <input name="nav_search_bar" class="autosuggest" type="text" placeholder="Search" aria-label="Search">
-            <input type="submit" / />
-            <ul id="results">
-            	<li><a href="#">India</a>
-            	<li><a href="#">US</a>
-            	<li><a href="#">UK</a>
-            	<li><a href="#">Australia</a>
-            </ul>
 
 
 
