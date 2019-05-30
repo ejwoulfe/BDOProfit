@@ -75,7 +75,7 @@ FROM cooking_sub_materials_table
             <p>Craft Quantity:</p>
           </div>
           <div class="d-inline-block">
-            <input type="number" name="quantity" min="1" max="999999" value="1">
+            <input id="craft_quantity_input" type="number" min="1" max="999999" value="1">
           </div>
         </div>
       <div id="tier1_proc" class"col-sm-4">
@@ -83,7 +83,7 @@ FROM cooking_sub_materials_table
           <p>Tier 1 Proc Rate:</p>
         </div>
         <div class="d-inline-block">
-          <input type="number" name="quantity" min="1" max="999999" value="2.5" step="0.1">
+          <input type="number" name="t1_proc_rate" min="1" max="999999" value="2.5" step="0.1">
         </div>
 
     </div>
@@ -116,7 +116,7 @@ FROM cooking_sub_materials_table
                 .getMaterialImage($subRow[$y], $conn).
                 '"  height="30"></td><td>'
                 .getMaterialID($subRow[$y], $conn).
-                '</td><td>'
+                '</td><td class="quantity">'
                 .$subRow[$x].
                 '</td>
                 </tr>';

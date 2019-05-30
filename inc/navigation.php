@@ -24,9 +24,11 @@ while ($nav_row = mysqli_fetch_assoc($nav_result)) {
       <div id="navigation" class="container-fluid">
 
 
-          <div id="logo" class="col-4 .order-sm-1">
+          <div id="logo" class="col-sm-2 .order-sm-1 mr-2">
             <a class="navbar-brand" href="../index.php">BDOWolf</a>
           </div>
+<div class="col-sm-6 mt-4 mb-4">
+
 
         <form class="form-inline" action="" method="POST">
         <div id="test" class="input-group mb-3">
@@ -38,16 +40,17 @@ while ($nav_row = mysqli_fetch_assoc($nav_result)) {
   </div>
 </div>
 </form>
+</div>
 
 
 
-
-          <button id="collapse_button" class="navbar-toggler ml-auto mb-2" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
+<div class="col-sm-4 ml-auto">
+          <button id="collapse_button" class="navbar-toggler mb-2 float-right" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
        <i class="fa fa-bars mt-2" style="color: white"></i>
      </button>
 
       <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarList">
-            <ul id="ul_container" class="navbar-nav ml-auto flex-nowrap">
+            <ul id="ul_container" class="navbar-nav ml-auto">
                  <li class="nav-item">
                    <a id="cooking_button" class="nav-link" href="../Calculator/cook.php">Cooking</a>
                  </li>
@@ -60,5 +63,6 @@ while ($nav_row = mysqli_fetch_assoc($nav_result)) {
               </ul>
           </div>
       </div>
+    </div>
     </nav>
     <!-- Navigation Bar End -->
