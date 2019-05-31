@@ -7,6 +7,7 @@ body{
 background-color: #150D07;
   color: #FA7D10;
   font-family: 'Bitter', serif;
+  font-size: 1rem;
 }
 nav{
 background-color: #282726;
@@ -217,13 +218,6 @@ a:hover{
 }
 #recipe_materials{
   background-color: rgba(0, 0, 0, 0.5);
-  width: 60%;
-}
-#imageRow{
-  width: 10%;
-}
-#quantityRow{
-  width: 10%;
 }
 
 #proc_rates_row{
@@ -273,6 +267,48 @@ a:hover{
   height: 25px;
   text-align: right;
 }
+#calculations_container{
+  margin-bottom: 40px;
+}
+#calculations_container #first_table, #second_table{
+  width: 100%;
+}
+#calculations_container table{
+  color: #FA7D10;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+.table_title{
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+.recipe_market_price{
+  width: 100%;
+  height: 25px;
+  text-align: right;
+  margin: auto;
+}
+#costs_table{
+  width: 100%;
+}
+#costs_table thead{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#costs_table_container table{
+  color: #FA7D10;
+}
+#costs_table_container{
+  margin: auto;
+}
+#costs_table input{
+    text-align: right;
+}
+#sub_materials_costs{
+  margin: auto;
+}
 
 
 
@@ -282,16 +318,20 @@ a:hover{
 
 /* Footer Ends */
 /* Media Queries */
-@@media (max-width 992px) {
-
+@media (max-width 992px) {
+html{
+font-size: 1.2rem;
+}
 }
 
-@@media (max-width 768px) {
-
+@media (max-width 768px) {
+html{
+font-size: 0.1rem;
+}
 }
 
-@@media (min-width 576px) {
-  #main_content_row2{
-    padding-top: 0px;
+@media (max-width 576px) {
+  html{
+font-size: 0.85rem;
   }
 }

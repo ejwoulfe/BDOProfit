@@ -11,6 +11,7 @@ if(isset($_GET['id'])){
   $subID = $row['sub_materials_id'];
 
 
+
   $subSql = "SELECT material1_quantity,
   material1_id,
   material2_quantity,
@@ -20,11 +21,32 @@ if(isset($_GET['id'])){
   material4_quantity,
   material4_id,
   material5_quantity,
-  material5_id
+  material5_id,
+  rewards_id
   FROM cooking_sub_materials_table
   WHERE sub_materials_id = $subID";
 $subResult = mysqli_query($conn, $subSql) or die("Bad Query: $subSql");
 $subRow = mysqli_fetch_array($subResult);
+
+$rewardID = $subRow['rewards_id'];
+$rewardSql = "SELECT material1_quantity,
+material1_id,
+material2_quantity,
+material2_id
+FROM cooking_rewards_table
+WHERE reward_id = $rewardID";
+$rewardResult = mysqli_query($conn, $rewardSql) or die("Bad Query: $rewardSql");
+$rewardRow = mysqli_fetch_array($rewardResult);
+$rewardAmountSql = "SELECT
+  ((CASE WHEN material1_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material1_id IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material2_quantity IS NOT NULL THEN 1 ELSE 0 END)
+  + (CASE WHEN material2_id IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_rewards
+FROM cooking_rewards_table
+  WHERE reward_id = $rewardID";
+
+  $rewardAmountResult = mysqli_query($conn, $rewardAmountSql) or die("Bad Query: $rewardAmountSql");
+  $rewardAmountRow = mysqli_fetch_array($rewardAmountResult);
 
 $nullSql = "SELECT
   ((CASE WHEN material1_quantity IS NOT NULL THEN 1 ELSE 0 END)
@@ -62,7 +84,6 @@ FROM cooking_sub_materials_table
 }else{
   header('Location: process.php');
 }
-
 ?>
 
 
@@ -102,8 +123,8 @@ FROM cooking_sub_materials_table
     <div class="jumbotron ">
       <h1 class="display-4 text-center"><?php echo $row['recipe_name']  ?></h1>
       <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
-
-      <div id="recipe_materials" class="container-fluid">
+      <div class="row">
+      <div id="recipe_materials" class="container-fluid col-lg-6">
         <table class="table table-borderless text-center">
           <tbody>
             <?php
@@ -112,46 +133,135 @@ FROM cooking_sub_materials_table
 
               $y = $x +1;
                 echo '<tr>
-                <td><img src="'
+                <td class="text-right"><img src="'
                 .getMaterialImage($subRow[$y], $conn).
                 '"  height="30"></td><td>'
                 .getMaterialID($subRow[$y], $conn).
-                '</td><td class="quantity">'
+                '</td><td class="quantity text-left">'
                 .$subRow[$x].
                 '</td>
                 </tr>';
-            //echo getMaterialID($subRow[1]);
-
-
-          //  <tr>
-            //echo   "<td id="imageRow">  </td>"
-            //   <td></td>
-            //   <td id="quantityRow"></td>
-        //  </tr>
-  }
+    }
             ?>
 
           </tbody>
         </table>
 
       </div>
+
+    </div>
     </div>
 
 
-    <div id="main_content" class="container-fluid bg-dark">
-      <table class="table table-bordered text-center bg-light">
-        <thead>
-          <tr>
-            <th scope="col col-4">Image</th>
-            <th scope="col col-4">Name</th>
-          </tr>
-        </thead>
+    <div id="calculations_container" class="container-fluid bg-dark">
+      <div class="row">
+
+      <div class="col-md-6 d-flex">
+      <div id="first_table">
+        <h5 class="table_title">Recipe Costs</h5>
+      <table class="table text-left">
         <tbody>
-
-
+          <tr>
+            <td class="align-middle">
+              Total Cost:
+            </td>
+            <td id="total_recipe_cost" class="align-middle">
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+      <div class="col-md-6 d-flex">
+        <div id="second_table">
+        <h5 class="table_title">Profits</h5>
+      <table class="table text-left">
+        <tbody>
+            <?php
+            for ($i = 0; $i < $rewardAmountRow['sum_of_rewards']; $i+=2) {
+              $y = $i +1;
+                echo '<tr>
+                <td class="align-middle text-center"><img src="'
+                .getMaterialImage($rewardRow[$y], $conn).
+                '"  height="30"></td><td class="align-middle text-left">'
+                .getMaterialID($rewardRow[$y], $conn).
+                '</td><td class="align-middle">
+                  <input class="recipe_market_price" type="number" min="1" max="999999" value="">
+                </td></tr>';
+    }
+            ?>
+            <tr>
+              <td class="align-middle text-left">
+                Total Profit:
+              </td>
+              <td id="total_recipe_profit" class="align-middle text-center">
+                5,111
+              </td>
+            </tr>
 
         </tbody>
       </table>
+    </div>
+  </div>
+  </div>
+    </div>
+
+    <div id="sub_materials_costs" class="container-fluid bg-dark">
+      <div class="row">
+
+      <div id="costs_table_container" class="col-md-8 d-flex">
+      <div id="costs_table">
+        <h5 class="table_title">Costs</h5>
+      <table class="table text-left">
+        <thead>
+          <th>
+
+          </th>
+          <th class="text-center">
+            Material
+          </th>
+          <th class="text-left">
+            Quantity
+          </th>
+          <th class="text-left">
+            Cost Per
+          </th>
+          <th class="text-right">
+            Total Cost
+          </th>
+        </thead>
+        <tbody>
+          <?php
+          $count = 1;
+          for ($x = 0; $x < $nullRow['sum_of_nulls']; $x+=2) {
+
+            $strCount = strval($count);
+            $cost_row = "row_" . $strCount;
+            $cost_field = "input_field_row_" . $strCount;
+            $cost_quantity = "quantity_row_" . $strCount;
+            $total_cost = "total_cost_row_" . $strCount;
+            $y = $x +1;
+              echo '<tr id="' . $cost_row .   '">
+              <td class="text-center"><img src="'
+              .getMaterialImage($subRow[$y], $conn).
+              '"  height="30"></td><td class="text-center">'
+              .getMaterialID($subRow[$y], $conn).
+              '</td><td id="' . $cost_quantity .   '" class="text-center cost_quantity onChange="costChanged()"">'
+              .$subRow[$x].
+              '</td><td class="align-middle">
+                <input id="' . $cost_field .   '" style="width:65%" onChange="costChanged()" type="number" min="1" max="999999" value="">
+              </td>
+              <td id="' . $total_cost .   '"class="text-right")">0</td>
+              </tr>';
+              $count+=1;
+  }
+          ?>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
 
     </div>
 
@@ -162,7 +272,9 @@ FROM cooking_sub_materials_table
     <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="../js/detailsScript.js"></script>
+    <script src="../js/subMaterialsQuantities.js"></script>
+    <script src="../js/recipeTotalCost.js"></script>
+    <script src="../js/totalCostPerMaterial.js"></script>
 
   </body>
 </html>
