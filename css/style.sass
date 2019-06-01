@@ -1,0 +1,16 @@
+// Variables
+$text_color: #FA7D10
+$web_background_color: #150D07
+
+
+@mixin default_font
+  color: $text_color
+  font-family: 'Bitter', serif
+  font-size: 1rem
+
+
+body
+  @include default_font
+  border-radius: 10px
+  @include $web_background_color
+    
