@@ -3,8 +3,7 @@ html {
   margin: auto;
 }
 body{
-  border-radius: 10px;
-/* background-color: #150D07; */
+background-color: #150D07;
 
 }
 nav{
@@ -23,16 +22,13 @@ background-color: #282726;
   margin-right:5px;
   margin-left:5px;
 }
-nav{
-  border-bottom: 5px solid black;
-}
 a{
   color: #FA7D10;
 }
 a:hover{
   color: white;
 }
-#navigation #test{
+#navigation #nav_form{
   position: absolute;
   width: 100%;
 }
@@ -41,17 +37,15 @@ a:hover{
 
 
 /* Jumbotron */
-#main_banner{
+#index_banner{
   min-height: 400px;
   background-size: 400px;
-  width: auto;
-  height: auto;
   background-image: url("/assets/main_banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
-#main_banner h1{
+#index_banner h1{
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   position: absolute;
@@ -66,7 +60,6 @@ a:hover{
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #282726;
-  text-decoration: uppercase;
 }
 
 .card{

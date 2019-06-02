@@ -1,6 +1,11 @@
 // Variables
 $text_color: #FA7D10
 $web_background_color: #150D07
+$hover_color: #f5f5f5
+$gray_background_color:  #282726
+$transparent_black: rgba(0, 0, 0, 0.7)
+$content_background_color: #343940
+
 
 
 @mixin default_font
@@ -8,9 +13,240 @@ $web_background_color: #150D07
   font-family: 'Bitter', serif
   font-size: 1rem
 
+/*  End Vairables */
+
+html
+  max-width: 1400px
+  margin: auto
 
 body
   @include default_font
   border-radius: 10px
-  @include $web_background_color
-    
+  background-color: $web_background_color
+  border-radius: 10px
+
+a:hover
+  color: $hover_color
+
+/*  Navigation Start */
+nav
+  background-color: $gray_background_color
+  min-height: 80px
+
+  a
+    color: $text_color
+
+  #nav_form
+    width: 100%
+    position: absolute
+
+  .nav-item
+    padding-left: 5px
+    padding-right: 5px
+    margin-right:5px
+    margin-left:5px
+
+
+/* Navigation End */
+
+
+/* Index Page Jumbotron */
+#index_banner
+  min-height: 400px
+  background-size: 400px
+  background-image: url("/assets/main_banner.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative
+
+  h1
+    background-color: $transparent_black
+    width: 100%
+    position: absolute
+    bottom: 0
+    padding: 20px 0px 20px 40px
+
+/* Index Page Jumbotron End */
+
+/* Index Page Main Content */
+#main_content
+  padding-top: 40px
+  padding-bottom: 40px
+  background-color: $gray_background_color
+
+  #main_content_row1
+    padding-left: 5px
+    padding-right: 5px
+
+    .card
+      margin: auto
+      color: $text_color
+      min-height: 500px
+      text-transform: uppercase
+      border: none
+
+      .card-body
+        padding: 0px
+
+        &:hover
+          .overlay
+            background-color: $transparent_black
+            height: 600px
+            h2
+              padding-top: 250px
+
+        .overlay
+            margin: auto
+            height: 60px
+            padding: 10px 0px 0px 0px
+            -webkit-transition: height 2s
+            transition: height 2s
+            background-color: $transparent_black
+            width: 100%
+
+            h2
+              margin-bottom: 0px
+              font-weight: bolder
+              -webkit-transition: padding-top 2s
+              transition: padding-top 2s
+
+#cooking_card
+  background-image: url("../assets/bdo_cooking.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+#processing_card
+  background-image: url("../assets/bdo_processing.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+#alchemy_card
+  background-image: url("../assets/bdo_alchemy.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+
+
+/* Index Page Main Content End */
+
+/* Footer */
+.footer
+  visibility: hidden
+  /* Footer End */
+
+
+/* Calculator Pages   */
+
+  /* Calculator Jumbotron   */
+#calc_jum
+  background-color: $content_background_color
+
+  #calc_search_bar
+    margin: auto
+
+    form
+      display: block
+      padding-top: 20px
+
+  /* Calculator Jumbotron End   */
+
+  /* Calculator Main Content   */
+
+#calculator_main_content
+  padding-top: 40px
+  padding-bottom: 40px
+  background-color: $content_background_color
+
+  #calculator_table
+
+    thead
+      tr
+        background-color: $gray_background_color
+        color: $text_color
+
+    tbody
+
+      tr
+
+        &:nth-child(odd)
+          background: $content_background_color
+        &:nth-child(even)
+          background: #282726
+        &:hover
+          background-color: rgba(255, 255, 255, 0.7)
+        td
+          padding: 0px
+
+          &:nth-child(1)
+            vertical-align: middle
+
+          a
+            color: $text_color
+            text-decoration: none
+            display: block
+            width: 100%
+            padding: 1.05em
+
+
+
+
+
+  /* Calculator Main Content End   */
+/* Calculator Pages End */
+
+/* Detials Page */
+#proc_rates
+
+  #proc_rates_row
+    background-color: $content_background_color
+
+    #craft_quantity
+      margin: auto
+      display: inline-block
+      min-height: 50px
+      padding-top: 20px
+      text-transform: uppercase
+
+      p
+        padding-right: 10px
+
+      #craft_quantity_input
+        width: 150px
+        height: 25px
+        text-align: right
+
+    #tier1_proc
+      margin: auto
+      min-height: 50px
+      padding-top: 20px
+      text-transform: uppercase
+
+      p
+        padding-right: 10px
+
+      input
+        width: 150px
+        height: 25px
+        text-align: right
+
+    #tier2_proc
+      margin: auto
+      min-height: 50px
+      padding-top: 20px
+      text-transform: uppercase
+
+      p
+        padding-right: 10px
+
+      input
+        width: 150px
+        height: 25px
+        text-align: right
+
+
+
+
+
+
+
+/* Detials Page End */

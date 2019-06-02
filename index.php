@@ -7,7 +7,7 @@
     <?php require_once('inc/navigation.php');?>
 
 <!-- Jumbotron -->
-<div id="main_banner" class="container-fluid">
+<div id="index_banner" class="container-fluid">
   <div  class="row">
     <h1>Welcome to BDOWolf</h1>
   </div>
