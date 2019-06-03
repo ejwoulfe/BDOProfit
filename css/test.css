@@ -174,8 +174,14 @@ nav .nav-item {
 
 /* Calculator Pages End */
 /* Detials Page */
+ *
+ * /* Top Page Container */
+#proc_rates {
+  /* Top Page Container End */
+  /* Jumbotron */
+}
 #proc_rates #proc_rates_row {
-  background-color: #343940;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 #proc_rates #proc_rates_row #craft_quantity {
   margin: auto;
@@ -221,6 +227,116 @@ nav .nav-item {
   text-align: right;
 }
 
+#details_jum {
+  background-color: #343940;
+  /* Jumbotron End */
+  /* Calculations Container  */
+}
+#details_jum #recipeImage {
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+#details_jum #recipe_materials {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#details_jum #recipe_materials table {
+  width: 100%;
+  margin: auto;
+  color: #FA7D10;
+}
+#details_jum #recipe_materials table #recipe_quantity {
+  padding-right: 20px;
+  width: 25%;
+}
+
+#calculations_container {
+  margin-bottom: 40px;
+  /* Calculations Container End */
+  /* Sub Materials Cost Container  */
+}
+#calculations_container #t1 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#calculations_container #t2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#calculations_container #first_table_container {
+  width: 100%;
+}
+#calculations_container #first_table_container .table_title {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+#calculations_container #first_table_container #first_table {
+  color: #FA7D10;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#calculations_container #second_table_container {
+  width: 100%;
+}
+#calculations_container #second_table_container .table_title {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+#calculations_container #second_table_container #second_table {
+  color: #FA7D10;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#calculations_container #second_table_container #second_table .recipe_market_price {
+  width: 100%;
+  height: 25px;
+  text-align: right;
+  margin: auto;
+}
+
+#sub_materials_costs {
+  margin: auto;
+  /* Sub Materials Cost Container End */
+}
+#sub_materials_costs #costs_table_container {
+  margin: auto;
+}
+#sub_materials_costs #costs_table_container #costs_table {
+  width: 100%;
+}
+#sub_materials_costs #costs_table_container #costs_table .table_title {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+#sub_materials_costs #costs_table_container #costs_table table {
+  color: #FA7D10;
+}
+#sub_materials_costs #costs_table_container #costs_table table thead {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#sub_materials_costs #costs_table_container #costs_table table input {
+  width: 100%;
+  height: 25px;
+  text-align: right;
+  margin: auto;
+}
+#sub_materials_costs #costs_table_container #costs_table table td {
+  border-color: #FA7D10;
+}
+
+/* Media Queries */
+@media screen and (min-width: 320px) and (max-width: 575px) {
+  .flex_table {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/* Media Queries End */
 /* Detials Page End */
 
 /*# sourceMappingURL=test.css.map */

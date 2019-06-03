@@ -5,6 +5,7 @@ $hover_color: #f5f5f5
 $gray_background_color:  #282726
 $transparent_black: rgba(0, 0, 0, 0.7)
 $content_background_color: #343940
+$table_background_color: rgba(0, 0, 0, 0.5)
 
 
 
@@ -141,6 +142,7 @@ nav
 #calc_jum
   background-color: $content_background_color
 
+
   #calc_search_bar
     margin: auto
 
@@ -195,10 +197,12 @@ nav
 /* Calculator Pages End */
 
 /* Detials Page */
+
+  /* Top Page Container */
 #proc_rates
 
   #proc_rates_row
-    background-color: $content_background_color
+    background-color: $transparent_black
 
     #craft_quantity
       margin: auto
@@ -243,10 +247,122 @@ nav
         height: 25px
         text-align: right
 
+  /* Top Page Container End */
+
+  /* Jumbotron */
+
+#details_jum
+  background-color: $content_background_color
+
+  #recipeImage
+    padding-top: 5px
+    padding-bottom: 25px
+
+  #recipe_materials
+    background-color: $table_background_color
+
+    table
+      width: 100%
+      margin: auto
+      color: $text_color
+
+      #recipe_quantity
+        padding-right: 20px
+        width: 25%
+
+
+  /* Jumbotron End */
+
+  /* Calculations Container  */
+#calculations_container
+  margin-bottom: 40px
+
+  #t1
+    padding-left: 15px
+    padding-right: 15px
+
+  #t2
+    padding-left: 15px
+    padding-right: 15px
+
+  #first_table_container
+    width: 100%
+
+    .table_title
+      background-color: $transparent_black
+      text-align: center
+      padding: 10px 0px 10px 0px
+      margin-bottom: 0px
+
+    #first_table
+        color: $text_color
+        margin: auto
+        background-color: $table_background_color
+
+
+  #second_table_container
+    width: 100%
+
+    .table_title
+      background-color: $transparent_black
+      text-align: center
+      padding: 10px 0px 10px 0px
+      margin-bottom: 0px
+
+    #second_table
+        color: $text_color
+        margin: auto
+        background-color: $table_background_color
+
+        .recipe_market_price
+          width: 100%
+          height: 25px
+          text-align: right
+          margin: auto
+  /* Calculations Container End */
+
+  /* Sub Materials Cost Container  */
+
+#sub_materials_costs
+  margin: auto
+
+  #costs_table_container
+    margin: auto
+
+    #costs_table
+      width: 100%
+
+      .table_title
+        background-color: $transparent_black
+        text-align: center
+        padding: 10px 0px 10px 0px
+        margin-bottom: 0px
+
+      table
+        color: $text_color
+
+        thead
+          background-color: $table_background_color
+
+        input
+          width: 100%
+          height: 25px
+          text-align: right
+          margin: auto
+
+        td
+          border-color: $text_color
 
 
 
+  /* Sub Materials Cost Container End */
 
+/* Media Queries */
+@media screen and (min-width : 320px) and (max-width : 575px)
+  .flex_table
+    padding-right:0
+    padding-left:0
 
+/* Media Queries End */
 
 /* Detials Page End */

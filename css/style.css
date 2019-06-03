@@ -214,6 +214,7 @@ a:hover{
 #proc_rates_row{
     background-color: #282726;
     text-decoration: uppercase;
+    color: #FA7D10;
 }
 #craft_quantity{
   margin: auto;
@@ -258,10 +259,11 @@ a:hover{
   height: 25px;
   text-align: right;
 }
+
 #calculations_container{
   margin-bottom: 40px;
 }
-#calculations_container #first_table, #second_table{
+#calculations_container #first_table_container, #second_table_container{
   width: 100%;
 }
 #calculations_container table{
@@ -282,6 +284,8 @@ a:hover{
   text-align: right;
   margin: auto;
 }
+
+
 #costs_table{
   width: 100%;
 }
