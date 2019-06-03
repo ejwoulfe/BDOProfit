@@ -336,6 +336,11 @@ nav .nav-item {
     padding-left: 0;
   }
 }
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  #second_table_container {
+    padding-top: 15px;
+  }
+}
 /* Media Queries End */
 /* Detials Page End */
 

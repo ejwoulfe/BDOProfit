@@ -212,7 +212,7 @@ if(isset($_GET['id'])){
     <div id="costs_table_container" class="flex_table col-md-8 d-flex">
       <div id="costs_table">
         <h5 class="table_title">Costs</h5>
-        <table class="table table-bordered text-left">
+        <table class="table table-borderless text-left">
           <thead>
             <th>
 
@@ -220,13 +220,13 @@ if(isset($_GET['id'])){
             <th class="text-center">
               Material
             </th>
-            <th class="text-left">
+            <th class="text-center">
               Quantity
             </th>
             <th class="text-left">
               Cost Per
             </th>
-            <th class="text-right">
+            <th class="text-center">
               Total Cost
             </th>
           </thead>
@@ -246,7 +246,7 @@ if(isset($_GET['id'])){
               .getMaterialImage($subRow[$y], $conn).
               '"  height="30"></td><td class="text-center">'
               .getMaterialID($subRow[$y], $conn).
-              '</td><td id="' . $cost_quantity .   '" class="text-center cost_quantity onChange="costChanged()"">'
+              '</td><td style="width:1%" id="' . $cost_quantity .   '" class="text-center cost_quantity onChange="costChanged()"">'
               .$subRow[$x].
               '</td><td class="align-middle">
               <input id="' . $cost_field .   '" onChange="costChanged()" type="number" min="1" max="999999" value="">
