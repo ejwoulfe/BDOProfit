@@ -197,6 +197,7 @@ nav .nav-item {
   width: 150px;
   height: 25px;
   text-align: right;
+  padding-right: 10px;
 }
 #proc_rates #proc_rates_row #tier1_proc {
   margin: auto;
@@ -210,6 +211,7 @@ nav .nav-item {
 #proc_rates #proc_rates_row #tier1_proc input {
   width: 150px;
   height: 25px;
+  padding-right: 10px;
   text-align: right;
 }
 #proc_rates #proc_rates_row #tier2_proc {
@@ -225,6 +227,7 @@ nav .nav-item {
   width: 150px;
   height: 25px;
   text-align: right;
+  padding-right: 10px;
 }
 
 #details_jum {
@@ -297,6 +300,11 @@ nav .nav-item {
   margin: auto;
 }
 
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 #sub_materials_costs {
   margin: auto;
   /* Sub Materials Cost Container End */
@@ -320,10 +328,11 @@ nav .nav-item {
   background-color: rgba(0, 0, 0, 0.5);
 }
 #sub_materials_costs #costs_table_container #costs_table table input {
-  width: 100%;
+  width: 65%;
   height: 25px;
   text-align: right;
   margin: auto;
+  padding-right: 10px;
 }
 #sub_materials_costs #costs_table_container #costs_table table td {
   border-color: #FA7D10;
@@ -336,7 +345,7 @@ nav .nav-item {
     padding-left: 0;
   }
 }
-@media screen and (min-width: 576px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #second_table_container {
     padding-top: 15px;
   }

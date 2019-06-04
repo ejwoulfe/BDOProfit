@@ -218,6 +218,7 @@ nav
         width: 150px
         height: 25px
         text-align: right
+        padding-right: 10px
 
     #tier1_proc
       margin: auto
@@ -231,6 +232,7 @@ nav
       input
         width: 150px
         height: 25px
+        padding-right: 10px
         text-align: right
 
     #tier2_proc
@@ -246,6 +248,7 @@ nav
         width: 150px
         height: 25px
         text-align: right
+        padding-right: 10px
 
   /* Top Page Container End */
 
@@ -322,6 +325,10 @@ nav
   /* Calculations Container End */
 
   /* Sub Materials Cost Container  */
+  
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button
+  -webkit-appearance: none
 
 #sub_materials_costs
   margin: auto
@@ -345,10 +352,11 @@ nav
           background-color: $table_background_color
 
         input
-          width: 100%
+          width: 65%
           height: 25px
           text-align: right
           margin: auto
+          padding-right: 10px
 
         td
           border-color: $text_color
@@ -363,10 +371,10 @@ nav
     padding-right:0
     padding-left:0
 
-@media screen and (min-width : 576px) and (max-width : 768px)
+@media screen and (max-width : 768px)
     #second_table_container
       padding-top: 15px
-
+      
 /* Media Queries End */
 
 /* Detials Page End */

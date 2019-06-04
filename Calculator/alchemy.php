@@ -24,16 +24,6 @@
       </form>
       </div>
     </div>
-    <!-- <form class="form-inline" action="" method="POST">
-    <div id="test" class="input-group mb-3">
-<input name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
-<div class="input-group-append">
-  <button class="btn btn-outline-secondary" type="submit" name="nav_search_button">
-  <i class="fa fa-search"></i>
-</button>
-</div>
-</div>
-</form> -->
 
 
 
