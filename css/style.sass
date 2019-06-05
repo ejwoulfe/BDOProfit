@@ -6,7 +6,12 @@ $gray_background_color:  #282726
 $transparent_black: rgba(0, 0, 0, 0.7)
 $content_background_color: #343940
 $table_background_color: rgba(0, 0, 0, 0.5)
+$input_background_color: #d3d8de
 
+@mixin no_input_arrows
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button
+      -webkit-appearance: none
 
 
 @mixin default_font
@@ -198,6 +203,7 @@ nav
 
 /* Detials Page */
 
+
   /* Top Page Container */
 #proc_rates
 
@@ -219,6 +225,9 @@ nav
         height: 25px
         text-align: right
         padding-right: 10px
+        background-color: $input_background_color
+
+      @include no_input_arrows
 
     #tier1_proc
       margin: auto
@@ -234,6 +243,9 @@ nav
         height: 25px
         padding-right: 10px
         text-align: right
+        background-color: $input_background_color
+
+      @include no_input_arrows
 
     #tier2_proc
       margin: auto
@@ -249,6 +261,9 @@ nav
         height: 25px
         text-align: right
         padding-right: 10px
+        background-color: $input_background_color
+
+      @include no_input_arrows
 
   /* Top Page Container End */
 
@@ -272,6 +287,9 @@ nav
       #recipe_quantity
         padding-right: 20px
         width: 25%
+
+      #material_name
+        padding-left: 75px
 
 
   /* Jumbotron End */
@@ -302,6 +320,21 @@ nav
         margin: auto
         background-color: $table_background_color
 
+        thead
+          border-bottom: 4px solid #2c323a
+
+        #total_cost_head
+          width: 20%
+
+        #image_head
+          width: 1%
+
+        input
+          width: 100%
+          text-align: left
+          background-color: $input_background_color
+
+        @include no_input_arrows
 
   #second_table_container
     width: 100%
@@ -313,57 +346,25 @@ nav
       margin-bottom: 0px
 
     #second_table
-        color: $text_color
-        margin: auto
-        background-color: $table_background_color
+      color: $text_color
+      margin: auto
+      background-color: $table_background_color
 
-        .recipe_market_price
-          width: 100%
-          height: 25px
-          text-align: right
-          margin: auto
+      thead
+        border-bottom: 4px solid #2c323a
+
+
+      input
+        width: 100%
+        height: 25px
+        text-align: left
+        margin: auto
+        background-color: $input_background_color
+
+      @include no_input_arrows
   /* Calculations Container End */
 
-  /* Sub Materials Cost Container  */
-  
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button
-  -webkit-appearance: none
 
-#sub_materials_costs
-  margin: auto
-
-  #costs_table_container
-    margin: auto
-
-    #costs_table
-      width: 100%
-
-      .table_title
-        background-color: $transparent_black
-        text-align: center
-        padding: 10px 0px 10px 0px
-        margin-bottom: 0px
-
-      table
-        color: $text_color
-
-        thead
-          background-color: $table_background_color
-
-        input
-          width: 65%
-          height: 25px
-          text-align: right
-          margin: auto
-          padding-right: 10px
-
-        td
-          border-color: $text_color
-
-
-
-  /* Sub Materials Cost Container End */
 
 /* Media Queries */
 @media screen and (min-width : 320px) and (max-width : 575px)
@@ -371,10 +372,57 @@ input::-webkit-outer-spin-button
     padding-right:0
     padding-left:0
 
+  #image_row
+    display: none
+
+  #profit_image_row
+    display: none
+
+  #image_head
+    display: none
+
+  .filler_1
+    display: none
+
 @media screen and (max-width : 768px)
+    #first_table
+      thead
+        font-size: 0.8rem
+      tbody
+        font-size: 0.8rem
+
+    #second_table
+      thead
+        font-size: 0.8rem
+      tbody
+        font-size: 0.8rem
+
     #second_table_container
-      padding-top: 15px
-      
+      margin-top: 15px
+
+    #image_row
+      display: none
+
+    #profit_image_row
+      display: none
+
+    #image_head
+      display: none
+
+    .filler_1
+      display: none
+
+
+@media screen and (min-width : 769px) and (max-width : 1140px)
+  #first_table
+
+    tbody
+      font-size: 0.85rem
+
+@media screen and (min-width : 769px) and (max-width : 991px)
+  #second_table_container
+    margin-top: 15px
+
 /* Media Queries End */
 
 /* Detials Page End */

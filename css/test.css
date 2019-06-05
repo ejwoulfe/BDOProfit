@@ -175,6 +175,7 @@ nav .nav-item {
 /* Calculator Pages End */
 /* Detials Page */
  *
+ *
  * /* Top Page Container */
 #proc_rates {
   /* Top Page Container End */
@@ -198,6 +199,11 @@ nav .nav-item {
   height: 25px;
   text-align: right;
   padding-right: 10px;
+  background-color: #d3d8de;
+}
+#proc_rates #proc_rates_row #craft_quantity input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #craft_quantity input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 #proc_rates #proc_rates_row #tier1_proc {
   margin: auto;
@@ -213,6 +219,11 @@ nav .nav-item {
   height: 25px;
   padding-right: 10px;
   text-align: right;
+  background-color: #d3d8de;
+}
+#proc_rates #proc_rates_row #tier1_proc input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #tier1_proc input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 #proc_rates #proc_rates_row #tier2_proc {
   margin: auto;
@@ -228,6 +239,11 @@ nav .nav-item {
   height: 25px;
   text-align: right;
   padding-right: 10px;
+  background-color: #d3d8de;
+}
+#proc_rates #proc_rates_row #tier2_proc input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #tier2_proc input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 #details_jum {
@@ -251,11 +267,13 @@ nav .nav-item {
   padding-right: 20px;
   width: 25%;
 }
+#details_jum #recipe_materials table #material_name {
+  padding-left: 75px;
+}
 
 #calculations_container {
   margin-bottom: 40px;
   /* Calculations Container End */
-  /* Sub Materials Cost Container  */
 }
 #calculations_container #t1 {
   padding-left: 15px;
@@ -279,6 +297,24 @@ nav .nav-item {
   margin: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+#calculations_container #first_table_container #first_table thead {
+  border-bottom: 4px solid #2c323a;
+}
+#calculations_container #first_table_container #first_table #total_cost_head {
+  width: 20%;
+}
+#calculations_container #first_table_container #first_table #image_head {
+  width: 1%;
+}
+#calculations_container #first_table_container #first_table input {
+  width: 100%;
+  text-align: left;
+  background-color: #d3d8de;
+}
+#calculations_container #first_table_container #first_table input::-webkit-inner-spin-button,
+#calculations_container #first_table_container #first_table input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 #calculations_container #second_table_container {
   width: 100%;
 }
@@ -293,49 +329,19 @@ nav .nav-item {
   margin: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
-#calculations_container #second_table_container #second_table .recipe_market_price {
+#calculations_container #second_table_container #second_table thead {
+  border-bottom: 4px solid #2c323a;
+}
+#calculations_container #second_table_container #second_table input {
   width: 100%;
   height: 25px;
-  text-align: right;
+  text-align: left;
   margin: auto;
+  background-color: #d3d8de;
 }
-
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
+#calculations_container #second_table_container #second_table input::-webkit-inner-spin-button,
+#calculations_container #second_table_container #second_table input::-webkit-outer-spin-button {
   -webkit-appearance: none;
-}
-
-#sub_materials_costs {
-  margin: auto;
-  /* Sub Materials Cost Container End */
-}
-#sub_materials_costs #costs_table_container {
-  margin: auto;
-}
-#sub_materials_costs #costs_table_container #costs_table {
-  width: 100%;
-}
-#sub_materials_costs #costs_table_container #costs_table .table_title {
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-  margin-bottom: 0px;
-}
-#sub_materials_costs #costs_table_container #costs_table table {
-  color: #FA7D10;
-}
-#sub_materials_costs #costs_table_container #costs_table table thead {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-#sub_materials_costs #costs_table_container #costs_table table input {
-  width: 65%;
-  height: 25px;
-  text-align: right;
-  margin: auto;
-  padding-right: 10px;
-}
-#sub_materials_costs #costs_table_container #costs_table table td {
-  border-color: #FA7D10;
 }
 
 /* Media Queries */
@@ -344,10 +350,66 @@ input::-webkit-outer-spin-button {
     padding-right: 0;
     padding-left: 0;
   }
+
+  #image_row {
+    display: none;
+  }
+
+  #profit_image_row {
+    display: none;
+  }
+
+  #image_head {
+    display: none;
+  }
+
+  .filler_1 {
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
+  #first_table thead {
+    font-size: 0.8rem;
+  }
+  #first_table tbody {
+    font-size: 0.8rem;
+  }
+
+  #second_table thead {
+    font-size: 0.8rem;
+  }
+  #second_table tbody {
+    font-size: 0.8rem;
+  }
+
   #second_table_container {
-    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  #image_row {
+    display: none;
+  }
+
+  #profit_image_row {
+    display: none;
+  }
+
+  #image_head {
+    display: none;
+  }
+
+  .filler_1 {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1140px) {
+  #first_table tbody {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  #second_table_container {
+    margin-top: 15px;
   }
 }
 /* Media Queries End */
