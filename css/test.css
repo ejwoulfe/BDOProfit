@@ -306,6 +306,9 @@ nav .nav-item {
 #calculations_container #first_table_container #first_table #image_head {
   width: 1%;
 }
+#calculations_container #first_table_container #first_table td {
+  vertical-align: middle;
+}
 #calculations_container #first_table_container #first_table input {
   width: 100%;
   text-align: left;

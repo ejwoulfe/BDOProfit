@@ -15,7 +15,7 @@ require ('cook_get.php');
           <p>Craft Quantity:</p>
         </div>
         <div class="d-inline-block">
-          <input id="craft_quantity_input" type="number" min="1" max="999999" value="1">
+          <input id="craft_quantity_input" class="test" type="number" min="1" max="999999" value="1" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
         </div>
       </div>
       <div id="tier1_proc" class"col-sm-4">
@@ -23,18 +23,18 @@ require ('cook_get.php');
           <p>Tier 1 Proc Rate:</p>
         </div>
         <div class="d-inline-block">
-          <input id="t1_input" type="number" name="t1_proc_rate" min="1" max="999999" value="2.5" step="0.1">
+          <p id="tier1_proc_rate">2.5</p>
         </div>
 
       </div>
-      <!-- <div id="tier2_proc" class"col-sm-4">
+      <div id="tier2_proc" class"col-sm-4">
       <div class="d-inline-block">
       <p>Tier 2 Proc Rate:</p>
     </div>
     <div class="d-inline-block">
-    <input type="number" name="quantity" min="0" max="999999" value="0.05">
+    <p id="tier2_proc_rate">0.3</p>
   </div>
-</div> -->
+</div>
 
 </div>
 </div>
@@ -43,7 +43,7 @@ require ('cook_get.php');
   <h1 class="display-4 text-center"><?php echo $row['recipe_name']  ?></h1>
   <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
   <div class="row">
-    <div id="recipe_materials" class="flex_table container-fluid col-md-6">
+    <div id="recipe_materials" class="flex_table container-fluid col-lg-6">
       <table class="table table-borderless text-center">
         <tbody>
 
@@ -112,7 +112,7 @@ require ('cook_get.php');
               '</td><td style="width:1%" id="' . $cost_quantity .   '" class="quantity text-center">'
               .$subRow[$x].
               '</td><td class="align-middle">
-              <input id="' . $cost_field .   '" type="number" min="1" max="9999999999" value="">
+              <input id="' . $cost_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
               </td>
               <td style="width:1%" id="' . $total_cost .   '" class="text-right")">0</td>
               </tr>';
@@ -168,13 +168,13 @@ require ('cook_get.php');
               $total_profit = "total_profit_row_" . $strCount;
               $y = $i +1;
               echo '<tr id="' . $profit_row .   '">
-              <td style="width:1%" id="' . $profit_quantity .   '" class="text-right")">0</td>
+              <td style="width:1%" id="' . $profit_quantity .   '" class="reward_quantity text-right")">0</td>
               <td id="profit_image_row" class="align-middle text-center"><img src="'
               .getMaterialImage($rewardRow[$y], $conn).
               '"  height="30"></td><td class="align-middle text-left">'
               .getMaterialID($rewardRow[$y], $conn).
               '</td><td class="align-middle">
-              <input id="' . $profit_field .   '" type="number" min="1" max="9999999999" value="">
+              <input id="' . $profit_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
               </td>
               <td style="width:1%" id="' . $total_profit .   '" class="text-right")">0</td>';
               $count+=1;

@@ -7,6 +7,7 @@ $transparent_black: rgba(0, 0, 0, 0.7)
 $content_background_color: #343940
 $table_background_color: rgba(0, 0, 0, 0.5)
 $input_background_color: #d3d8de
+$tooltip-color: red
 
 @mixin no_input_arrows
     input::-webkit-inner-spin-button,
@@ -229,6 +230,7 @@ nav
 
       @include no_input_arrows
 
+
     #tier1_proc
       margin: auto
       min-height: 50px
@@ -328,6 +330,9 @@ nav
 
         #image_head
           width: 1%
+
+        td
+          vertical-align: middle
 
         input
           width: 100%
