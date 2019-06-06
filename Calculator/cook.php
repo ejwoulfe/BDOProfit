@@ -24,28 +24,14 @@
     </div>
   </div>
 
-  <div id="pagination_controls">
-  </div>
+
 
   <div id="calculator_main_content" class="container-fluid bg-dark">
-    <table id="calculator_table" class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th style="width:10%" scope="col col-4">Image</th>
-          <th scope="col col-4">Name</th>
-        </tr>
-      </thead>
-      <tbody id="calculator_tbody">
+    <table id="calculator_table" class="table table-borderless text-center">
 
 
 
-
-
-
-
-      </tbody>
     </table>
-
   </div>
 
 

@@ -165,7 +165,7 @@ nav
   padding-bottom: 40px
   background-color: $content_background_color
 
-  #calculator_table
+  #calculator_table      
 
     thead
       tr
@@ -175,25 +175,30 @@ nav
     tbody
 
       tr
-
+        border-bottom: 2px solid $input_background_color
+        border-top: 2px solid $input_background_color
+        border-left: 2px solid $input_background_color
+        border-right: 2px solid $input_background_color
         &:nth-child(odd)
           background: $content_background_color
         &:nth-child(even)
           background: #282726
         &:hover
           background-color: rgba(255, 255, 255, 0.7)
+          
         td
           padding: 0px
+          border-right: 2px solid $input_background_color
 
           &:nth-child(1)
             vertical-align: middle
 
-          a
-            color: $text_color
-            text-decoration: none
-            display: block
-            width: 100%
-            padding: 1.05em
+        a
+          color: $text_color
+          text-decoration: none
+          display: block
+          width: 100%
+          padding: 1.05em
 
 
 

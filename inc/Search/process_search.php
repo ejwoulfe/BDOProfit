@@ -1,18 +1,36 @@
 <?php
-require '../connectToDatabase.php';
-
-$search_value = $_POST['recipe_name'];
-$sql_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%".$search_value."%'";
-  $result = mysqli_query($conn, $sql_query);
-  while ($row = mysqli_fetch_assoc($result)) {
-    $totalRecipes=mysqli_num_rows($result);
-    $totalRows= ceil($rowCount/$recipesPerPage);
-    if($totalRecipes < 1){
-      $totalRecipes = 1;
-    }
-    echo '<tr><td><img src="' .$row['recipe_image']. '" height="30" ></td>';
-    echo "<td><a href='processingDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
-
+if(isset($_POST['recipe_name'])){
+  require '../connectToDatabase.php';
+  $recipesPerPage = 100;
+  $search_value = $_POST['recipe_name'];
+  $page = $_POST['page'] - 1;
+  $firstLimit = ($page * $recipesPerPage);
+  $secondLimit = $firstLimit+100;
+  
+  
+  $pages_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%{$search_value}%'";
+  $pages_result = mysqli_query($conn, $pages_query);
+  $totalRecipes=mysqli_num_rows($pages_result);
+  $totalPages= ceil($totalRecipes/$recipesPerPage);
+  
+  for($i; $i < $totalPages; $i++){
+    
+    echo "<span class='pagination_link' style='cursor:pointer; padding:6px; border:1px sollid #ccc;' id='" .$i. "'>" .$i."</span>";
+  }
+  
+  
+  // 
+  // 
+  // $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value}%' LIMIT $firstLimit, $secondLimit";
+  //   $result = mysqli_query($conn, $sql_query);
+  //   while ($row = mysqli_fetch_assoc($result)) {
+  // 
+  //     echo '<tr><td class="img_row"><img src="' .$row['recipe_image']. '" height="30" ></td>';
+  //     echo "<td><a class='name_row' href='cookingDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
+  // 
+  // }
+  // 
+  
 }
 
- ?>
+?>
