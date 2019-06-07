@@ -96,6 +96,7 @@ nav
         padding: 0px
 
         &:hover
+          cursor: pointer
           .overlay
             background-color: $transparent_black
             height: 600px
@@ -148,7 +149,6 @@ nav
 #calc_jum
   background-color: $content_background_color
 
-
   #calc_search_bar
     margin: auto
 
@@ -163,7 +163,6 @@ nav
 #calculator_main_content
   padding-top: 40px
   padding-bottom: 40px
-  background-color: $content_background_color
 
   #calculator_table      
 
@@ -179,19 +178,16 @@ nav
         border-top: 2px solid $input_background_color
         border-left: 2px solid $input_background_color
         border-right: 2px solid $input_background_color
+        
         &:nth-child(odd)
           background: $content_background_color
         &:nth-child(even)
           background: #282726
-        &:hover
-          background-color: rgba(255, 255, 255, 0.7)
-          
+      
         td
           padding: 0px
           border-right: 2px solid $input_background_color
-
-          &:nth-child(1)
-            vertical-align: middle
+          vertical-align: middle
 
         a
           color: $text_color
@@ -199,6 +195,9 @@ nav
           display: block
           width: 100%
           padding: 1.05em
+          
+        &:hover
+          background-color: rgba(255, 255, 255, 0.7)
 
 
 
@@ -234,7 +233,6 @@ nav
         background-color: $input_background_color
 
       @include no_input_arrows
-
 
     #tier1_proc
       margin: auto
@@ -362,7 +360,6 @@ nav
 
       thead
         border-bottom: 4px solid #2c323a
-
 
       input
         width: 100%

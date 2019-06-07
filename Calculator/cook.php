@@ -26,7 +26,7 @@
 
 
 
-  <div id="calculator_main_content" class="container-fluid bg-dark">
+  <div id="calculator_main_content" class="container-fluid">
     <table id="calculator_table" class="table table-borderless text-center">
 
 

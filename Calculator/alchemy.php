@@ -8,7 +8,7 @@
 
 
   <div id="calc_jum" class="jumbotron ">
-    <h1 class="display-4 text-center">AlchemyCalculator</h1>
+    <h1 class="display-4 text-center">Alchemy Calculator</h1>
     <p class="h5 text-center">What are you looking to mix?</p>
     <div id="calc_search_bar" class="col-md-8">
       <form action="" class="form-inline">
@@ -24,25 +24,12 @@
     </div>
   </div>
 
-  <div id="calculator_main_content" style="display:  none" class="container-fluid bg-dark">
-    <table id="calculator_table" class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th style="width:10%" scope="col col-4">Image</th>
-          <th scope="col col-4">Name</th>
-        </tr>
-      </thead>
-      <tbody id="calculator_tbody">
+  <div id="calculator_main_content" class="container-fluid">
+    <table id="calculator_table" class="table table-borderless text-center">
 
 
 
-
-
-
-
-      </tbody>
     </table>
-
   </div>
 
 

@@ -12,7 +12,7 @@ function doSearch(text) {
     clearTimeout(delayTimer);
     delayTimer = setTimeout(function() {
         findRecipe(1);
-    }, 1000);
+    }, 500);
 
 }
 

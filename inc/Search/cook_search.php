@@ -3,9 +3,9 @@ if(isset($_POST['recipe_name'])){
   require '../connectToDatabase.php';
   $recipesPerPage = 100;
   $search_value = $_POST['recipe_name'];
-  $page = $_POST['page'] - 1;
-  $firstLimit = ($page * $recipesPerPage);
-  $secondLimit = $firstLimit+100;
+  $page = $_POST['page'];
+  $firstLimit = (($page - 1)* $recipesPerPage);
+
   
   
   $pages_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value}%'";
@@ -19,14 +19,14 @@ if(isset($_POST['recipe_name'])){
     
     $output .= "<span class='pagination_link' style='cursor:pointer; padding:6px; border:1px sollid #ccc;' id='" .$i. "'>" .$i."</span>";
   }
-  echo '  <div id="pagination_controls" style="border: none">' .$output. '</div>';
+  echo '  <div id="pagination_controls"">' .$output. '</div>';
   echo '<tbody id="calculator_tbody">';
-  $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value}%' LIMIT $firstLimit, $secondLimit";
+  $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value}%' LIMIT $firstLimit, $recipesPerPage";
     $result = mysqli_query($conn, $sql_query);
     while ($row = mysqli_fetch_assoc($result)) {
       
       
-      echo '<tr><td class="img_row"><img src="' .$row['recipe_image']. '" height="30" ></td>';
+      echo '<tr><td class="img_row" style="width: 10%"><img src="' .$row['recipe_image']. '" height="30" ></td>';
       echo "<td><a class='name_row' href='cookingDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
   
   }
