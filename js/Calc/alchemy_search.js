@@ -1,20 +1,24 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+    findRecipe(1);
+});
 var delayTimer;
-$('#bar').on('keypress', function(event){
+$('#bar').on('keyup', function(event){
 
  if((event.which === 13 || event.keyCode === 13) && event.target !== ''){
       event.preventDefault();
     }
-      doSearch(event.target.value);
+      findRecipe(1);
 
 });
 
-function doSearch(text) {
-    clearTimeout(delayTimer);
-    delayTimer = setTimeout(function() {
-        findRecipe(1);
-    }, 500);
-
-}
+// function doSearch() {
+//     clearTimeout(delayTimer);
+//     delayTimer = setTimeout(function() {
+//         findRecipe(1);
+//     }, 1000);
+// 
+// }
 
 
 function findRecipe(page){
@@ -35,7 +39,7 @@ function findRecipe(page){
   	function display_data() {
   	 if (xhr.readyState == 4) {
         if (xhr.status == 200) {
-         document.getElementById("calculator_table").innerHTML = xhr.responseText;
+         document.getElementById("calculator_main_content").innerHTML = xhr.responseText;
          addEventListener();
         } else {
           alert('There was a problem with the request.');
@@ -48,5 +52,9 @@ function addEventListener(){
   $('.pagination_link').click(function(){
     let page = parseInt(event.target.innerHTML);
     findRecipe(page)
+});
+$('.second_pagination_link').click(function(){
+  let page = parseInt(event.target.innerHTML);
+  findRecipe(page)
 });
 }

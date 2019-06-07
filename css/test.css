@@ -24,6 +24,14 @@ nav {
 }
 nav a {
   color: #FA7D10;
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
+}
+nav a:hover {
+  font-size: 1.25rem;
 }
 nav #nav_form {
   width: 100%;
@@ -34,6 +42,16 @@ nav .nav-item {
   padding-right: 5px;
   margin-right: 5px;
   margin-left: 5px;
+}
+nav .navbar-brand {
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
+}
+nav .navbar-brand:hover {
+  font-size: 1.75rem;
 }
 
 /* Navigation End */
@@ -76,6 +94,7 @@ nav .nav-item {
   padding: 0px;
 }
 #main_content #main_content_row1 .card .card-body:hover {
+  box-shadow: 0 4px 20px 0 #FA7D10, 0 6px 20px 0 #FA7D10;
   cursor: pointer;
 }
 #main_content #main_content_row1 .card .card-body:hover .overlay {
@@ -89,16 +108,22 @@ nav .nav-item {
   margin: auto;
   height: 60px;
   padding: 10px 0px 0px 0px;
-  -webkit-transition: height 2s;
-  transition: height 2s;
+  -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
 }
 #main_content #main_content_row1 .card .card-body .overlay h2 {
   margin-bottom: 0px;
   font-weight: bolder;
-  -webkit-transition: padding-top 2s;
-  transition: padding-top 2s;
+  -webkit-transition: padding-top 2s ease;
+  -moz-transition: padding-top 2s ease;
+  -ms-transition: padding-top 2s ease;
+  -o-transition: padding-top 2s ease;
+  transition: padding-top 2s ease;
 }
 
 #cooking_card {
@@ -147,6 +172,40 @@ nav .nav-item {
   padding-bottom: 40px;
   /* Calculator Main Content End   */
 }
+#calculator_main_content #pagination_controls {
+  height: 30px;
+  float: right;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
+#calculator_main_content #pagination_controls .pagination_link {
+  background-color: #FA7D10;
+  padding: 5px 10px 20px 10px;
+  vertical-align: middle;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+  position: relative;
+}
+#calculator_main_content #pagination_controls .pagination_link:hover {
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #pagination_controls .second_pagination_link {
+  background-color: #FA7D10;
+  padding: 20px 10px 5px 10px;
+  vertical-align: middle;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+}
+#calculator_main_content #pagination_controls .second_pagination_link:hover {
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #calculator_table {
+  position: relative;
+}
 #calculator_main_content #calculator_table thead tr {
   background-color: #282726;
   color: #FA7D10;
@@ -176,7 +235,10 @@ nav .nav-item {
   padding: 1.05em;
 }
 #calculator_main_content #calculator_table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #d3d8de;
+}
+#calculator_main_content #calculator_table tbody tr:hover a {
+  color: white;
 }
 
 /* Calculator Pages End */

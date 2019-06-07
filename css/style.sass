@@ -20,6 +20,15 @@ $tooltip-color: red
   font-family: 'Bitter', serif
   font-size: 1rem
 
+
+@mixin transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+
 /*  End Vairables */
 
 html
@@ -42,6 +51,10 @@ nav
 
   a
     color: $text_color
+    @include transition(font-size 2s ease)
+
+    &:hover
+      font-size: 1.25rem
 
   #nav_form
     width: 100%
@@ -52,6 +65,12 @@ nav
     padding-right: 5px
     margin-right:5px
     margin-left:5px
+
+  .navbar-brand
+    @include transition(font-size 2s ease)
+    &:hover
+      font-size: 1.75rem
+
 
 
 /* Navigation End */
@@ -96,6 +115,7 @@ nav
         padding: 0px
 
         &:hover
+          box-shadow: 0 4px 20px 0 $text_color, 0 6px 20px 0 $text_color
           cursor: pointer
           .overlay
             background-color: $transparent_black
@@ -107,16 +127,14 @@ nav
             margin: auto
             height: 60px
             padding: 10px 0px 0px 0px
-            -webkit-transition: height 2s
-            transition: height 2s
+            @include transition(height 2s ease)
             background-color: $transparent_black
             width: 100%
 
             h2
               margin-bottom: 0px
               font-weight: bolder
-              -webkit-transition: padding-top 2s
-              transition: padding-top 2s
+              @include transition(padding-top 2s ease)
 
 #cooking_card
   background-image: url("../assets/bdo_cooking.jpg")
@@ -164,7 +182,39 @@ nav
   padding-top: 40px
   padding-bottom: 40px
 
-  #calculator_table      
+  #pagination_controls
+    height: 30px
+    float: right
+    margin-bottom: 5px
+    margin-top: -10px
+
+    .pagination_link
+      background-color: $text_color
+      padding: 5px 10px 20px 10px
+      vertical-align: middle
+      color: #282726
+      border-radius: 10px
+      margin-right: 3px
+      position: relative
+
+      &:hover
+        color: $text_color
+        background-color: #282726
+
+    .second_pagination_link
+      background-color: $text_color
+      padding: 20px 10px 5px 10px
+      vertical-align: middle
+      color: #282726
+      border-radius: 10px
+      margin-right: 3px
+
+      &:hover
+        color: $text_color
+        background-color: #282726
+
+  #calculator_table
+    position: relative
 
     thead
       tr
@@ -178,12 +228,12 @@ nav
         border-top: 2px solid $input_background_color
         border-left: 2px solid $input_background_color
         border-right: 2px solid $input_background_color
-        
+
         &:nth-child(odd)
           background: $content_background_color
         &:nth-child(even)
           background: #282726
-      
+
         td
           padding: 0px
           border-right: 2px solid $input_background_color
@@ -195,9 +245,12 @@ nav
           display: block
           width: 100%
           padding: 1.05em
-          
+
         &:hover
-          background-color: rgba(255, 255, 255, 0.7)
+          background-color: $input_background_color
+
+          a
+            color: white
 
 
 
