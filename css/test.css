@@ -24,6 +24,14 @@ nav {
 }
 nav a {
   color: #FA7D10;
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
+}
+nav a:hover {
+  font-size: 1.25rem;
 }
 nav #nav_form {
   width: 100%;
@@ -34,6 +42,16 @@ nav .nav-item {
   padding-right: 5px;
   margin-right: 5px;
   margin-left: 5px;
+}
+nav .navbar-brand {
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
+}
+nav .navbar-brand:hover {
+  font-size: 1.75rem;
 }
 
 /* Navigation End */
@@ -76,6 +94,7 @@ nav .nav-item {
   padding: 0px;
 }
 #main_content #main_content_row1 .card .card-body:hover {
+  box-shadow: 0 4px 20px 0 #FA7D10, 0 6px 20px 0 #FA7D10;
   cursor: pointer;
 }
 #main_content #main_content_row1 .card .card-body:hover .overlay {
@@ -158,21 +177,34 @@ nav .nav-item {
   float: right;
   margin-bottom: 5px;
   margin-top: -10px;
-  border-radius: 10px;
 }
 #calculator_main_content #pagination_controls .pagination_link {
-  background-color: #282726;
-  padding: 5px 10px 5px 10px;
+  background-color: #FA7D10;
+  padding: 5px 10px 20px 10px;
   vertical-align: middle;
-  border: 2px solid #FA7D10;
-  border-right: none;
-}
-#calculator_main_content #pagination_controls .pagination_link:nth-last-child(1) {
-  border-right: 2px solid #FA7D10;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+  position: relative;
 }
 #calculator_main_content #pagination_controls .pagination_link:hover {
-  color: white;
-  border: 2px solid white;
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #pagination_controls .second_pagination_link {
+  background-color: #FA7D10;
+  padding: 20px 10px 5px 10px;
+  vertical-align: middle;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+}
+#calculator_main_content #pagination_controls .second_pagination_link:hover {
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #calculator_table {
+  position: relative;
 }
 #calculator_main_content #calculator_table thead tr {
   background-color: #282726;
@@ -203,7 +235,7 @@ nav .nav-item {
   padding: 1.05em;
 }
 #calculator_main_content #calculator_table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #d3d8de;
 }
 #calculator_main_content #calculator_table tbody tr:hover a {
   color: white;

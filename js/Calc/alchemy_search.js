@@ -53,4 +53,8 @@ function addEventListener(){
     let page = parseInt(event.target.innerHTML);
     findRecipe(page)
 });
+$('.second_pagination_link').click(function(){
+  let page = parseInt(event.target.innerHTML);
+  findRecipe(page)
+});
 }

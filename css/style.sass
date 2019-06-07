@@ -51,6 +51,10 @@ nav
 
   a
     color: $text_color
+    @include transition(font-size 2s ease)
+
+    &:hover
+      font-size: 1.25rem
 
   #nav_form
     width: 100%
@@ -61,6 +65,12 @@ nav
     padding-right: 5px
     margin-right:5px
     margin-left:5px
+
+  .navbar-brand
+    @include transition(font-size 2s ease)
+    &:hover
+      font-size: 1.75rem
+
 
 
 /* Navigation End */
@@ -105,6 +115,7 @@ nav
         padding: 0px
 
         &:hover
+          box-shadow: 0 4px 20px 0 $text_color, 0 6px 20px 0 $text_color
           cursor: pointer
           .overlay
             background-color: $transparent_black
@@ -176,23 +187,34 @@ nav
     float: right
     margin-bottom: 5px
     margin-top: -10px
-    border-radius: 10px
 
     .pagination_link
-      background-color: #282726
-      padding: 5px 10px 5px 10px
+      background-color: $text_color
+      padding: 5px 10px 20px 10px
       vertical-align: middle
-      border: 2px solid $text_color
-      border-right: none
-
-      &:nth-last-child(1)
-        border-right: 2px solid $text_color
+      color: #282726
+      border-radius: 10px
+      margin-right: 3px
+      position: relative
 
       &:hover
-        color: white
-        border: 2px solid white
+        color: $text_color
+        background-color: #282726
+
+    .second_pagination_link
+      background-color: $text_color
+      padding: 20px 10px 5px 10px
+      vertical-align: middle
+      color: #282726
+      border-radius: 10px
+      margin-right: 3px
+
+      &:hover
+        color: $text_color
+        background-color: #282726
 
   #calculator_table
+    position: relative
 
     thead
       tr
@@ -225,7 +247,7 @@ nav
           padding: 1.05em
 
         &:hover
-          background-color: rgba(0, 0, 0, 0.3)
+          background-color: $input_background_color
 
           a
             color: white
