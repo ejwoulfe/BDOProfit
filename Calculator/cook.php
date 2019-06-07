@@ -27,11 +27,11 @@
 
 
   <div id="calculator_main_content" class="container-fluid">
-    <table id="calculator_table" class="table table-borderless text-center">
+    <!-- <table id="calculator_table" class="table table-borderless text-center">
 
 
 
-    </table>
+    </table> -->
   </div>
 
 

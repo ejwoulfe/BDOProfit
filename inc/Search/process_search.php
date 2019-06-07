@@ -2,35 +2,54 @@
 if(isset($_POST['recipe_name'])){
   require '../connectToDatabase.php';
   $recipesPerPage = 100;
-  $search_value = $_POST['recipe_name'];
+  $search_value = trim($_POST['recipe_name']);
+  $search_value_filter = filter_var($search_value, FILTER_SANITIZE_STRING);
   $page = $_POST['page'] - 1;
   $firstLimit = ($page * $recipesPerPage);
   
-  $pages_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%{$search_value}%'";
+  $pages_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%'";
   $pages_result = mysqli_query($conn, $pages_query);
   $totalRecipes=mysqli_num_rows($pages_result);
   $totalPages= ceil($totalRecipes/$recipesPerPage);
   
 
-  
+  function paginationDiv($totalPages){
   for($i = 1; $i <= $totalPages; $i++){
     
-    $output .= "<span class='pagination_link' style='cursor:pointer; padding:6px; border:1px sollid #ccc;' id='" .$i. "'>" .$i."</span>";
+    $output .= "<span class='pagination_link' style='cursor:pointer;' id='" .$i. "'>" .$i."</span>";
   }
-  echo '  <div id="pagination_controls" ">' .$output. '</div>';
-  echo '<tbody id="calculator_tbody">';
-  $sql_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%{$search_value}%' LIMIT $firstLimit, $recipesPerPage";
+  return '<div id="pagination_controls" ">' .$output. '</div>';
+}
+
+
+function tbodyDiv($search_value_filter, $firstLimit, $recipesPerPage, $conn){
+  // echo '<tbody id="calculator_tbody">';
+  $sql_query = "SELECT * FROM processing_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%' LIMIT $firstLimit, $recipesPerPage";
     $result = mysqli_query($conn, $sql_query);
     while ($row = mysqli_fetch_assoc($result)) {
+
       
-      
-      echo '<tr><td style="width: 10%" class="img_row"><img src="' .$row['recipe_image']. '" height="30" ></td>';
-      echo "<td><a class='name_row' href='processingDetails.php?id={$row['recipe_id']}'>" .$row['recipe_name']. '</td>';
+      $trOutput .= '<tr><td style="width: 10%" class="img_row"><img src="' .$row["recipe_image"]. '" height="30" ></td>' .
+      "<td><div class='overlay'><a class='name_row' href='processingDetails.php?id={$row['recipe_id']}'>" .$row["recipe_name"]. "</div></td></tr>";
   
   }
-  echo '</tbody>';
+  return '<tbody id="calculator_tbody" class="rounded">' .$trOutput. '</tbody></table>';
+  // echo '</tbody>';
+}
+function createTableBody(){
+    
+  return '<table id="calculator_table" class="table table-borderless text-center">';
+}
 
-  
+  if($totalRecipes == 0){
+    echo '<h5 style="color: #FA7D10">No Results for ' .$search_value_filter. '</h5>';
+  }
+    echo paginationDiv($totalPages);
+    echo createTableBody();
+    echo tbodyDiv($search_value_filter, $firstLimit, $recipesPerPage, $conn);
+    if($totalRecipes > 60){
+    echo paginationDiv($totalPages);
+}
   
 }
 

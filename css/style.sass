@@ -20,6 +20,15 @@ $tooltip-color: red
   font-family: 'Bitter', serif
   font-size: 1rem
 
+
+@mixin transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+
 /*  End Vairables */
 
 html
@@ -107,16 +116,14 @@ nav
             margin: auto
             height: 60px
             padding: 10px 0px 0px 0px
-            -webkit-transition: height 2s
-            transition: height 2s
+            @include transition(height 2s ease)
             background-color: $transparent_black
             width: 100%
 
             h2
               margin-bottom: 0px
               font-weight: bolder
-              -webkit-transition: padding-top 2s
-              transition: padding-top 2s
+              @include transition(padding-top 2s ease)
 
 #cooking_card
   background-image: url("../assets/bdo_cooking.jpg")
@@ -164,7 +171,28 @@ nav
   padding-top: 40px
   padding-bottom: 40px
 
-  #calculator_table      
+  #pagination_controls
+    height: 30px
+    float: right
+    margin-bottom: 5px
+    margin-top: -10px
+    border-radius: 10px
+
+    .pagination_link
+      background-color: #282726
+      padding: 5px 10px 5px 10px
+      vertical-align: middle
+      border: 2px solid $text_color
+      border-right: none
+
+      &:nth-last-child(1)
+        border-right: 2px solid $text_color
+
+      &:hover
+        color: white
+        border: 2px solid white
+
+  #calculator_table
 
     thead
       tr
@@ -178,12 +206,12 @@ nav
         border-top: 2px solid $input_background_color
         border-left: 2px solid $input_background_color
         border-right: 2px solid $input_background_color
-        
+
         &:nth-child(odd)
           background: $content_background_color
         &:nth-child(even)
           background: #282726
-      
+
         td
           padding: 0px
           border-right: 2px solid $input_background_color
@@ -195,9 +223,12 @@ nav
           display: block
           width: 100%
           padding: 1.05em
-          
+
         &:hover
-          background-color: rgba(255, 255, 255, 0.7)
+          background-color: rgba(0, 0, 0, 0.3)
+
+          a
+            color: white
 
 
 

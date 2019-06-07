@@ -89,16 +89,22 @@ nav .nav-item {
   margin: auto;
   height: 60px;
   padding: 10px 0px 0px 0px;
-  -webkit-transition: height 2s;
-  transition: height 2s;
+  -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
 }
 #main_content #main_content_row1 .card .card-body .overlay h2 {
   margin-bottom: 0px;
   font-weight: bolder;
-  -webkit-transition: padding-top 2s;
-  transition: padding-top 2s;
+  -webkit-transition: padding-top 2s ease;
+  -moz-transition: padding-top 2s ease;
+  -ms-transition: padding-top 2s ease;
+  -o-transition: padding-top 2s ease;
+  transition: padding-top 2s ease;
 }
 
 #cooking_card {
@@ -147,6 +153,27 @@ nav .nav-item {
   padding-bottom: 40px;
   /* Calculator Main Content End   */
 }
+#calculator_main_content #pagination_controls {
+  height: 30px;
+  float: right;
+  margin-bottom: 5px;
+  margin-top: -10px;
+  border-radius: 10px;
+}
+#calculator_main_content #pagination_controls .pagination_link {
+  background-color: #282726;
+  padding: 5px 10px 5px 10px;
+  vertical-align: middle;
+  border: 2px solid #FA7D10;
+  border-right: none;
+}
+#calculator_main_content #pagination_controls .pagination_link:nth-last-child(1) {
+  border-right: 2px solid #FA7D10;
+}
+#calculator_main_content #pagination_controls .pagination_link:hover {
+  color: white;
+  border: 2px solid white;
+}
 #calculator_main_content #calculator_table thead tr {
   background-color: #282726;
   color: #FA7D10;
@@ -176,7 +203,10 @@ nav .nav-item {
   padding: 1.05em;
 }
 #calculator_main_content #calculator_table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#calculator_main_content #calculator_table tbody tr:hover a {
+  color: white;
 }
 
 /* Calculator Pages End */
