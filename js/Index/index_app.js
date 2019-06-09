@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-  console.log("Ready");
   $(".card").click(function() {
     if(this.id==="processing_card"){
       window.location = "../Calculator/process.php";

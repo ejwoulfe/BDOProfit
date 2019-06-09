@@ -19,6 +19,13 @@ console.log(event);
 //     }, 1000);
 // 
 // }
+function hideSecondPagination(){
+    let numOfTableRows = document.getElementsByTagName('tr').length;
+    if(numOfTableRows < 60){
+      $('.second_pagination_link').hide();
+    }
+  
+}
 
 
 function findRecipe(page){
@@ -41,6 +48,7 @@ function findRecipe(page){
         if (xhr.status == 200) {
          document.getElementById("calculator_main_content").innerHTML = xhr.responseText;
          addEventListener();
+         hideSecondPagination();
         } else {
           alert('There was a problem with the request.');
         }

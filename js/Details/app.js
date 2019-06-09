@@ -117,7 +117,7 @@ let UIController = (function()  {
       return{
         quantity: quant,
         cost: cost,
-        totalCost: parseInt(parseFloat(quant) * parseInt(cost))
+        totalCost: Number(Math.round((parseFloat(quant) * parseInt(cost))+'e'+0)+'e-'+0)
       }
     },
     updateRowTotal: function(type, id, total){
@@ -140,7 +140,7 @@ let UIController = (function()  {
     updateRewardQuantities: function(quantities){
 
       for (let i = 0; i < quantities.length; i++) {
-        document.querySelector('#profit_quantity_row_'+(i+1)).innerHTML = quantities[i];
+        document.querySelector('#profit_quantity_row_'+(i+1)).innerHTML = Number(Math.round(quantities[i]+'e'+2)+'e-'+2);
       }
     },
     changeInput: function(field){
@@ -162,7 +162,7 @@ let UIController = (function()  {
       }
 
       return check;
-    },
+    }
   }
 })();
 
