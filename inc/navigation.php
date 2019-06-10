@@ -12,14 +12,15 @@
       <form class="form-inline" action="" method="POST">
         <div id="nav_form" class="input-group mb-3">
           <input id="nav_search_bar" name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
+          <div class="dropdown-menu" id="response"></div>
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit" name="nav_search_button">
               <i class="fa fa-search"></i>
             </button>
           </div>
-          <div id="response"></div>
         </div>
       </form>
+
     </div>
 
 
@@ -61,13 +62,32 @@ $(document).ready(function() {
         },
         success: function(data){
           $('#response').html(data);
+          $('#response').dropdown('show');
+          checkDropDownDisplay(true);
         },
         error: function(data){
           console.log(data);
         }
     });
+  }else{
+    checkDropDownDisplay(false);
   }
   });
+function checkDropDownDisplay(status){
+  if(status===true){
+    $('#response').dropdown('show')
+  }else if(status === false){
+    $('#response').dropdown('hide')
+  }
+
+}
+
+$("#response").on("click", function(){
+  let link = event.target.getElementsByTagName("a");
+  window.location.href = (link.item(0).href);
+});
+
+
 });
 
 </script>
