@@ -1,43 +1,69 @@
+/*  End Vairables */
 html {
   max-width: 1400px;
   margin: auto;
+  scroll-behavior: smooth;
 }
-body{
-background-color: #150D07;
 
+body {
+  color: #FA7D10;
+  font-family: "Bitter", serif;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #150D07;
+  border-radius: 10px;
 }
-nav{
-background-color: #282726;
+
+a:hover {
+  color: #f5f5f5;
 }
-.jumbotron{
-  background-color: #343940;
+
+/*  Navigation Start */
+nav {
+  background-color: #282726;
+  min-height: 80px;
 }
-/* Navigation */
-#navigation{
-  min-height: 60px;
+nav #logo {
+  margin-right: 20px;
 }
-.nav-item {
+nav a {
+  color: #FA7D10;
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
+}
+nav #nav_form {
+  width: 92%;
+  position: absolute;
+}
+nav #nav_form input {
+  background-color: #d3d8de;
+}
+nav .nav-item {
   padding-left: 5px;
   padding-right: 5px;
-  margin-right:5px;
-  margin-left:5px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
-a{
-  color: #FA7D10;
+nav .navbar-brand {
+  -webkit-transition: font-size 2s ease;
+  -moz-transition: font-size 2s ease;
+  -ms-transition: font-size 2s ease;
+  -o-transition: font-size 2s ease;
+  transition: font-size 2s ease;
 }
-a:hover{
-  color: white;
+nav #collapse_list_container {
+  clear: both;
 }
-#navigation #nav_form{
-  position: absolute;
-  width: 100%;
+nav #collapse_button {
+  margin-right: 5px;
 }
 
-/* End Navigation */
-
-
-/* Jumbotron */
-#index_banner{
+/* Navigation End */
+/* Index Page Jumbotron */
+#index_banner {
   min-height: 400px;
   background-size: 400px;
   background-image: url("/assets/main_banner.jpg");
@@ -45,7 +71,7 @@ a:hover{
   background-size: cover;
   position: relative;
 }
-#index_banner h1{
+#index_banner h1 {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   position: absolute;
@@ -53,278 +79,453 @@ a:hover{
   padding: 20px 0px 20px 40px;
 }
 
-/* End Jumbotron */
-
-/* Main Content */
-#main_content{
+/* Index Page Jumbotron End */
+/* Index Page Main Content */
+#main_content {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #282726;
 }
-
-.card{
+#main_content #main_content_row1 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#main_content #main_content_row1 .card {
   margin: auto;
   color: #FA7D10;
   min-height: 500px;
   text-transform: uppercase;
   border: none;
 }
-.card h2{
-  font-weight: bolder;
-  -webkit-transition: padding-top 2s; /* Safari */
-  transition: padding-top 2s;
-}
-.card-body{
+#main_content #main_content_row1 .card .card-body {
   padding: 0px;
 }
-.overlay{
-  margin: auto;
-  height: 60px;
-  padding: 10px 0px 0px 0px;
-  -webkit-transition: height 2s; /* Safari */
-  transition: height 2s;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
+#main_content #main_content_row1 .card .card-body:hover {
+  box-shadow: 0 4px 20px 0 #FA7D10, 0 6px 20px 0 #FA7D10;
+  cursor: pointer;
 }
-.card-body:hover .overlay{
+#main_content #main_content_row1 .card .card-body:hover .overlay {
   background-color: rgba(0, 0, 0, 0.7);
   height: 600px;
 }
-.card-body:hover h2{
+#main_content #main_content_row1 .card .card-body:hover .overlay h2 {
   padding-top: 250px;
 }
-.card-body:hover{
-  cursor:pointer;
+#main_content #main_content_row1 .card .card-body .overlay {
+  margin: auto;
+  height: 60px;
+  padding: 10px 0px 0px 0px;
+  -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
 }
-.card-title{
+#main_content #main_content_row1 .card .card-body .overlay h2 {
   margin-bottom: 0px;
+  font-weight: bolder;
+  -webkit-transition: padding-top 2s ease;
+  -moz-transition: padding-top 2s ease;
+  -ms-transition: padding-top 2s ease;
+  -o-transition: padding-top 2s ease;
+  transition: padding-top 2s ease;
 }
-#main_content_row1{
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#cooking_card{
+
+#cooking_card {
   background-image: url("../assets/bdo_cooking.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#processing_card{
+
+#processing_card {
   background-image: url("../assets/bdo_processing.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#alchemy_card{
+
+#alchemy_card {
   background-image: url("../assets/bdo_alchemy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-
-
-/* Main Content Ends */
-
-
+/* Index Page Main Content End */
 /* Footer */
-.footer{
+.footer {
   visibility: hidden;
+  /* Footer End */
 }
 
-
-
-
-
-/* Calculator Pages  CSS */
-#calc_search_bar{
-    margin: auto;
+/* Calculator Pages   */
+ *
+ * /* Calculator Jumbotron   */
+#calc_jum {
+  background-color: #343940;
+  /* Calculator Jumbotron End   */
+  /* Calculator Main Content   */
 }
-#calc_search_bar form{
+#calc_jum #calc_search_bar {
+  margin: auto;
+}
+#calc_jum #calc_search_bar form {
   display: block;
   padding-top: 20px;
 }
-#calculator_table thead tr{
-  background-color: white;
-  color: black;
+#calc_jum #calc_search_bar form input {
+  background-color: #d3d8de;
 }
-#calculator_table tbody tr:hover {
-  background-color: #f5f5f5;
+
+#calculator_main_content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* Calculator Main Content End   */
 }
-#calculator_main_content table td{
+#calculator_main_content #pagination_controls {
+  height: 30px;
+  float: right;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
+#calculator_main_content #pagination_controls .pagination_link {
+  background-color: #FA7D10;
+  padding: 5px 10px 20px 10px;
+  vertical-align: middle;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+  position: relative;
+}
+#calculator_main_content #pagination_controls .pagination_link:hover {
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #pagination_controls_2 {
+  height: 30px;
+  float: right;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+#calculator_main_content #pagination_controls_2 .second_pagination_link {
+  background-color: #FA7D10;
+  padding: 20px 10px 5px 10px;
+  vertical-align: middle;
+  color: #282726;
+  border-radius: 10px;
+  margin-right: 3px;
+  float: left;
+}
+#calculator_main_content #pagination_controls_2 .second_pagination_link:hover {
+  color: #FA7D10;
+  background-color: #282726;
+}
+#calculator_main_content #calculator_table {
+  position: relative;
+}
+#calculator_main_content #calculator_table thead tr {
+  background-color: #282726;
+  color: #FA7D10;
+}
+#calculator_main_content #calculator_table tbody tr {
+  border-bottom: 2px solid #d3d8de;
+  border-top: 2px solid #d3d8de;
+  border-left: 2px solid #d3d8de;
+  border-right: 2px solid #d3d8de;
+}
+#calculator_main_content #calculator_table tbody tr:nth-child(odd) {
+  background: #343940;
+}
+#calculator_main_content #calculator_table tbody tr:nth-child(even) {
+  background: #282726;
+}
+#calculator_main_content #calculator_table tbody tr td {
   padding: 0px;
+  border-right: 2px solid #d3d8de;
+  vertical-align: middle;
 }
-#calculator_main_content table a{
+#calculator_main_content #calculator_table tbody tr a {
+  color: #FA7D10;
   text-decoration: none;
   display: block;
   width: 100%;
   padding: 1.05em;
 }
-#calculator_main_content table a:hover{
+#calculator_main_content #calculator_table tbody tr:hover {
+  background-color: #d3d8de;
+}
+#calculator_main_content #calculator_table tbody tr:hover a {
   color: white;
-  text-decoration: underline;
-}
-#calculator_main_content table td:nth-child(1){
-  vertical-align: middle;
-}
-#calculator_main_content table tbody tr:nth-child(even) {
-  background: #282726;
-}
-#calculator_main_content table tbody tr:nth-child(odd){
-  background: #343940;
-}
-#calculator_main_content{
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #343940;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Calculator Pages Css End */
-
-
-
-
-/* Details Pages  CSS */
-#recipeImage{
-  padding-top: 5px;
-  padding-bottom: 25px;
+/* Calculator Pages End */
+/* Detials Page */
+ *
+ *
+ * /* Top Page Container */
+#proc_rates {
+  /* Top Page Container End */
+  /* Jumbotron */
 }
-#recipe_materials table{
-  width: 100%;
-  margin:auto;
-  color: #FA7D10;
-  padding-left: -20px;
-  padding-right: -20px;
+#proc_rates #proc_rates_row {
+  background-color: rgba(0, 0, 0, 0.7);
 }
-#recipe_materials{
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#proc_rates_row{
-    background-color: #282726;
-    text-decoration: uppercase;
-    color: #FA7D10;
-}
-#craft_quantity{
+#proc_rates #proc_rates_row #craft_quantity {
   margin: auto;
   display: inline-block;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#craft_quantity p{
+#proc_rates #proc_rates_row #craft_quantity p {
   padding-right: 10px;
 }
-#craft_quantity input{
+#proc_rates #proc_rates_row #craft_quantity #craft_quantity_input {
   width: 150px;
   height: 25px;
   text-align: right;
+  padding-right: 10px;
+  background-color: #d3d8de;
 }
-#tier1_proc{
+#proc_rates #proc_rates_row #craft_quantity input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #craft_quantity input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#proc_rates #proc_rates_row #tier1_proc {
   margin: auto;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#tier1_proc p{
+#proc_rates #proc_rates_row #tier1_proc p {
   padding-right: 10px;
 }
-#tier1_proc input{
+#proc_rates #proc_rates_row #tier1_proc input {
   width: 150px;
   height: 25px;
+  padding-right: 10px;
   text-align: right;
+  background-color: #d3d8de;
 }
-#tier2_proc{
+#proc_rates #proc_rates_row #tier1_proc input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #tier1_proc input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#proc_rates #proc_rates_row #tier2_proc {
   margin: auto;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#tier2_proc p{
+#proc_rates #proc_rates_row #tier2_proc p {
   padding-right: 10px;
 }
-#tier2_proc input{
+#proc_rates #proc_rates_row #tier2_proc input {
   width: 150px;
   height: 25px;
   text-align: right;
+  padding-right: 10px;
+  background-color: #d3d8de;
+}
+#proc_rates #proc_rates_row #tier2_proc input::-webkit-inner-spin-button,
+#proc_rates #proc_rates_row #tier2_proc input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-#calculations_container{
-  margin-bottom: 40px;
+#details_jum {
+  background-color: #343940;
+  /* Jumbotron End */
+  /* Calculations Container  */
 }
-#calculations_container #first_table_container, #second_table_container{
+#details_jum #recipeImage {
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+#details_jum #recipe_materials {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#details_jum #recipe_materials table {
+  width: 100%;
+  margin: auto;
+  color: #FA7D10;
+}
+#details_jum #recipe_materials table #recipe_quantity {
+  padding-right: 20px;
+  width: 25%;
+}
+#details_jum #recipe_materials table #material_name {
+  padding-left: 75px;
+}
+
+#calculations_container {
+  margin-bottom: 40px;
+  /* Calculations Container End */
+}
+#calculations_container #t1 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#calculations_container #t2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#calculations_container #first_table_container {
   width: 100%;
 }
-#calculations_container table{
-  color: #FA7D10;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-
-}
-.table_title{
-  background-color: rgba(0, 0, 0, 0.75);
+#calculations_container #first_table_container .table_title {
+  background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 10px 0px 10px 0px;
   margin-bottom: 0px;
 }
-.recipe_market_price{
-  width: 100%;
-  height: 25px;
-  text-align: right;
+#calculations_container #first_table_container #first_table {
+  color: #FA7D10;
   margin: auto;
-}
-
-
-#costs_table{
-  width: 100%;
-}
-#costs_table thead{
   background-color: rgba(0, 0, 0, 0.5);
 }
-#costs_table_container table{
+#calculations_container #first_table_container #first_table thead {
+  border-bottom: 4px solid #2c323a;
+}
+#calculations_container #first_table_container #first_table #total_cost_head {
+  width: 20%;
+}
+#calculations_container #first_table_container #first_table #image_head {
+  width: 1%;
+}
+#calculations_container #first_table_container #first_table td {
+  vertical-align: middle;
+}
+#calculations_container #first_table_container #first_table input {
+  width: 100%;
+  text-align: left;
+  background-color: #d3d8de;
+}
+#calculations_container #first_table_container #first_table input::-webkit-inner-spin-button,
+#calculations_container #first_table_container #first_table input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#calculations_container #second_table_container {
+  width: 100%;
+}
+#calculations_container #second_table_container .table_title {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+#calculations_container #second_table_container #second_table {
   color: #FA7D10;
-}
-#costs_table_container{
   margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-#costs_table input{}
-#sub_materials_costs{
+#calculations_container #second_table_container #second_table thead {
+  border-bottom: 4px solid #2c323a;
+}
+#calculations_container #second_table_container #second_table input {
+  width: 100%;
+  height: 25px;
+  text-align: left;
   margin: auto;
+  background-color: #d3d8de;
+}
+#calculations_container #second_table_container #second_table input::-webkit-inner-spin-button,
+#calculations_container #second_table_container #second_table input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-
-
-/* Details Pages Css End */
-
-
-
-/* Footer Ends */
 /* Media Queries */
-@media (max-width 992px) {
-html{
-font-size: 1.2rem;
-}
-}
+@media screen and (min-width: 320px) and (max-width: 575px) {
+  #cooking_col {
+    margin-bottom: 10px;
+  }
 
-@media (max-width 768px) {
-html{
-font-size: 0.1rem;
-}
-}
+  #processing_col {
+    margin-bottom: 10px;
+  }
 
-@media (max-width 576px) {
-  html{
-font-size: 0.85rem;
+  .flex_table {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #image_row {
+    display: none;
+  }
+
+  #profit_image_row {
+    display: none;
+  }
+
+  #image_head {
+    display: none;
+  }
+
+  .filler_1 {
+    display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  #first_table thead {
+    font-size: 0.8rem;
+  }
+  #first_table tbody {
+    font-size: 0.8rem;
+  }
+
+  #second_table thead {
+    font-size: 0.8rem;
+  }
+  #second_table tbody {
+    font-size: 0.8rem;
+  }
+
+  #second_table_container {
+    margin-top: 15px;
+  }
+
+  #image_row {
+    display: none;
+  }
+
+  #profit_image_row {
+    display: none;
+  }
+
+  #image_head {
+    display: none;
+  }
+
+  .filler_1 {
+    display: none;
+  }
+
+  #test_container {
+    max-width: 1%;
+  }
+
+  #nav_form {
+    padding-left: 10px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1140px) {
+  #first_table tbody {
+    font-size: 0.85rem;
+  }
+
+  #test_container {
+    max-width: 1%;
+  }
+}
+@media screen and (max-width: 991px) {
+  #second_table_container {
+    margin-top: 15px;
+  }
+
+  #test_container {
+    max-width: 1%;
+  }
+}
+/* Media Queries End */
+/* Detials Page End */
+
+/*# sourceMappingURL=style.css.map */
