@@ -23,7 +23,7 @@
   <div id="main_content_row1" class="row">
 
 
-    <div class="col-sm-4">
+    <div id="cooking_col" class="col-sm-4">
       <div id="cooking_card" class="card text-center">
         <div class="card-body d-flex">
           <div class="overlay">
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4">
+    <div id="processing_col" class="col-sm-4">
       <div id="processing_card" class="card text-center">
         <div class="card-body d-flex">
           <div class="overlay">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4">
+    <div id="alchemy_col" class="col-sm-4">
       <div id="alchemy_card" class="card text-center">
         <div class="card-body d-flex">
           <div class="overlay">

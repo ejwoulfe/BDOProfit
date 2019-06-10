@@ -34,6 +34,7 @@ $tooltip-color: red
 html
   max-width: 1400px
   margin: auto
+  scroll-behavior: smooth
 
 body
   @include default_font
@@ -45,20 +46,25 @@ a:hover
   color: $hover_color
 
 /*  Navigation Start */
+
 nav
   background-color: $gray_background_color
   min-height: 80px
+  
+  #logo
+    margin-right: 20px
+    
 
   a
     color: $text_color
     @include transition(font-size 2s ease)
 
-    &:hover
-      font-size: 1.25rem
-
   #nav_form
-    width: 100%
+    width: 92%
     position: absolute
+    
+    input
+      background-color: $input_background_color
 
   .nav-item
     padding-left: 5px
@@ -68,10 +74,14 @@ nav
 
   .navbar-brand
     @include transition(font-size 2s ease)
-    &:hover
-      font-size: 1.75rem
-
-
+      
+  #collapse_list_container
+    clear: both
+    
+  #collapse_button
+    margin-right: 5px
+    
+    
 
 /* Navigation End */
 
@@ -173,6 +183,9 @@ nav
     form
       display: block
       padding-top: 20px
+      
+      input
+        background-color: $input_background_color
 
   /* Calculator Jumbotron End   */
 
@@ -200,6 +213,12 @@ nav
       &:hover
         color: $text_color
         background-color: #282726
+        
+  #pagination_controls_2
+    height: 30px
+    float: right
+    margin-bottom: 10px
+    margin-top: -25px
 
     .second_pagination_link
       background-color: $text_color
@@ -208,6 +227,7 @@ nav
       color: #282726
       border-radius: 10px
       margin-right: 3px
+      float: left
 
       &:hover
         color: $text_color
@@ -428,6 +448,12 @@ nav
 
 /* Media Queries */
 @media screen and (min-width : 320px) and (max-width : 575px)
+  #cooking_col
+    margin-bottom: 10px
+    
+  #processing_col
+    margin-bottom: 10px
+  
   .flex_table
     padding-right:0
     padding-left:0
@@ -471,6 +497,13 @@ nav
 
     .filler_1
       display: none
+    
+    #test_container
+      max-width: 1%
+      
+    #nav_form
+      padding-left: 10px
+    
 
 
 @media screen and (min-width : 769px) and (max-width : 1140px)
@@ -478,10 +511,16 @@ nav
 
     tbody
       font-size: 0.85rem
+      
+  #test_container
+    max-width: 1%
 
-@media screen and (min-width : 769px) and (max-width : 991px)
+@media screen and (max-width : 991px)
   #second_table_container
     margin-top: 15px
+    
+  #test_container
+    max-width: 1%
 
 /* Media Queries End */
 

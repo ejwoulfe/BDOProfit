@@ -31,13 +31,13 @@ if(isset($_POST['recipe_name'])){
     if($totalPages>1){
       for($i = 1; $i <= $totalPages; $i++){
         if($i == $currentPage){
-          $output .= "<span class='second_pagination_link' style='cursor:pointer; color: #FA7D10; background-color: #282726; bottom: -10px;' id='" .$i. "'>" .$i."</span>";
+          $output .= "<span class='second_pagination_link' style='cursor:pointer; color: #FA7D10; background-color: #282726; position: relative; padding-top: 3px; border-radius: 0px 0px 10px 10px; top: 8.5px;' id='" .$i. "'>" .$i."</span>";
         }else{
           $output .= "<span class='second_pagination_link' style='cursor:pointer;' id='" .$i. "'>" .$i."</span>";
         }
       }
     }
-    return '<div id="pagination_controls" ">' .$output. '</div>';
+    return '<div id="pagination_controls_2" ">' .$output. '</div>';
   }
   
   

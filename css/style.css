@@ -2,6 +2,7 @@
 html {
   max-width: 1400px;
   margin: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,6 +23,9 @@ nav {
   background-color: #282726;
   min-height: 80px;
 }
+nav #logo {
+  margin-right: 20px;
+}
 nav a {
   color: #FA7D10;
   -webkit-transition: font-size 2s ease;
@@ -30,12 +34,12 @@ nav a {
   -o-transition: font-size 2s ease;
   transition: font-size 2s ease;
 }
-nav a:hover {
-  font-size: 1.25rem;
-}
 nav #nav_form {
-  width: 100%;
+  width: 92%;
   position: absolute;
+}
+nav #nav_form input {
+  background-color: #d3d8de;
 }
 nav .nav-item {
   padding-left: 5px;
@@ -50,8 +54,11 @@ nav .navbar-brand {
   -o-transition: font-size 2s ease;
   transition: font-size 2s ease;
 }
-nav .navbar-brand:hover {
-  font-size: 1.75rem;
+nav #collapse_list_container {
+  clear: both;
+}
+nav #collapse_button {
+  margin-right: 5px;
 }
 
 /* Navigation End */
@@ -166,6 +173,9 @@ nav .navbar-brand:hover {
   display: block;
   padding-top: 20px;
 }
+#calc_jum #calc_search_bar form input {
+  background-color: #d3d8de;
+}
 
 #calculator_main_content {
   padding-top: 40px;
@@ -191,15 +201,22 @@ nav .navbar-brand:hover {
   color: #FA7D10;
   background-color: #282726;
 }
-#calculator_main_content #pagination_controls .second_pagination_link {
+#calculator_main_content #pagination_controls_2 {
+  height: 30px;
+  float: right;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+#calculator_main_content #pagination_controls_2 .second_pagination_link {
   background-color: #FA7D10;
   padding: 20px 10px 5px 10px;
   vertical-align: middle;
   color: #282726;
   border-radius: 10px;
   margin-right: 3px;
+  float: left;
 }
-#calculator_main_content #pagination_controls .second_pagination_link:hover {
+#calculator_main_content #pagination_controls_2 .second_pagination_link:hover {
   color: #FA7D10;
   background-color: #282726;
 }
@@ -418,6 +435,14 @@ nav .navbar-brand:hover {
 
 /* Media Queries */
 @media screen and (min-width: 320px) and (max-width: 575px) {
+  #cooking_col {
+    margin-bottom: 10px;
+  }
+
+  #processing_col {
+    margin-bottom: 10px;
+  }
+
   .flex_table {
     padding-right: 0;
     padding-left: 0;
@@ -473,15 +498,31 @@ nav .navbar-brand:hover {
   .filler_1 {
     display: none;
   }
+
+  #test_container {
+    max-width: 1%;
+  }
+
+  #nav_form {
+    padding-left: 10px;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 1140px) {
   #first_table tbody {
     font-size: 0.85rem;
   }
+
+  #test_container {
+    max-width: 1%;
+  }
 }
-@media screen and (min-width: 769px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   #second_table_container {
     margin-top: 15px;
+  }
+
+  #test_container {
+    max-width: 1%;
   }
 }
 /* Media Queries End */
