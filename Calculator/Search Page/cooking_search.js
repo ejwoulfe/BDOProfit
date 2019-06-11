@@ -37,7 +37,7 @@ function findRecipe(page){
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
   }
   let data = "recipe_name="+recipe+"&page="+pageNumber;
-  xhr.open("POST", "../../inc/Search/alchemy_search.php", true);
+  xhr.open("POST", "Search Tables/cooking_search_table.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send(data);
 
