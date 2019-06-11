@@ -26,6 +26,43 @@ nav {
 nav #logo {
   margin-right: 20px;
 }
+nav .dropdown-menu {
+  padding: 0px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #d3d8de;
+  width: inherit;
+}
+nav .dropdown-menu span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+nav .dropdown-menu span:hover {
+  cursor: pointer;
+}
+nav .dropdown-menu li {
+  border-bottom: 2px solid #343940;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+nav .dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+nav .dropdown-menu li:first-child {
+  margin-top: -1px;
+}
+nav .dropdown-menu li img {
+  padding-left: 15px;
+}
+nav .dropdown-menu li a {
+  padding-left: 30px;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+nav .dropdown-menu li a:hover {
+  color: #FA7D10;
+}
 nav a {
   color: #FA7D10;
   -webkit-transition: font-size 2s ease;
@@ -465,45 +502,49 @@ nav #collapse_button {
   }
 }
 @media screen and (max-width: 768px) {
-  #first_table thead {
+  nav .dropdown-menu {
+    margin-left: 10px;
+  }
+  nav .dropdown-menu span {
+    display: inline-flex;
+  }
+  nav .dropdown-menu span img {
+    display: none;
+  }
+  nav .dropdown-menu span a {
+    float: left;
+  }
+  nav #first_table thead {
     font-size: 0.8rem;
   }
-  #first_table tbody {
+  nav #first_table tbody {
     font-size: 0.8rem;
   }
-
-  #second_table thead {
+  nav #second_table thead {
     font-size: 0.8rem;
   }
-  #second_table tbody {
+  nav #second_table tbody {
     font-size: 0.8rem;
   }
-
-  #second_table_container {
+  nav #second_table_container {
     margin-top: 15px;
   }
-
-  #image_row {
+  nav #image_row {
     display: none;
   }
-
-  #profit_image_row {
+  nav #profit_image_row {
     display: none;
   }
-
-  #image_head {
+  nav #image_head {
     display: none;
   }
-
-  .filler_1 {
+  nav .filler_1 {
     display: none;
   }
-
-  #test_container {
+  nav #test_container {
     max-width: 1%;
   }
-
-  #nav_form {
+  nav #nav_form {
     padding-left: 10px;
   }
 }
@@ -517,6 +558,13 @@ nav #collapse_button {
   }
 }
 @media screen and (max-width: 991px) {
+  nav .dropdown-menu li img {
+    padding-left: 5px;
+  }
+  nav .dropdown-menu li a {
+    padding-left: 10px;
+  }
+
   #second_table_container {
     margin-top: 15px;
   }
