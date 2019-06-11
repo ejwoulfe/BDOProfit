@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$_SESSION['craftType'] = $_POST['sendCellValue'];
+echo $_SESSION['craftType'];
+?>
+
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg">
   <div id="navigation" class="container-fluid">
@@ -33,13 +39,13 @@
         <div class="collapse navbar-collapse flex-grow-0 text-right flex-wrap ml-auto" id="navbarList">
           <ul id="ul_container" class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a id="cooking_button" class="nav-link" href="../Calculator/cook.php">Cooking</a>
+              <a id="cooking_button" class="nav-link calculator_links">Cooking</a>
             </li>
             <li class="nav-item">
-              <a id="processing_button" class="nav-link"href="../Calculator/process.php">Processing</a>
+              <a id="processing_button" class="nav-link calculator_links">Processing</a>
             </li>
             <li class="nav-item">
-              <a id="alchemy_button"  class="nav-link"href="../Calculator/alchemy.php">Alchemy</a>
+              <a id="alchemy_button"  class="nav-link calculator_links">Alchemy</a>
             </li>
           </ul>
         </div>
@@ -49,6 +55,7 @@
 </nav>
 <!-- Navigation Bar End -->
 <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="../js/URL Links/search_page.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
   $("#nav_search_bar").keyup(function() {
@@ -62,29 +69,33 @@ $(document).ready(function() {
         },
         success: function(data){
           $('#response').html(data);
-          $('#response').dropdown('show');
-          checkDropDownDisplay(true);
+          dropDownDisplay(true);
         },
         error: function(data){
           console.log(data);
         }
     });
   }else{
-    checkDropDownDisplay(false);
+    dropDownDisplay(false);
   }
   });
-function checkDropDownDisplay(status){
+function dropDownDisplay(status){
   if(status===true){
     $('#response').dropdown('show')
   }else if(status === false){
     $('#response').dropdown('hide')
   }
-
 }
 
 $("#response").on("click", function(){
   let link = event.target.getElementsByTagName("a");
   window.location.href = (link.item(0).href);
+});
+
+$('#nav_form').on('shown.bs.dropdown', function () {
+  $('body').click(function(event) {
+    dropDownDisplay(false);
+});
 });
 
 
