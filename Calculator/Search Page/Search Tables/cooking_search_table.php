@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['recipe_name'])){
-  require '../connectToDatabase.php';
+  require '../../../Includes/connectToDatabase.php';
   $recipesPerPage = 100;
   $search_value = trim($_POST['recipe_name']);
   $search_value_filter = filter_var($search_value, FILTER_SANITIZE_STRING);
@@ -8,7 +8,7 @@ if(isset($_POST['recipe_name'])){
   $firstLimit = ($page * $recipesPerPage);
   $currentPage = $page + 1;
   
-  $pages_query = "SELECT * FROM alchemy_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%'";
+  $pages_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%'";
   $pages_result = mysqli_query($conn, $pages_query);
   $totalRecipes=mysqli_num_rows($pages_result);
   $totalPages= ceil($totalRecipes/$recipesPerPage);
@@ -45,13 +45,13 @@ if(isset($_POST['recipe_name'])){
   
   
   function tbodyDiv($search_value_filter, $firstLimit, $recipesPerPage, $conn){
-    $sql_query = "SELECT * FROM alchemy_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%' LIMIT $firstLimit, $recipesPerPage";
+    $sql_query = "SELECT * FROM cooking_recipes_table WHERE recipe_name LIKE '%{$search_value_filter}%' LIMIT $firstLimit, $recipesPerPage";
     $result = mysqli_query($conn, $sql_query);
     while ($row = mysqli_fetch_assoc($result)) {
       
       
-      $trOutput .= '<tr><td style="width: 10%" class="img_row"><img src="' .$row["recipe_image"]. '" height="30" ></td>' .
-      "<td><div class='overlay'><a class='name_row' href='alchemyDetails.php?id={$row['recipe_id']}'>" .$row["recipe_name"]. "</div></td></tr>";
+      $trOutput .= '<tr><td style="width: 10%" class="img_row"><img src="../' .$row["recipe_image"]. '" height="30" ></td>' .
+      "<td><div class='overlay'><a class='name_row' href='../../Calculator/Recipe Page/cooking_recipe.php?id={$row['recipe_id']}'>" .$row["recipe_name"]. "</div></td></tr>";
       
     }
     return '<tbody id="calculator_tbody" class="rounded">' .$trOutput. '</tbody></table>';

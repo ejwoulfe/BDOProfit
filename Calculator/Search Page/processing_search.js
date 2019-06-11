@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 var delayTimer;
 $('#bar').on('keyup', function(event){
-
- if((event.which === 13 || event.keyCode === 13) && event.target !== ''){
+console.log(event);
+ if((event.which === 13 || event.keyCode === 13)){
       event.preventDefault();
     }
       findRecipe(1);
@@ -27,6 +27,7 @@ function hideSecondPagination(){
   
 }
 
+
 function findRecipe(page){
   let recipe = document.getElementById("bar").value;
   let pageNumber = page;
@@ -37,7 +38,7 @@ function findRecipe(page){
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
   }
   let data = "recipe_name="+recipe+"&page="+pageNumber;
-  xhr.open("POST", "../../inc/Search/search_recipes.php", true);
+  xhr.open("POST", "Search Tables/processing_search_table.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send(data);
 
@@ -63,7 +64,6 @@ function addEventListener(){
 $('.second_pagination_link').click(function(){
   let page = parseInt(event.target.innerHTML);
   findRecipe(page);
-  $('html').scrollTop(0);
   if (this.hash !== "") {
     // Prevent default anchor click behavior
     event.preventDefault();
@@ -82,4 +82,9 @@ $('.second_pagination_link').click(function(){
     });
   } // End if
 });
+
+
+
 }
+
+

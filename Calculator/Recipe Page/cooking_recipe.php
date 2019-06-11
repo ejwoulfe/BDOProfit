@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<?php require_once('../inc/header.php');
-require ('../inc/connectToDatabase.php');
-require ('cook_get.php');
+<?php require '../../Includes/header.php';
+require '../../Includes/connectToDatabase.php';
+require ('Get Recipe Data/get_cooking_recipe_data.php');
 
 ?>
 <body>
-  <?php require_once('../inc/navigation.php');?>
+  <?php require '../../Includes/navigation.php';?>
 
   <div id="proc_rates" class="container-fluid bg-dark">
     <div id="proc_rates_row" class="row">
@@ -41,7 +41,7 @@ require ('cook_get.php');
 
 <div id="details_jum" class="jumbotron">
   <h1 class="display-4 text-center"><?php echo $row['recipe_name']  ?></h1>
-  <div id="recipeImage"><?php echo '<img src="' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
+  <div id="recipeImage"><?php echo '<img src="../' .$row['recipe_image']. '" class="rounded mx-auto d-block" height="50" >' ?></div>
   <div class="row">
     <div id="recipe_materials" class="flex_table container-fluid col-lg-6">
       <table class="table table-borderless text-center">
@@ -51,7 +51,7 @@ require ('cook_get.php');
           for ($x = 0; $x < $nullRow['sum_of_nulls']; $x+=2) {
             $y = $x +1;
             echo '<tr>
-            <td class="text-center"><img src="'
+            <td class="text-center"><img src="../'
             .getMaterialImage($subRow[$y], $conn).
             '"  height="30"></td"><td id="material_name" >'
             .getMaterialID($subRow[$y], $conn).
@@ -105,7 +105,7 @@ require ('cook_get.php');
               $total_cost = "total_cost_row_" . $strCount;
               $y = $x +1;
               echo '<tr id="' . $cost_row .   '">
-              <td id="image_row" class="text-center"><img src="'
+              <td id="image_row" class="text-center"><img src="../'
               .getMaterialImage($subRow[$y], $conn).
               '"  height="30"></td><td class="text-center">'
               .getMaterialID($subRow[$y], $conn).
@@ -169,7 +169,7 @@ require ('cook_get.php');
               $y = $i +1;
               echo '<tr id="' . $profit_row .   '">
               <td style="width:1%" id="' . $profit_quantity .   '" class="reward_quantity text-right")">0</td>
-              <td id="profit_image_row" class="align-middle text-center"><img src="'
+              <td id="profit_image_row" class="align-middle text-center"><img src="../'
               .getMaterialImage($rewardRow[$y], $conn).
               '"  height="30"></td><td class="align-middle text-left">'
               .getMaterialID($rewardRow[$y], $conn).
@@ -209,7 +209,7 @@ require ('cook_get.php');
 <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="../js/Details/app.js"></script>
+<script src="recipe_calculator.js"></script>
 
 
 </body>
