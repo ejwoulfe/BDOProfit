@@ -155,14 +155,27 @@ let UIController = (function()  {
       if (input === '') {
         input === 0;
       }
-      if(!isNaN(input) && input.match(/^[0-9]+$/) && input < 99999999999){
+      if(!isNaN(input) && input.match(/^[0-9]+$/) && input <= 99999999999){
         check = true;
       }else{
         check = false;
       }
 
       return check;
-    }
+    },
+    validateCraftQuantityInput: function(input){
+      let check = false;
+      if (input === '') {
+        input === 0;
+      }
+      if(!isNaN(input) && input.match(/^[0-9]+$/) && input <= 999999){
+        check = true;
+      }else{
+        check = false;
+      }
+
+      return check;
+    },
   }
 })();
 
@@ -233,9 +246,9 @@ let appController = (function(recipeCtrl, UICtrl)  {
 });
 
     $("#craft_quantity_input").on('keypress', function(event){
-      if((event.which === 13 || event.keyCode === 13) && UICtrl.validateInput(event.target.value)){
+      if((event.which === 13 || event.keyCode === 13) && UICtrl.validateCraftQuantityInput(event.target.value)){
         ctrlAddQuantities(recipeCtrl.calculateSubQuantities(event.target.value), recipeCtrl.calculateRewardQuantities(event.target.value));
-      } else if((event.which === 13 || event.keyCode === 13) && !UICtrl.validateInput(event.target.value)){
+      } else if((event.which === 13 || event.keyCode === 13) && !UICtrl.validateCraftQuantityInput(event.target.value)){
         $("#craft_quantity_input").tooltip('show');
         setTimeout(function(){
         $("#craft_quantity_input").tooltip('hide');

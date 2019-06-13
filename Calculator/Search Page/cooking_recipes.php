@@ -6,35 +6,30 @@
 <body>
   <?php require_once('../../Includes/navigation.php');?>
 
-
+  <!-- Jumbotron -->
   <div id="calc_jum" class="jumbotron ">
-    <h1 class="display-4 text-center">Cook Calculator</h1>
+    <h1 class="display-4 text-center">Cooking Calculator</h1>
     <p class="h5 text-center">What are you looking to cook?</p>
+    
+    <!-- Search Bar -->
     <div id="calc_search_bar" class="col-md-8">
-      <form class="form-inline">
+      <form action="" class="form-inline">
         <div class="input-group mb-3">
           <input id="bar" type="text" class="form-control" placeholder="Search for Recipe" aria-label="cook search" aria-describedby="basic-addon2">
-          <!-- <div class="input-group-append">
-            <button id="btn" class="btn btn-outline-secondary" type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-          </div> -->
         </div>
       </form>
     </div>
+    <!-- Search Bar End -->
+    
   </div>
+  <!-- Jumbotron End -->
 
 
-
+  <!-- Recipes Table -->
   <div id="calculator_main_content" class="container-fluid">
-    <!-- <table id="calculator_table" class="table table-borderless text-center">
 
-
-
-    </table> -->
   </div>
-
-
+  <!-- Recipes Table End -->
 
 
 

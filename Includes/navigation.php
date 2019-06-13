@@ -2,12 +2,13 @@
 <nav class="navbar navbar-expand-lg">
   <div id="navigation" class="container-fluid">
 
-
+    <!-- Logo -->
     <div id="logo" class="col-2" >
       <a class="navbar-brand" href="../../index.php">BDOWolf</a>
     </div>
+    <!-- Logo End -->
 
-
+    <!-- Search Bar -->
     <div class="col-6 mt-4 mb-4">
       <form class="form-inline" action="" method="POST">
         <div id="nav_form" class="input-group mb-3">
@@ -20,12 +21,11 @@
           </div>
         </div>
       </form>
-
     </div>
+    <!-- Search Bar End -->
 
-
-
-    <div id="test_container"  class="col-sm-4 ml-auto pr-0">
+    <!-- Link Items -->
+    <div id="collapse_container"  class="col-sm-4 ml-auto pr-0">
       <button id="collapse_button" class="navbar-toggler mb-2 float-right" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars mt-2" style="color: white"></i>
       </button>
@@ -45,12 +45,20 @@
         </div>
       </div>
     </div>
+    <!-- Link Items End -->
   </div>
 </nav>
 <!-- Navigation Bar End -->
+
+
+<!-- Scripts -->
 <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+  /* As user types in the navigation search bar, after 3 letters we start searching our database for like recipe names.
+  * We search using an ajax object to send a POST to our search php file.
+  * If search is successful, display the data underneath the search bar, else  we can display an error message or hide it.
+  */
   $("#nav_search_bar").keyup(function() {
     let query = $("#nav_search_bar").val();
     if(query.length > 2){
@@ -72,6 +80,8 @@ $(document).ready(function() {
     dropDownDisplay(false);
   }
   });
+
+// Function to hide or show the drop down menu.
 function dropDownDisplay(status){
   if(status===true){
     $('#response').dropdown('show')
@@ -80,18 +90,23 @@ function dropDownDisplay(status){
   }
 }
 
+// Event Handlers
 $("#response").on("click", function(){
   let link = event.target.getElementsByTagName("a");
   window.location.href = (link.item(0).href);
 });
 
-$('#nav_form').on('shown.bs.dropdown', function () {
+/* Using bootstraps shown event, if the drop down is currently being shown
+* and the user clicks anything but the dropdown,
+* we can just hide the display so it isn't in their way.
+*/
+$('#nav_form').on('shown.bs.dropdown', function (e) {
   $('body').click(function(event) {
     dropDownDisplay(false);
 });
 });
 
-
 });
 
 </script>
+<!-- Scripts End-->

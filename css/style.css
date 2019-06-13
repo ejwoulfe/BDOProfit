@@ -1,4 +1,8 @@
+/* Vairables */
 /*  End Vairables */
+/*  Mixins */
+/*  Mixins End */
+/*  All Pages */
 html {
   max-width: 1400px;
   margin: auto;
@@ -18,13 +22,23 @@ a:hover {
   color: #f5f5f5;
 }
 
-/*  Navigation Start */
+/* All Pages End */
+/* Navigation */
 nav {
   background-color: #282726;
   min-height: 80px;
+  /* Navigation Links End */  
 }
 nav #logo {
   margin-right: 20px;
+  /* Search Bar */
+}
+nav #nav_form {
+  width: 92%;
+  position: absolute;
+}
+nav #nav_form input {
+  background-color: #d3d8de;
 }
 nav .dropdown-menu {
   padding: 0px;
@@ -32,6 +46,8 @@ nav .dropdown-menu {
   overflow-y: auto;
   background-color: #d3d8de;
   width: inherit;
+  /* Search Bar End */
+  /* Navigation Links */
 }
 nav .dropdown-menu span {
   display: block;
@@ -65,31 +81,12 @@ nav .dropdown-menu li a:hover {
 }
 nav a {
   color: #FA7D10;
-  -webkit-transition: font-size 2s ease;
-  -moz-transition: font-size 2s ease;
-  -ms-transition: font-size 2s ease;
-  -o-transition: font-size 2s ease;
-  transition: font-size 2s ease;
-}
-nav #nav_form {
-  width: 92%;
-  position: absolute;
-}
-nav #nav_form input {
-  background-color: #d3d8de;
 }
 nav .nav-item {
   padding-left: 5px;
   padding-right: 5px;
   margin-right: 5px;
   margin-left: 5px;
-}
-nav .navbar-brand {
-  -webkit-transition: font-size 2s ease;
-  -moz-transition: font-size 2s ease;
-  -ms-transition: font-size 2s ease;
-  -o-transition: font-size 2s ease;
-  transition: font-size 2s ease;
 }
 nav #collapse_list_container {
   clear: both;
@@ -99,6 +96,7 @@ nav #collapse_button {
 }
 
 /* Navigation End */
+/*////////////////////////////// Index Page //////////////////////////////*/
 /* Index Page Jumbotron */
 #index_banner {
   min-height: 400px;
@@ -189,19 +187,13 @@ nav #collapse_button {
 }
 
 /* Index Page Main Content End */
-/* Footer */
-.footer {
-  visibility: hidden;
-  /* Footer End */
-}
-
-/* Calculator Pages   */
+/*////////////////////////////// Index Page End //////////////////////////////*/
+/*////////////////////////////// Calculator Pages //////////////////////////////*/
  *
  * /* Calculator Jumbotron   */
 #calc_jum {
   background-color: #343940;
   /* Calculator Jumbotron End   */
-  /* Calculator Main Content   */
 }
 #calc_jum #calc_search_bar {
   margin: auto;
@@ -214,18 +206,20 @@ nav #collapse_button {
   background-color: #d3d8de;
 }
 
+/* Calculator Main Content   */
 #calculator_main_content {
   padding-top: 40px;
   padding-bottom: 40px;
-  /* Calculator Main Content End   */
+  /* Pagination Buttons */
 }
-#calculator_main_content #pagination_controls {
+
+#pagination_controls {
   height: 30px;
   float: right;
   margin-bottom: 5px;
   margin-top: -10px;
 }
-#calculator_main_content #pagination_controls .pagination_link {
+#pagination_controls .pagination_link {
   background-color: #FA7D10;
   padding: 5px 10px 20px 10px;
   vertical-align: middle;
@@ -234,17 +228,18 @@ nav #collapse_button {
   margin-right: 3px;
   position: relative;
 }
-#calculator_main_content #pagination_controls .pagination_link:hover {
+#pagination_controls .pagination_link:hover {
   color: #FA7D10;
   background-color: #282726;
 }
-#calculator_main_content #pagination_controls_2 {
+
+#pagination_controls_2 {
   height: 30px;
   float: right;
   margin-bottom: 10px;
   margin-top: -25px;
 }
-#calculator_main_content #pagination_controls_2 .second_pagination_link {
+#pagination_controls_2 .second_pagination_link {
   background-color: #FA7D10;
   padding: 20px 10px 5px 10px;
   vertical-align: middle;
@@ -252,226 +247,250 @@ nav #collapse_button {
   border-radius: 10px;
   margin-right: 3px;
   float: left;
+  /* Pagination Buttons End */
+  /* Calculator Tables */  
 }
-#calculator_main_content #pagination_controls_2 .second_pagination_link:hover {
+#pagination_controls_2 .second_pagination_link:hover {
   color: #FA7D10;
   background-color: #282726;
 }
-#calculator_main_content #calculator_table {
+
+#calculator_table {
   position: relative;
+  /* Calculator Tables End*/
+  /* Calculator Main Content End */
 }
-#calculator_main_content #calculator_table thead tr {
+#calculator_table thead tr {
   background-color: #282726;
   color: #FA7D10;
 }
-#calculator_main_content #calculator_table tbody tr {
+#calculator_table tbody tr {
   border-bottom: 2px solid #d3d8de;
   border-top: 2px solid #d3d8de;
   border-left: 2px solid #d3d8de;
   border-right: 2px solid #d3d8de;
 }
-#calculator_main_content #calculator_table tbody tr:nth-child(odd) {
+#calculator_table tbody tr:nth-child(odd) {
   background: #343940;
 }
-#calculator_main_content #calculator_table tbody tr:nth-child(even) {
+#calculator_table tbody tr:nth-child(even) {
   background: #282726;
 }
-#calculator_main_content #calculator_table tbody tr td {
+#calculator_table tbody tr td {
   padding: 0px;
   border-right: 2px solid #d3d8de;
   vertical-align: middle;
 }
-#calculator_main_content #calculator_table tbody tr a {
+#calculator_table tbody tr a {
   color: #FA7D10;
   text-decoration: none;
   display: block;
   width: 100%;
   padding: 1.05em;
 }
-#calculator_main_content #calculator_table tbody tr:hover {
+#calculator_table tbody tr:hover {
   background-color: #d3d8de;
 }
-#calculator_main_content #calculator_table tbody tr:hover a {
+#calculator_table tbody tr:hover a {
   color: white;
 }
 
-/* Calculator Pages End */
-/* Detials Page */
- *
- *
+/*////////////////////////////// Calculator Pages End //////////////////////////////*/
+/*////////////////////////////// Recipe Pages //////////////////////////////*/
  * /* Top Page Container */
-#proc_rates {
+#proc_rates_row {
+  background-color: rgba(0, 0, 0, 0.7);
   /* Top Page Container End */
   /* Jumbotron */
 }
-#proc_rates #proc_rates_row {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-#proc_rates #proc_rates_row #craft_quantity {
+#proc_rates_row #craft_quantity {
   margin: auto;
   display: inline-block;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#proc_rates #proc_rates_row #craft_quantity p {
+#proc_rates_row #craft_quantity p {
   padding-right: 10px;
 }
-#proc_rates #proc_rates_row #craft_quantity #craft_quantity_input {
+#proc_rates_row #craft_quantity #craft_quantity_input {
   width: 150px;
   height: 25px;
   text-align: right;
   padding-right: 10px;
   background-color: #d3d8de;
 }
-#proc_rates #proc_rates_row #craft_quantity input::-webkit-inner-spin-button,
-#proc_rates #proc_rates_row #craft_quantity input::-webkit-outer-spin-button {
+#proc_rates_row #craft_quantity input::-webkit-inner-spin-button,
+#proc_rates_row #craft_quantity input::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-#proc_rates #proc_rates_row #tier1_proc {
+#proc_rates_row #tier1_proc {
   margin: auto;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#proc_rates #proc_rates_row #tier1_proc p {
+#proc_rates_row #tier1_proc p {
   padding-right: 10px;
 }
-#proc_rates #proc_rates_row #tier1_proc input {
+#proc_rates_row #tier1_proc input {
   width: 150px;
   height: 25px;
   padding-right: 10px;
   text-align: right;
   background-color: #d3d8de;
 }
-#proc_rates #proc_rates_row #tier1_proc input::-webkit-inner-spin-button,
-#proc_rates #proc_rates_row #tier1_proc input::-webkit-outer-spin-button {
+#proc_rates_row #tier1_proc input::-webkit-inner-spin-button,
+#proc_rates_row #tier1_proc input::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-#proc_rates #proc_rates_row #tier2_proc {
+#proc_rates_row #tier2_proc {
   margin: auto;
   min-height: 50px;
   padding-top: 20px;
   text-transform: uppercase;
 }
-#proc_rates #proc_rates_row #tier2_proc p {
+#proc_rates_row #tier2_proc p {
   padding-right: 10px;
 }
-#proc_rates #proc_rates_row #tier2_proc input {
+#proc_rates_row #tier2_proc input {
   width: 150px;
   height: 25px;
   text-align: right;
   padding-right: 10px;
   background-color: #d3d8de;
 }
-#proc_rates #proc_rates_row #tier2_proc input::-webkit-inner-spin-button,
-#proc_rates #proc_rates_row #tier2_proc input::-webkit-outer-spin-button {
+#proc_rates_row #tier2_proc input::-webkit-inner-spin-button,
+#proc_rates_row #tier2_proc input::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
 #details_jum {
   background-color: #343940;
-  /* Jumbotron End */
-  /* Calculations Container  */
 }
-#details_jum #recipeImage {
+
+#recipeImage {
   padding-top: 5px;
   padding-bottom: 25px;
 }
-#details_jum #recipe_materials {
+
+#recipe_materials {
   background-color: rgba(0, 0, 0, 0.5);
+  /* Jumbotron End */
+  /* Calculations Container */
 }
-#details_jum #recipe_materials table {
+#recipe_materials table {
   width: 100%;
   margin: auto;
   color: #FA7D10;
 }
-#details_jum #recipe_materials table #recipe_quantity {
+#recipe_materials table #recipe_quantity {
   padding-right: 20px;
   width: 25%;
 }
-#details_jum #recipe_materials table #material_name {
+#recipe_materials table #material_name {
   padding-left: 75px;
 }
 
 #calculations_container {
   margin-bottom: 40px;
-  /* Calculations Container End */
+  border-radius: 0.3rem;
+  /* Costs Table */
 }
-#calculations_container #t1 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-#calculations_container #t2 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-#calculations_container #first_table_container {
-  width: 100%;
-}
-#calculations_container #first_table_container .table_title {
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 10px 0px 10px 0px;
+#calculations_container table {
   margin-bottom: 0px;
 }
-#calculations_container #first_table_container #first_table {
-  color: #FA7D10;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+#calculations_container .title_container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px 10px 0px 0px;
 }
-#calculations_container #first_table_container #first_table thead {
+#calculations_container .table_title {
+  margin-bottom: 0px;
+  height: 15%;
+}
+#calculations_container thead {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  border-bottom: 4px solid white;
+  font-size: 0.95rem;
+  font-style: oblique;
+}
+#calculations_container tbody {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FA7D10;
+}
+#calculations_container tr {
+  display: flex;
+}
+#calculations_container tr:last-child {
+  border-bottom: 0px;
+}
+#calculations_container .table_bottom {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0px 0px 10px 10px;
+}
+#calculations_container td {
+  align-self: center;
+}
+#calculations_container #total_profit_text, #calculations_container #total_cost_text {
+  font-size: 1rem;
+  white-space: nowrap;
+  font-style: oblique;
+  color: white;
+}
+#calculations_container #total_recipe_profit, #calculations_container #total_recipe_cost {
+  color: white;
+  font-style: oblique;
+}
+
+#costs_table_container {
+  width: 100%;
+  font-size: 0.8rem;
+}
+#costs_table_container tr {
   border-bottom: 4px solid #2c323a;
 }
-#calculations_container #first_table_container #first_table #total_cost_head {
-  width: 20%;
-}
-#calculations_container #first_table_container #first_table #image_head {
-  width: 1%;
-}
-#calculations_container #first_table_container #first_table td {
+#costs_table_container td {
   vertical-align: middle;
 }
-#calculations_container #first_table_container #first_table input {
-  width: 100%;
-  text-align: left;
+#costs_table_container input {
+  text-align: right;
   background-color: #d3d8de;
 }
-#calculations_container #first_table_container #first_table input::-webkit-inner-spin-button,
-#calculations_container #first_table_container #first_table input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-#calculations_container #second_table_container {
-  width: 100%;
-}
-#calculations_container #second_table_container .table_title {
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-  margin-bottom: 0px;
-}
-#calculations_container #second_table_container #second_table {
-  color: #FA7D10;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-#calculations_container #second_table_container #second_table thead {
-  border-bottom: 4px solid #2c323a;
-}
-#calculations_container #second_table_container #second_table input {
-  width: 100%;
-  height: 25px;
-  text-align: left;
-  margin: auto;
-  background-color: #d3d8de;
-}
-#calculations_container #second_table_container #second_table input::-webkit-inner-spin-button,
-#calculations_container #second_table_container #second_table input::-webkit-outer-spin-button {
+#costs_table_container input::-webkit-inner-spin-button,
+#costs_table_container input::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-/* Media Queries */
+/* Costs Table End*/
+/* Profits Table */
+#profits_table_container {
+  width: 100%;
+  font-size: 0.8rem;
+  /* Profits Table End */
+}
+#profits_table_container tr {
+  border-bottom: 4px solid #2c323a;
+}
+#profits_table_container td {
+  vertical-align: middle;
+}
+#profits_table_container input {
+  height: 25px;
+  background-color: #d3d8de;
+}
+#profits_table_container input::-webkit-inner-spin-button,
+#profits_table_container input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Calculations Container End */
+/*////////////////////////////// Recipe Pages End //////////////////////////////*/
+/*////////////////////////////// Media Queries //////////////////////////////*/
 @media screen and (min-width: 320px) and (max-width: 575px) {
+  /* Index Page */
   #cooking_col {
     margin-bottom: 10px;
   }
@@ -480,28 +499,20 @@ nav #collapse_button {
     margin-bottom: 10px;
   }
 
-  .flex_table {
-    padding-right: 0;
-    padding-left: 0;
+  /* Index Page End */
+  /* Recipe Pages */
+  #costs_col, #profits_col {
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
-  #image_row {
-    display: none;
-  }
-
-  #profit_image_row {
-    display: none;
-  }
-
-  #image_head {
-    display: none;
-  }
-
-  .filler_1 {
-    display: none;
-  }
+  /* Recipe Pages End */
 }
 @media screen and (max-width: 768px) {
+  /* Navigation */
+  nav {
+    /* Navigation End*/
+  }
   nav .dropdown-menu {
     margin-left: 10px;
   }
@@ -514,47 +525,34 @@ nav #collapse_button {
   nav .dropdown-menu span a {
     float: left;
   }
-  nav #first_table thead {
-    font-size: 0.8rem;
-  }
-  nav #first_table tbody {
-    font-size: 0.8rem;
-  }
-  nav #second_table thead {
-    font-size: 0.8rem;
-  }
-  nav #second_table tbody {
-    font-size: 0.8rem;
-  }
-  nav #second_table_container {
-    margin-top: 15px;
-  }
-  nav #image_row {
-    display: none;
-  }
-  nav #profit_image_row {
-    display: none;
-  }
-  nav #image_head {
-    display: none;
-  }
-  nav .filler_1 {
-    display: none;
-  }
-  nav #test_container {
+  nav #collapse_container {
     max-width: 1%;
   }
   nav #nav_form {
     padding-left: 10px;
   }
+
+  .image_row, .image_head {
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: collapse;
+    max-width: 0%;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 1140px) {
-  #first_table tbody {
-    font-size: 0.85rem;
+  #collapse_container {
+    max-width: 1%;
   }
 
-  #test_container {
-    max-width: 1%;
+  .image_row, .image_head {
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: collapse;
+    max-width: 0%;
   }
 }
 @media screen and (max-width: 991px) {
@@ -565,15 +563,14 @@ nav #collapse_button {
     padding-left: 10px;
   }
 
-  #second_table_container {
-    margin-top: 15px;
-  }
-
-  #test_container {
+  #collapse_container {
     max-width: 1%;
   }
+
+  #profits_table_container {
+    margin-top: 10px;
+  }
 }
-/* Media Queries End */
-/* Detials Page End */
+/*////////////////////////////// Media Queries End //////////////////////////////*/
 
 /*# sourceMappingURL=style.css.map */
