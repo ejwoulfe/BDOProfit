@@ -1,4 +1,4 @@
-// Variables
+/* Vairables */
 $text_color: #FA7D10
 $web_background_color: #150D07
 $hover_color: #f5f5f5
@@ -8,7 +8,9 @@ $content_background_color: #343940
 $table_background_color: rgba(0, 0, 0, 0.5)
 $input_background_color: #d3d8de
 $tooltip-color: red
+/*  End Vairables */
 
+/*  Mixins */
 @mixin no_input_arrows
     input::-webkit-inner-spin-button,
     input::-webkit-outer-spin-button
@@ -28,9 +30,9 @@ $tooltip-color: red
   -o-transition: $args
   transition: $args
 
+/*  Mixins End */
 
-/*  End Vairables */
-
+/*  All Pages */
 html
   max-width: 1400px
   margin: auto
@@ -44,9 +46,9 @@ body
 
 a:hover
   color: $hover_color
+/* All Pages End */
 
-/*  Navigation Start */
-
+/* Navigation */
 nav
   background-color: $gray_background_color
   min-height: 80px
@@ -54,6 +56,14 @@ nav
   #logo
     margin-right: 20px
     
+    /* Search Bar */
+  #nav_form
+    width: 92%
+    position: absolute
+        
+    input
+      background-color: $input_background_color
+      
   .dropdown-menu
     padding: 0px
     max-height: 200px
@@ -90,26 +100,18 @@ nav
         
         &:hover
           color: $text-color
-      
+          
+    /* Search Bar End */
+    
+    /* Navigation Links */
   a
     color: $text_color
-    @include transition(font-size 2s ease)
-
-  #nav_form
-    width: 92%
-    position: absolute
-    
-    input
-      background-color: $input_background_color
 
   .nav-item
     padding-left: 5px
     padding-right: 5px
-    margin-right:5px
-    margin-left:5px
-
-  .navbar-brand
-    @include transition(font-size 2s ease)
+    margin-right: 5px
+    margin-left:  5px
       
   #collapse_list_container
     clear: both
@@ -117,11 +119,12 @@ nav
   #collapse_button
     margin-right: 5px
     
+  /* Navigation Links End */  
     
 
 /* Navigation End */
 
-
+/*////////////////////////////// Index Page //////////////////////////////*/
 /* Index Page Jumbotron */
 #index_banner
   min-height: 400px
@@ -197,17 +200,14 @@ nav
   background-repeat: no-repeat
   background-size: cover
 
-
-
 /* Index Page Main Content End */
-
-/* Footer */
-.footer
-  visibility: hidden
-  /* Footer End */
+/*////////////////////////////// Index Page End //////////////////////////////*/
 
 
-/* Calculator Pages   */
+
+
+
+/*////////////////////////////// Calculator Pages //////////////////////////////*/
 
   /* Calculator Jumbotron   */
 #calc_jum
@@ -225,159 +225,162 @@ nav
 
   /* Calculator Jumbotron End   */
 
-  /* Calculator Main Content   */
+/* Calculator Main Content   */
 
 #calculator_main_content
   padding-top: 40px
   padding-bottom: 40px
 
-  #pagination_controls
-    height: 30px
-    float: right
-    margin-bottom: 5px
-    margin-top: -10px
+  /* Pagination Buttons */
+#pagination_controls  
+  height: 30px
+  float: right
+  margin-bottom: 5px
+  margin-top: -10px
 
-    .pagination_link
-      background-color: $text_color
-      padding: 5px 10px 20px 10px
-      vertical-align: middle
-      color: #282726
-      border-radius: 10px
-      margin-right: 3px
-      position: relative
-
-      &:hover
-        color: $text_color
-        background-color: #282726
-        
-  #pagination_controls_2
-    height: 30px
-    float: right
-    margin-bottom: 10px
-    margin-top: -25px
-
-    .second_pagination_link
-      background-color: $text_color
-      padding: 20px 10px 5px 10px
-      vertical-align: middle
-      color: #282726
-      border-radius: 10px
-      margin-right: 3px
-      float: left
-
-      &:hover
-        color: $text_color
-        background-color: #282726
-
-  #calculator_table
+  .pagination_link
+    background-color: $text_color
+    padding: 5px 10px 20px 10px
+    vertical-align: middle
+    color: #282726
+    border-radius: 10px
+    margin-right: 3px
     position: relative
 
-    thead
-      tr
-        background-color: $gray_background_color
-        color: $text_color
+    &:hover
+      color: $text_color
+      background-color: #282726
+      
+#pagination_controls_2
+  height: 30px
+  float: right
+  margin-bottom: 10px
+  margin-top: -25px
 
-    tbody
+  .second_pagination_link
+    background-color: $text_color
+    padding: 20px 10px 5px 10px
+    vertical-align: middle
+    color: #282726
+    border-radius: 10px
+    margin-right: 3px
+    float: left
 
-      tr
-        border-bottom: 2px solid $input_background_color
-        border-top: 2px solid $input_background_color
-        border-left: 2px solid $input_background_color
+    &:hover
+      color: $text_color
+      background-color: #282726
+    /* Pagination Buttons End */
+    
+    /* Calculator Tables */  
+#calculator_table
+  position: relative
+
+  thead
+    
+    tr
+      background-color: $gray_background_color
+      color: $text_color
+
+  tbody
+
+    tr
+      border-bottom: 2px solid $input_background_color
+      border-top: 2px solid $input_background_color
+      border-left: 2px solid $input_background_color
+      border-right: 2px solid $input_background_color
+
+      &:nth-child(odd)
+        background: $content_background_color
+      &:nth-child(even)
+        background: #282726
+
+      td
+        padding: 0px
         border-right: 2px solid $input_background_color
+        vertical-align: middle
 
-        &:nth-child(odd)
-          background: $content_background_color
-        &:nth-child(even)
-          background: #282726
+      a
+        color: $text_color
+        text-decoration: none
+        display: block
+        width: 100%
+        padding: 1.05em
 
-        td
-          padding: 0px
-          border-right: 2px solid $input_background_color
-          vertical-align: middle
+      &:hover
+        background-color: $input_background_color
 
         a
-          color: $text_color
-          text-decoration: none
-          display: block
-          width: 100%
-          padding: 1.05em
+          color: white
+          
+  /* Calculator Tables End*/
 
-        &:hover
-          background-color: $input_background_color
 
-          a
-            color: white
+  /* Calculator Main Content End */
+/*////////////////////////////// Calculator Pages End //////////////////////////////*/
 
 
 
 
 
-  /* Calculator Main Content End   */
-/* Calculator Pages End */
-
-/* Detials Page */
-
-
+/*////////////////////////////// Recipe Pages //////////////////////////////*/
   /* Top Page Container */
-#proc_rates
+#proc_rates_row
+  background-color: $transparent_black
 
-  #proc_rates_row
-    background-color: $transparent_black
+  #craft_quantity
+    margin: auto
+    display: inline-block
+    min-height: 50px
+    padding-top: 20px
+    text-transform: uppercase
 
-    #craft_quantity
-      margin: auto
-      display: inline-block
-      min-height: 50px
-      padding-top: 20px
-      text-transform: uppercase
+    p
+      padding-right: 10px
 
-      p
-        padding-right: 10px
+    #craft_quantity_input
+      width: 150px
+      height: 25px
+      text-align: right
+      padding-right: 10px
+      background-color: $input_background_color
 
-      #craft_quantity_input
-        width: 150px
-        height: 25px
-        text-align: right
-        padding-right: 10px
-        background-color: $input_background_color
+    @include no_input_arrows
 
-      @include no_input_arrows
+  #tier1_proc
+    margin: auto
+    min-height: 50px
+    padding-top: 20px
+    text-transform: uppercase
 
-    #tier1_proc
-      margin: auto
-      min-height: 50px
-      padding-top: 20px
-      text-transform: uppercase
+    p
+      padding-right: 10px
 
-      p
-        padding-right: 10px
+    input
+      width: 150px
+      height: 25px
+      padding-right: 10px
+      text-align: right
+      background-color: $input_background_color
 
-      input
-        width: 150px
-        height: 25px
-        padding-right: 10px
-        text-align: right
-        background-color: $input_background_color
+    @include no_input_arrows
 
-      @include no_input_arrows
+  #tier2_proc
+    margin: auto
+    min-height: 50px
+    padding-top: 20px
+    text-transform: uppercase
 
-    #tier2_proc
-      margin: auto
-      min-height: 50px
-      padding-top: 20px
-      text-transform: uppercase
+    p
+      padding-right: 10px
 
-      p
-        padding-right: 10px
+    input
+      width: 150px
+      height: 25px
+      text-align: right
+      padding-right: 10px
+      background-color: $input_background_color
 
-      input
-        width: 150px
-        height: 25px
-        text-align: right
-        padding-right: 10px
-        background-color: $input_background_color
-
-      @include no_input_arrows
+    @include no_input_arrows
 
   /* Top Page Container End */
 
@@ -386,127 +389,144 @@ nav
 #details_jum
   background-color: $content_background_color
 
-  #recipeImage
-    padding-top: 5px
-    padding-bottom: 25px
+#recipeImage
+  padding-top: 5px
+  padding-bottom: 25px
 
-  #recipe_materials
-    background-color: $table_background_color
+#recipe_materials
+  background-color: $table_background_color
 
-    table
-      width: 100%
-      margin: auto
-      color: $text_color
+  table
+    width: 100%
+    margin: auto
+    color: $text_color
 
-      #recipe_quantity
-        padding-right: 20px
-        width: 25%
+    #recipe_quantity
+      padding-right: 20px
+      width: 25%
 
-      #material_name
-        padding-left: 75px
+    #material_name
+      padding-left: 75px
 
 
   /* Jumbotron End */
 
-  /* Calculations Container  */
+  /* Calculations Container */
 #calculations_container
   margin-bottom: 40px
-
-  #t1
-    padding-left: 15px
-    padding-right: 15px
-
-  #t2
-    padding-left: 15px
-    padding-right: 15px
-
-  #first_table_container
-    width: 100%
-
-    .table_title
-      background-color: $transparent_black
-      text-align: center
-      padding: 10px 0px 10px 0px
-      margin-bottom: 0px
-
-    #first_table
-        color: $text_color
-        margin: auto
-        background-color: $table_background_color
-
-        thead
-          border-bottom: 4px solid #2c323a
-
-        #total_cost_head
-          width: 20%
-
-        #image_head
-          width: 1%
-
-        td
-          vertical-align: middle
-
-        input
-          width: 100%
-          text-align: left
-          background-color: $input_background_color
-
-        @include no_input_arrows
-
-  #second_table_container
-    width: 100%
-
-    .table_title
-      background-color: $transparent_black
-      text-align: center
-      padding: 10px 0px 10px 0px
-      margin-bottom: 0px
-
-    #second_table
-      color: $text_color
-      margin: auto
-      background-color: $table_background_color
-
-      thead
-        border-bottom: 4px solid #2c323a
-
-      input
-        width: 100%
-        height: 25px
-        text-align: left
-        margin: auto
-        background-color: $input_background_color
-
-      @include no_input_arrows
-  /* Calculations Container End */
-
-
-
-/* Media Queries */
-@media screen and (min-width : 320px) and (max-width : 575px)
-  #cooking_col
-    margin-bottom: 10px
-    
-  #processing_col
-    margin-bottom: 10px
+  border-radius: .3rem
   
-  .flex_table
-    padding-right:0
-    padding-left:0
+  table
+    margin-bottom: 0px
+  
+  .title_container
+    padding: 20px
+    background-color: $transparent_black
+    border-radius: 10px 10px 0px 0px
+    
+  .table_title
+    margin-bottom: 0px
+    height: 15%
+    
+  thead
+    background-color: rgba(0, 0, 0, 0.55)
+    color: white
+    border-bottom: 4px solid white
+    font-size: .95rem
+    font-style: oblique
+    
+  tbody
+    background-color: $table_background_color
+    color: $text_color
+    
+  tr
+    display:  flex
+    &:last-child
+      border-bottom: 0px
+    
+  .table_bottom
+    padding: 10px
+    background-color: $transparent_black
+    border-radius: 0px 0px 10px 10px
+    
+  td
+    align-self: center
+    
+  #total_profit_text,  #total_cost_text
+    font-size: 1rem
+    white-space: nowrap
+    font-style: oblique
+    color: white
+    
+  #total_recipe_profit, #total_recipe_cost
+    color: white
+    font-style: oblique
+    
 
-  #image_row
-    display: none
+  /* Costs Table */
+  
+#costs_table_container
+  width: 100%
+  font-size: 0.8rem
+  
+  tr
+    border-bottom: 4px solid #2c323a
 
-  #profit_image_row
-    display: none
+  td
+    vertical-align: middle
 
-  #image_head
-    display: none
+  input
+    text-align: right
+    background-color: $input_background_color
 
-  .filler_1
-    display: none
+  @include no_input_arrows
+
+/* Costs Table End*/
+
+/* Profits Table */
+#profits_table_container
+  width: 100%
+  font-size: 0.8rem
+
+  tr
+    border-bottom: 4px solid #2c323a
+    
+  td
+    vertical-align: middle
+
+  input
+    height: 25px
+    background-color: $input_background_color
+
+  @include no_input_arrows
+      
+  /* Profits Table End */
+/* Calculations Container End */
+  
+/*////////////////////////////// Recipe Pages End //////////////////////////////*/
+
+
+/*////////////////////////////// Media Queries //////////////////////////////*/
+@media screen and (min-width : 320px) and (max-width : 575px)
+    /* Index Page */
+    #cooking_col
+      margin-bottom: 10px
+      
+    #processing_col
+      margin-bottom: 10px
+
+      
+    /* Index Page End */
+
+    /* Recipe Pages */
+    #costs_col, #profits_col
+      padding-right: 0px
+      padding-left: 0px
+
+    /* Recipe Pages End */
 
 @media screen and (max-width : 768px)
+  /* Navigation */
   nav
     .dropdown-menu
       margin-left: 10px
@@ -520,50 +540,33 @@ nav
         a
           float: left
     
-
-    #first_table
-      thead
-        font-size: 0.8rem
-      tbody
-        font-size: 0.8rem
-
-    #second_table
-      thead
-        font-size: 0.8rem
-      tbody
-        font-size: 0.8rem
-
-    #second_table_container
-      margin-top: 15px
-
-    #image_row
-      display: none
-
-    #profit_image_row
-      display: none
-
-    #image_head
-      display: none
-
-    .filler_1
-      display: none
-    
-    #test_container
+    #collapse_container
       max-width: 1%
       
     #nav_form
       padding-left: 10px
     
+    /* Navigation End*/
 
+  .image_row, .image_head
+    display: none
+    width: 0
+    height: 0
+    opacity: 0
+    visibility: collapse
+    max-width: 0%
 
 @media screen and (min-width : 769px) and (max-width : 1140px)
-  
-  #first_table
-    tbody
-      font-size: 0.85rem
-      
-  #test_container
+  #collapse_container
     max-width: 1%
+    
+  .image_row, .image_head
+    display: none
+    width: 0
+    height: 0
+    opacity: 0
+    visibility: collapse
+    max-width: 0%
 
 @media screen and (max-width : 991px)
   nav
@@ -574,13 +577,12 @@ nav
         
         a
           padding-left: 10px
-  
-  #second_table_container
-    margin-top: 15px
-    
-  #test_container
+
+  #collapse_container
     max-width: 1%
+    
+  #profits_table_container
+    margin-top: 10px
 
-/* Media Queries End */
+/*////////////////////////////// Media Queries End //////////////////////////////*/
 
-/* Detials Page End */
