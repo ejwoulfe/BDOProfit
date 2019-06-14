@@ -62,13 +62,13 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
           <tbody>
             <!-- PHP to display the recipes sub material image, name, and the quantity. -->
             <?php
-            for ($x = 0; $x < $nullRow['sum_of_nulls']; $x+=2) {
+            for ($x = 0; $x < $nullRow['sum_of_sub_materials']; $x+=2) {
               $y = $x +1;
               echo '<tr>
               <td class="text-center"><img src="../'
               .getMaterialImage($subRow[$y], $conn).
               '"  height="30"></td"><td id="material_name" >'
-              .getMaterialID($subRow[$y], $conn).
+              .getMaterialName($subRow[$y], $conn).
               '</td><td id="recipe_quantity" class="quantity text-right">'
               .$subRow[$x].
               '</td>
@@ -114,7 +114,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
               <!-- For loop to iterate through the total amount of sub materials and make a row containing the materials image, cost, their quantity, and a calculated total cost. -->
               <?php
               $count = 1;
-              for ($x = 0; $x < $nullRow['sum_of_nulls']; $x+=2) {
+              for ($x = 0; $x < $nullRow['sum_of_sub_materials']; $x+=2) {
                 $strCount = strval($count);
                 $cost_row = "row_" . $strCount;
                 $cost_field = "cost_input_row_" . $strCount;
@@ -125,7 +125,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
                 <td class="image_row text-center col-1"><img src="../'
                 .getMaterialImage($subRow[$y], $conn).
                 '"  height="30"></td><td class="text-center col-2">'
-                .getMaterialID($subRow[$y], $conn).
+                .getMaterialName($subRow[$y], $conn).
                 '</td><td class="align-middle col-3">
                 <input id="' . $cost_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
                 </td><td id="' . $cost_quantity .   '" class="quantity text-center col-2">'
@@ -200,7 +200,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
                 '"  height="30"></td>
                 <td id="' . $profit_quantity .   '" class="reward_quantity text-center col-2")">0</td>
                 <td class="align-middle text-left col-2">'
-                .getMaterialID($rewardRow[$y], $conn).
+                .getMaterialName($rewardRow[$y], $conn).
                 '</td><td class="align-middle col-3">
                 <input id="' . $profit_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
                 </td>
