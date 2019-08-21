@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 // Event handler for the search bar
-$('#bar').on('keyup', function(event){
+$('#bar').on('keydown', function(event){
   /* If statement to disable to enter key, this will prevent the default of refreshing the page to submit the form.
   * But since we are doing an ajax method, we will dynamically display the recipes based on the user search term.
   */
-  if((event.which === 13 || event.keyCode === 13) && event.target !== ''){
+
+  if((event.which === 13 || event.keyCode === 13 || event.key === "Enter") && event.target !== ''){
     event.preventDefault();
   }
   // Every new search will start on the first page.

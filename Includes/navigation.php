@@ -4,13 +4,13 @@
 
     <!-- Logo -->
     <div id="logo" class="col-2" >
-      <a class="navbar-brand" href="../../index.php">BDOWolf</a>
+      <a class="navbar-brand" href="../../index.php">BDOProfit</a>
     </div>
     <!-- Logo End -->
 
     <!-- Search Bar -->
     <div class="col-6 mt-4 mb-4">
-      <form class="form-inline" action="" method="POST">
+      <form id="nav_inline_form" class="form-inline" action="" method="POST">
         <div id="nav_form" class="input-group mb-3">
           <input id="nav_search_bar" name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
           <div class="dropdown-menu" id="response"></div>
@@ -59,7 +59,12 @@ $(document).ready(function() {
   * We search using an ajax object to send a POST to our search php file.
   * If search is successful, display the data underneath the search bar, else  we can display an error message or hide it.
   */
+  $("#nav_inline_form").click(function(event){
+
+  event.preventDefault();
+});
   $("#nav_search_bar").keyup(function() {
+    
     let query = $("#nav_search_bar").val();
     if(query.length > 2){
       $.ajax({
@@ -92,6 +97,7 @@ function dropDownDisplay(status){
 
 // Event Handlers
 $("#response").on("click", function(){
+
   let link = event.target.getElementsByTagName("a");
   window.location.href = (link.item(0).href);
 });

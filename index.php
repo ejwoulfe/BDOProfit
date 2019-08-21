@@ -8,7 +8,7 @@
 <!-- Jumbotron -->
 <div id="index_banner" class="container-fluid">
   <div  class="row">
-    <h1>Welcome to BDOWolf</h1>
+    <h1>Welcome to BDOProfit</h1>
   </div>
 </div>
 

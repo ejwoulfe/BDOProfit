@@ -13,8 +13,8 @@
     
     <!-- Search Bar -->
     <div id="calc_search_bar" class="col-md-8">
-      <form action="" class="form-inline">
-        <div class="input-group mb-3">
+      <form action="" class="form-inline" id="cooking_form">
+        <div class="input-group mb-3" >
           <input id="bar" type="text" class="form-control" placeholder="Search for Recipe" aria-label="cook search" aria-describedby="basic-addon2">
         </div>
       </form>
