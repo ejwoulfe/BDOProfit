@@ -111,14 +111,14 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
           </div>
           <!-- Table for the sub materials costs -->
           <table id="costs_table" class="table table-borderless">
-            <thead>
-              <th class="image_head col-1">
+            <!-- <thead>
+              <th id="image_head" class="col-1">
 
               </th>
-              <th class="text-center col-2">
+              <th id="mat_head" class="text-center col-2">
                 Material
               </th>
-              <th id="cost_per_head" class="text-left col-3">
+              <th id="cost_per_head" class="text-center col-3">
                 Cost Per
               </th>
               <th id="quantity_head" class="text-center col-2">
@@ -127,8 +127,8 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
               <th id="total_cost_head" class="text-center col-4">
                 Total Cost
               </th>
-            </thead>
-            <tbody>
+            </thead> -->
+            <tbody >
               <!-- For loop to iterate through the total amount of sub materials and make a row containing the materials image, cost, their quantity, and a calculated total cost. -->
               <?php
               $count = 1;
@@ -142,14 +142,14 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
                 echo '<tr id="' . $cost_row .   '">
                 <td class="image_row text-center col-1"><img src="../'
                 .getMaterialImage($subRow[$y], $conn).
-                '"  height="30"></td><td class="text-center col-2">'
+                '"  height="30"></td><td class="material_name_row text-center col-2">'
                 .getMaterialName($subRow[$y], $conn).
-                '</td><td class="align-middle col-3">
+                '</td><td id="cost_per" class="align-middle col-3">
                 <input id="' . $cost_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
                 </td><td id="' . $cost_quantity .   '" class="quantity text-center col-2">'
                 .$subRow[$x].
                 '</td>
-                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td><button id="edit_button_' . $strCount . '"edit_button></button></td>
+                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td class="edit_button_td" ><button id="edit_button_' . $strCount . '" class="edit_button"></button></td>
                 </tr>';
                 $count+=1;
               }
@@ -181,24 +181,24 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
       <div id="profits_col" class="col-lg-6">
         <div id="profits_table_container">
           <div class="title_container">
-            <h5 class="table_title text-center">Profits</h5>
+            <h5 class="table_title text-center">Market Place Values</h5>
           </div>
           <!-- Table for the sub materials profits -->
           <table id="profits_table" class="table table-borderless">
             <thead>
               <th class="image_head text-center col-1">
               </th>
-              <th class="text-center col-2">
+              <th id="quantity_head_profits" class="text-center col-2">
                 Quantity
               </th>
-              <th class="text-left col-2">
+              <th id="reward_head" class="text-left col-2">
                 Reward
               </th>
-              <th class="text-left col-3">
+              <th id="market_place_head" class="text-left col-3">
                 MP Price
               </th>
               <th id="total_cost_head" class="text-center col-4">
-                Profit
+                Sales
               </th>
             </thead>
             <tbody>

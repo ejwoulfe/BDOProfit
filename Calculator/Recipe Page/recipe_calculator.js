@@ -157,6 +157,7 @@ let UIController = (function() {
       if (isNaN(total)) {
         total = 0;
       }
+
       document.querySelector(
         `#row_${id} #total_${type}_row_${id}`
       ).innerHTML = numberWithCommas(total);
@@ -196,6 +197,8 @@ let UIController = (function() {
     },
     // Function to changes the input box css when the user changes the costs/reward amount of a row.
     changeInput: function(field) {
+      let row = field.id.substring(field.id.length - 1, field.id.length);
+
       if (field.style.backgroundColor == "") {
         field.setAttribute(
           "style",
@@ -207,24 +210,33 @@ let UIController = (function() {
           "background: default; border: default; color: default; outline: default;"
         );
       }
+      $("#cost_input_row_" + row).css("width", "89%");
     },
     // Function to hide elements when user enters input, to free up space for mobile.
     hideElements: function(row) {
       var costPer = document.getElementById("cost_input_row_" + row);
       var quantity = document.getElementById("cost_quantity_row_" + row);
-      var costPerHead = document.getElementById("cost_per_head");
-      var quantityHead = document.getElementById("quantity_head");
-      if (costPer.style.display === "none") {
-        costPer.style.display = "block";
-        quantity.style.display = "block";
-        costPerHead.style.display = "block";
-        quantityHead.style.display = "block";
-      } else {
-        costPer.style.display = "none";
-        quantity.style.display = "none";
-        costPerHead.style.display = "none";
-        quantityHead.style.display = "none";
-      }
+      var editButton = document.getElementById("edit_button_" + row);
+
+      costPer.style.display = "none";
+      quantity.style.display = "none";
+      editButton.style.display = "block";
+
+      $("#total_cost_row_" + row).animate({ right: "20%" });
+    },
+    // Function to show hidden elements when user presses edit button.
+    showElements: function(row) {
+      var costPer = document.getElementById("cost_input_row_" + row);
+      var quantity = document.getElementById("cost_quantity_row_" + row);
+      var editButton = document.getElementById("edit_button_" + row);
+
+      costPer.style.display = "block";
+      quantity.style.display = "block";
+      editButton.style.display = "none";
+
+      $("#cost_input_row_" + row).css("width", "89%");
+      $("#total_cost_row_" + row).animate({ right: "0%" });
+      $("#total_cost_row_" + row).text("0");
     },
     // Function to validate the incoming input from the costs/rewards table.
     validateInput: function(input) {
@@ -259,6 +271,24 @@ let UIController = (function() {
 
 ////////////// App Controller, which will use both UI and Recipe Controller methods for caluclations and HTML Changes //////////////
 let appController = (function(recipeCtrl, UICtrl) {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    //Costs
+    $("input[id*='cost_input_row_']").css("width", "89%");
+    $("#image_head").css("display", "none");
+    $("#mat_head").text("Mats");
+    $("#cost_per_head").text("Cost");
+    $("#quantity_head").text("Qty");
+    $("#total_cost_head").text("Total");
+
+    // Market Place Values
+    $("#quantity_head_profits").text("Qty");
+    $("#reward_head").text("Rwds");
+    $("#market_place_head").text("MP");
+  }
   let setupEventListeners = function() {
     // Keypress Event handler for the costs tables rows input field when user presses "enter".
     $("input[id*='cost_input_row_']").on("keypress", function(event) {
@@ -274,9 +304,14 @@ let appController = (function(recipeCtrl, UICtrl) {
         // Change the html to their new values.
         UICtrl.changeInput(event.target);
         event.target.blur();
-        UICtrl.hideElements(`${rowNumber}`);
-
-        $(`#total_cost_row_${rowNumber}`).animate({ right: "40%" });
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          // some code..
+          UICtrl.hideElements(`${rowNumber}`);
+        }
 
         // If statement to display the tooltip when user enters in an incorrect input.
       } else if (
@@ -290,6 +325,7 @@ let appController = (function(recipeCtrl, UICtrl) {
         }, 2000);
       }
     });
+
     // Click Event Listener to adjust the css based on the input fields current attributes.
     $("input[id*='cost_input_row_']").on("click", function(event) {
       if (event.target.style.backgroundColor == "transparent") {
@@ -302,6 +338,17 @@ let appController = (function(recipeCtrl, UICtrl) {
       if (event.target.style.backgroundColor == "transparent") {
         UICtrl.changeInput(event.target);
       }
+    });
+
+    $(".edit_button").click(function() {
+      let rowNumber = event.target.id[event.target.id.length - 1];
+      UICtrl.showElements(rowNumber);
+      var inputField = $(event.target)
+        .parent()
+        .parent()
+        .children()[2].firstElementChild;
+
+      UICtrl.changeInput(inputField);
     });
 
     // Keypress Event handler for the profits tables rows input field when user presses "enter".

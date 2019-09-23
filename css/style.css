@@ -416,6 +416,13 @@ nav #collapse_button {
 #total_profit_col {
   text-align: center;
 }
+.edit_button {
+  display: none;
+}
+.edit_button_td {
+  position: absolute;
+  right: 0;
+}
 
 /* Profits Container End */
 
@@ -537,6 +544,20 @@ nav #collapse_button {
 
   /* Index Page End */
   /* Recipe Pages */
+  #image_head {
+    display: none;
+  }
+  .material_name_row,
+  #mat_head {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  td[id*="total_cost_row_"],
+  #total_cost_head {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
   #costs_col,
   #profits_col {
     padding-right: 0px;
