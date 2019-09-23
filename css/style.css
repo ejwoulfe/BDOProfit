@@ -418,6 +418,7 @@ nav #collapse_button {
 }
 .edit_button {
   display: none;
+  margin-right: 20px;
 }
 .edit_button_td {
   position: absolute;
@@ -539,7 +540,7 @@ nav #collapse_button {
     max-width: 100%;
   }
   nav #nav_form {
-    padding-left: 0px;
+    padding-left: 0px !important;
   }
 
   /* Index Page End */

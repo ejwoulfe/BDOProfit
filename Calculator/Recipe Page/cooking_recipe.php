@@ -111,7 +111,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
           </div>
           <!-- Table for the sub materials costs -->
           <table id="costs_table" class="table table-borderless">
-            <!-- <thead>
+            <thead>
               <th id="image_head" class="col-1">
 
               </th>
@@ -127,7 +127,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
               <th id="total_cost_head" class="text-center col-4">
                 Total Cost
               </th>
-            </thead> -->
+            </thead>
             <tbody >
               <!-- For loop to iterate through the total amount of sub materials and make a row containing the materials image, cost, their quantity, and a calculated total cost. -->
               <?php

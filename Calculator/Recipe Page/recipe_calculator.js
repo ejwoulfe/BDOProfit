@@ -220,7 +220,7 @@ let UIController = (function() {
 
       costPer.style.display = "none";
       quantity.style.display = "none";
-      editButton.style.display = "block";
+      editButton.style.display = "inline";
 
       $("#total_cost_row_" + row).animate({ right: "20%" });
     },
@@ -230,8 +230,8 @@ let UIController = (function() {
       var quantity = document.getElementById("cost_quantity_row_" + row);
       var editButton = document.getElementById("edit_button_" + row);
 
-      costPer.style.display = "block";
-      quantity.style.display = "block";
+      costPer.style.display = "inline";
+      quantity.style.display = "inline";
       editButton.style.display = "none";
 
       $("#cost_input_row_" + row).css("width", "89%");

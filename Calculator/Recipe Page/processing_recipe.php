@@ -81,6 +81,24 @@ require ('Get Recipe Data/get_processing_recipe_data.php');
     </div>
   </div>
 
+  <!-- Container for the Total Profits -->
+   <div id="total_profits_container" class="container-fluid bg-dark">
+      <div class="row">
+        <div id="costs_and_sale_col" class="col-sm-6">
+          <h4>Materials Total Cost: <p id="total_cost_profits">0</p></h4>
+          <h4>Market Place Value: <p id="total_sales_profits">0</p></h4>
+
+        </div>
+        <div id="total_profit_col" class="col-sm-6">
+            <h4>Total Profits: <p id="total_profits_profits">0</p></h4>
+        </div>
+      </div>
+   </div>
+
+
+
+  <!-- End Container for Total Profit -->
+
   <!-- Container for the Calculations -->
   <div id="calculations_container" class="container-fluid bg-dark">
     <!-- Row for both tables -->
@@ -94,23 +112,23 @@ require ('Get Recipe Data/get_processing_recipe_data.php');
           <!-- Table for the sub materials costs -->
           <table id="costs_table" class="table table-borderless">
             <thead>
-              <th class="image_head col-1">
+              <th id="image_head" class="col-1">
 
               </th>
-              <th class="text-center col-2">
+              <th id="mat_head" class="text-center col-2">
                 Material
               </th>
-              <th class="text-left col-3">
+              <th id="cost_per_head" class="text-center col-3">
                 Cost Per
               </th>
-              <th class="text-center col-2">
+              <th id="quantity_head" class="text-center col-2">
                 Quantity
               </th>
               <th id="total_cost_head" class="text-center col-4">
                 Total Cost
               </th>
             </thead>
-            <tbody>
+            <tbody >
               <!-- For loop to iterate through the total amount of sub materials and make a row containing the materials image, cost, their quantity, and a calculated total cost. -->
               <?php
               $count = 1;
@@ -124,14 +142,14 @@ require ('Get Recipe Data/get_processing_recipe_data.php');
                 echo '<tr id="' . $cost_row .   '">
                 <td class="image_row text-center col-1"><img src="../'
                 .getMaterialImage($subRow[$y], $conn).
-                '"  height="30"></td><td class="text-center col-2">'
+                '"  height="30"></td><td class="material_name_row text-center col-2">'
                 .getMaterialName($subRow[$y], $conn).
-                '</td><td class="align-middle col-3">
+                '</td><td id="cost_per" class="align-middle col-3">
                 <input id="' . $cost_field .   '" type="number" min="1" max="9999999999" value="" data-toggle="tooltip" data-placement="bottom" title="Enter a number from 0 to 99,999,999,999">
                 </td><td id="' . $cost_quantity .   '" class="quantity text-center col-2">'
                 .$subRow[$x].
                 '</td>
-                <td id="' . $total_cost .   '" class="text-right col-4")">0</td>
+                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td class="edit_button_td" ><button id="edit_button_' . $strCount . '" class="edit_button"></button></td>
                 </tr>';
                 $count+=1;
               }
@@ -163,24 +181,24 @@ require ('Get Recipe Data/get_processing_recipe_data.php');
       <div id="profits_col" class="col-lg-6">
         <div id="profits_table_container">
           <div class="title_container">
-            <h5 class="table_title text-center">Profits</h5>
+            <h5 class="table_title text-center">Market Place Values</h5>
           </div>
           <!-- Table for the sub materials profits -->
           <table id="profits_table" class="table table-borderless">
             <thead>
               <th class="image_head text-center col-1">
               </th>
-              <th class="text-center col-2">
+              <th id="quantity_head_profits" class="text-center col-2">
                 Quantity
               </th>
-              <th class="text-left col-2">
+              <th id="reward_head" class="text-left col-2">
                 Reward
               </th>
-              <th class="text-left col-3">
+              <th id="market_place_head" class="text-left col-3">
                 MP Price
               </th>
               <th id="total_cost_head" class="text-center col-4">
-                Profit
+                Sales
               </th>
             </thead>
             <tbody>
