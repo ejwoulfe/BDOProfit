@@ -81,6 +81,24 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
     </div>
   </div>
 
+  <!-- Container for the Total Profits -->
+   <div id="total_profits_container" class="container-fluid bg-dark">
+      <div class="row">
+        <div id="costs_and_sale_col" class="col-sm-6">
+          <h4>Materials Total Cost: <p id="total_cost_profits">0</p></h4>
+          <h4>Market Place Value: <p id="total_sales_profits">0</p></h4>
+
+        </div>
+        <div id="total_profit_col" class="col-sm-6">
+            <h4>Total Profits: <p id="total_profits_profits">0</p></h4>
+        </div>
+      </div>
+   </div>
+
+
+
+  <!-- End Container for Total Profit -->
+
   <!-- Container for the Calculations -->
   <div id="calculations_container" class="container-fluid bg-dark">
     <!-- Row for both tables -->
@@ -100,10 +118,10 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
               <th class="text-center col-2">
                 Material
               </th>
-              <th class="text-left col-3">
+              <th id="cost_per_head" class="text-left col-3">
                 Cost Per
               </th>
-              <th class="text-center col-2">
+              <th id="quantity_head" class="text-center col-2">
                 Quantity
               </th>
               <th id="total_cost_head" class="text-center col-4">
@@ -131,7 +149,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
                 </td><td id="' . $cost_quantity .   '" class="quantity text-center col-2">'
                 .$subRow[$x].
                 '</td>
-                <td id="' . $total_cost .   '" class="text-right col-4")">0</td>
+                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td><button id="edit_button_' . $strCount . '"edit_button></button></td>
                 </tr>';
                 $count+=1;
               }

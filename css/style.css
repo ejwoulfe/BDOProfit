@@ -10,11 +10,11 @@ html {
 }
 
 body {
-  color: #FA7D10;
+  color: #fa7d10;
   font-family: "Bitter", serif;
   font-size: 1rem;
   border-radius: 10px;
-  background-color: #150D07;
+  background-color: #150d07;
   border-radius: 10px;
 }
 
@@ -27,7 +27,7 @@ a:hover {
 nav {
   background-color: #282726;
   min-height: 80px;
-  /* Navigation Links End */  
+  /* Navigation Links End */
 }
 nav #logo {
   margin-right: 20px;
@@ -39,7 +39,7 @@ nav #nav_form {
 }
 nav #nav_form input {
   background-color: #d3d8de;
-vertical-align: middle;
+  vertical-align: middle;
 }
 nav .dropdown-menu {
   padding: 0px;
@@ -78,10 +78,10 @@ nav .dropdown-menu li a {
   text-decoration: none;
 }
 nav .dropdown-menu li a:hover {
-  color: #FA7D10;
+  color: #fa7d10;
 }
 nav a {
-  color: #FA7D10;
+  color: #fa7d10;
 }
 nav .nav-item {
   padding-left: 5px;
@@ -95,8 +95,8 @@ nav #collapse_list_container {
 nav #collapse_button {
   margin-right: 5px;
 }
-#nav_inline_form{
-flex-flow: nowrap;
+#nav_inline_form {
+  flex-flow: nowrap;
 }
 
 /* Navigation End */
@@ -131,7 +131,7 @@ flex-flow: nowrap;
 }
 #main_content #main_content_row1 .card {
   margin: auto;
-  color: #FA7D10;
+  color: #fa7d10;
   min-height: 500px;
   text-transform: uppercase;
   border: none;
@@ -140,7 +140,7 @@ flex-flow: nowrap;
   padding: 0px;
 }
 #main_content #main_content_row1 .card .card-body:hover {
-  box-shadow: 0 4px 20px 0 #FA7D10, 0 6px 20px 0 #FA7D10;
+  box-shadow: 0 4px 20px 0 #fa7d10, 0 6px 20px 0 #fa7d10;
   cursor: pointer;
 }
 #main_content #main_content_row1 .card .card-body:hover .overlay {
@@ -193,7 +193,7 @@ flex-flow: nowrap;
 /* Index Page Main Content End */
 /*////////////////////////////// Index Page End //////////////////////////////*/
 /*////////////////////////////// Calculator Pages //////////////////////////////*/
- *
+*
  * /* Calculator Jumbotron   */
 #calc_jum {
   background-color: #343940;
@@ -224,7 +224,7 @@ flex-flow: nowrap;
   margin-top: -10px;
 }
 #pagination_controls .pagination_link {
-  background-color: #FA7D10;
+  background-color: #fa7d10;
   padding: 5px 10px 20px 10px;
   vertical-align: middle;
   color: #282726;
@@ -233,7 +233,7 @@ flex-flow: nowrap;
   position: relative;
 }
 #pagination_controls .pagination_link:hover {
-  color: #FA7D10;
+  color: #fa7d10;
   background-color: #282726;
 }
 
@@ -244,7 +244,7 @@ flex-flow: nowrap;
   margin-top: -25px;
 }
 #pagination_controls_2 .second_pagination_link {
-  background-color: #FA7D10;
+  background-color: #fa7d10;
   padding: 20px 10px 5px 10px;
   vertical-align: middle;
   color: #282726;
@@ -252,10 +252,10 @@ flex-flow: nowrap;
   margin-right: 3px;
   float: left;
   /* Pagination Buttons End */
-  /* Calculator Tables */  
+  /* Calculator Tables */
 }
 #pagination_controls_2 .second_pagination_link:hover {
-  color: #FA7D10;
+  color: #fa7d10;
   background-color: #282726;
 }
 
@@ -266,7 +266,7 @@ flex-flow: nowrap;
 }
 #calculator_table thead tr {
   background-color: #282726;
-  color: #FA7D10;
+  color: #fa7d10;
 }
 #calculator_table tbody tr {
   border-bottom: 2px solid #d3d8de;
@@ -286,7 +286,7 @@ flex-flow: nowrap;
   vertical-align: middle;
 }
 #calculator_table tbody tr a {
-  color: #FA7D10;
+  color: #fa7d10;
   text-decoration: none;
   display: block;
   width: 100%;
@@ -301,7 +301,7 @@ flex-flow: nowrap;
 
 /*////////////////////////////// Calculator Pages End //////////////////////////////*/
 /*////////////////////////////// Recipe Pages //////////////////////////////*/
- * /* Top Page Container */
+* /* Top Page Container */
 #proc_rates_row {
   background-color: rgba(0, 0, 0, 0.7);
   /* Top Page Container End */
@@ -381,12 +381,13 @@ flex-flow: nowrap;
 #recipe_materials {
   background-color: rgba(0, 0, 0, 0.5);
   /* Jumbotron End */
+
   /* Calculations Container */
 }
 #recipe_materials table {
   width: 100%;
   margin: auto;
-  color: #FA7D10;
+  color: #fa7d10;
 }
 #recipe_materials table #recipe_quantity {
   padding-right: 20px;
@@ -395,10 +396,32 @@ flex-flow: nowrap;
 #recipe_materials table #material_name {
   padding-left: 75px;
 }
+/* Profits Container */
+#total_profits_container {
+  border-radius: 10px 10px 0px 0px;
+}
+#total_profits_container .row {
+  height: 100%;
+  padding-top: 20px;
+}
+#costs_and_sale_col {
+  text-align: center;
+  display: inline-grid;
+}
+#costs_and_sale_col p,
+#total_profit_col p {
+  color: white;
+}
+
+#total_profit_col {
+  text-align: center;
+}
+
+/* Profits Container End */
 
 #calculations_container {
   margin-bottom: 40px;
-  border-radius: 0.3rem;
+  border-radius: 0 0 0.3rem 0.3rem;
   /* Costs Table */
 }
 #calculations_container table {
@@ -422,7 +445,7 @@ flex-flow: nowrap;
 }
 #calculations_container tbody {
   background-color: rgba(0, 0, 0, 0.5);
-  color: #FA7D10;
+  color: #fa7d10;
 }
 #calculations_container tr {
   display: flex;
@@ -438,13 +461,15 @@ flex-flow: nowrap;
 #calculations_container td {
   align-self: center;
 }
-#calculations_container #total_profit_text, #calculations_container #total_cost_text {
+#calculations_container #total_profit_text,
+#calculations_container #total_cost_text {
   font-size: 1rem;
   white-space: nowrap;
   font-style: oblique;
   color: white;
 }
-#calculations_container #total_recipe_profit, #calculations_container #total_recipe_cost {
+#calculations_container #total_recipe_profit,
+#calculations_container #total_recipe_cost {
   color: white;
   font-style: oblique;
 }
@@ -502,17 +527,18 @@ flex-flow: nowrap;
   #processing_col {
     margin-bottom: 10px;
   }
-  #logo{
+  #logo {
     flex: 0 0 100%;
     max-width: 100%;
-}
-  nav #nav_form{
-     padding-left: 0px;
-}
+  }
+  nav #nav_form {
+    padding-left: 0px;
+  }
 
   /* Index Page End */
   /* Recipe Pages */
-  #costs_col, #profits_col {
+  #costs_col,
+  #profits_col {
     padding-right: 0px;
     padding-left: 0px;
   }
@@ -543,7 +569,8 @@ flex-flow: nowrap;
     padding-left: 10px;
   }
 
-  .image_row, .image_head {
+  .image_row,
+  .image_head {
     display: none;
     width: 0;
     height: 0;
@@ -557,7 +584,8 @@ flex-flow: nowrap;
     max-width: 1%;
   }
 
-  .image_row, .image_head {
+  .image_row,
+  .image_head {
     display: none;
     width: 0;
     height: 0;
@@ -581,10 +609,10 @@ flex-flow: nowrap;
   #profits_table_container {
     margin-top: 10px;
   }
-  #search_div{
+  #search_div {
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
-}
+  }
 }
 /*////////////////////////////// Media Queries End //////////////////////////////*/
 
