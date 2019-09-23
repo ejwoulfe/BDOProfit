@@ -1,5 +1,7 @@
 <?php
 if(isset($_GET['id'])){
+
+
   // Get all rows from table based on the incoming ID.
   $ID = mysqli_real_escape_string($conn, $_GET['id']);
   $sql = "SELECT * FROM alchemy_recipes_table WHERE recipe_id = '$ID' ";

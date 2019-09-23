@@ -1,21 +1,21 @@
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><nav class="navbar navbar-expand-lg">
   <div id="navigation" class="container-fluid">
 
     <!-- Logo -->
-    <div id="logo" class="col-2" >
+    <div id="logo" class="col-2 mb-3" >
       <a class="navbar-brand" href="../../index.php">BDOProfit</a>
     </div>
     <!-- Logo End -->
 
     <!-- Search Bar -->
-    <div class="col-6 mt-4 mb-4">
+    <div id="search_div" class="col-6 mt-2 mb-2">
       <form id="nav_inline_form" class="form-inline" action="" method="POST">
         <div id="nav_form" class="input-group mb-3">
           <input id="nav_search_bar" name="nav_search_bar" type="text" class="form-control" placeholder="Find Recipe" aria-label="cook search" aria-describedby="basic-addon2">
           <div class="dropdown-menu" id="response"></div>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit" name="nav_search_button">
+            <button class="btn btn-outline-secondary" disabled type="submit" name="nav_search_button">
               <i class="fa fa-search"></i>
             </button>
           </div>
@@ -25,7 +25,7 @@
     <!-- Search Bar End -->
 
     <!-- Link Items -->
-    <div id="collapse_container"  class="col-sm-4 ml-auto pr-0">
+    <div id="collapse_container"  class="col-sm-4 ml-auto mb-3 pr-0">
       <button id="collapse_button" class="navbar-toggler mb-2 float-right" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars mt-2" style="color: white"></i>
       </button>
@@ -59,9 +59,14 @@ $(document).ready(function() {
   * We search using an ajax object to send a POST to our search php file.
   * If search is successful, display the data underneath the search bar, else  we can display an error message or hide it.
   */
-  $("#nav_inline_form").click(function(event){
+  $("#nav_search_bar").keydown(function(event){
 
-  event.preventDefault();
+    if(event.keyCode === 13){
+      
+      event.preventDefault();
+      
+    }
+
 });
   $("#nav_search_bar").keyup(function() {
     
@@ -78,7 +83,7 @@ $(document).ready(function() {
           dropDownDisplay(true);
         },
         error: function(data){
-          console.log(data);
+        
         }
     });
   }else{

@@ -35,10 +35,11 @@ nav #logo {
 }
 nav #nav_form {
   width: 92%;
-  position: absolute;
+  position: relative;
 }
 nav #nav_form input {
   background-color: #d3d8de;
+vertical-align: middle;
 }
 nav .dropdown-menu {
   padding: 0px;
@@ -93,6 +94,9 @@ nav #collapse_list_container {
 }
 nav #collapse_button {
   margin-right: 5px;
+}
+#nav_inline_form{
+flex-flow: nowrap;
 }
 
 /* Navigation End */
@@ -498,6 +502,13 @@ nav #collapse_button {
   #processing_col {
     margin-bottom: 10px;
   }
+  #logo{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+  nav #nav_form{
+     padding-left: 0px;
+}
 
   /* Index Page End */
   /* Recipe Pages */
@@ -570,6 +581,10 @@ nav #collapse_button {
   #profits_table_container {
     margin-top: 10px;
   }
+  #search_div{
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
 }
 /*////////////////////////////// Media Queries End //////////////////////////////*/
 

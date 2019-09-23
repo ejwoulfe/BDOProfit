@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require_once('Includes/header.php');?>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><?php require_once('Includes/header.php');?>
 
 
   <body>

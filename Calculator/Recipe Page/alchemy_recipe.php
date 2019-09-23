@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require '../../Includes/header.php';
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><?php require '../../Includes/header.php';
 require '../../Includes/connectToDatabase.php';
 require ('Get Recipe Data/get_alchemy_recipe_data.php');
 ?>
