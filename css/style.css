@@ -419,7 +419,15 @@ nav #collapse_button {
 .edit_button {
   display: none;
   margin-right: 20px;
+  height: 25px;
+  width: 40px;
+  line-height: initial;
+  background-color: transparent;
+  border-color: #fa7d10;
+  color: #fa7d10;
+  border-radius: 4px;
 }
+
 .edit_button_td {
   position: absolute;
   right: 0;

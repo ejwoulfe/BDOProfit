@@ -149,7 +149,7 @@ require ('Get Recipe Data/get_cooking_recipe_data.php');
                 </td><td id="' . $cost_quantity .   '" class="quantity text-center col-2">'
                 .$subRow[$x].
                 '</td>
-                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td class="edit_button_td" ><button id="edit_button_' . $strCount . '" class="edit_button"></button></td>
+                <td id="' . $total_cost .   '" class="text-right col-4")">0</td><td class="edit_button_td" ><button id="edit_button_' . $strCount . '" class="edit_button">Edit</button></td>
                 </tr>';
                 $count+=1;
               }
