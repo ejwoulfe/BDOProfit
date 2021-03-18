@@ -15,5 +15,5 @@ Using a self made MySQL relational database, all recipes/crafts will already hav
  Back End:
  PHP, MySQL, and item data gathered from web scraping, with permission using Node.js and Puppeteer.
  
- ## Video Explaining the Project
- https://www.youtube.com/watch?v=9EjlIWlHb4U
+## MySQL Diagram
+![mysql diagram](https://user-images.githubusercontent.com/47793125/111681516-b187b700-87f9-11eb-82bc-592ff89eadf2.png)
